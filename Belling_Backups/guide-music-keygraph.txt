@@ -1,0 +1,63 @@
+Nøkkelord brukt for utvalg: keygraph, key, mixing, dj
+
+Harness the power of harmonic mixing today!
+Harness the power of harmonic mixing today!
+Do you ever wonder why it sounds clashy when mixing two songs together? Even when the BPM is matched? We've all been there - it's all to do with music keys.
+One of the most common elements new DJs overlook is musical keys. Mixing in key is one skill that separates beginners from professionals. While it takes a little while to understand, it's essential to make your mixes sound clean and coherent.
+Through years of DJ experience I've learned the power of mixing in key firsthand. In this guide, I'll share everything DJs need to know about musical keys. Get ready to sound like a pro!
+Musical keys dictate which notes sound good together.
+DJs should understand how keys work to improve their sound.
+Mixing songs with related keys will always sound better than clashing keys.
+Using software like DJ.Studio makes it super easy to identify keys, and mix in key.
+Keys are a system within music that dictates which notes, pitches, and scales fit together.
+This is why music uses keys - keys are a system for working out which notes sound good together, and which ones to avoid.
+There are major and minor keys: major chords, major scales, and major keys have a happier sound while minor is darker.
+For example, if a song is in the key of C major, some notes sound good (harmonic), while other notes sound wrong (dissonant).
+To demonstrate, only the following notes sound correct in the key of C major: C, D, E, F, G, A, B. Any sharps or flats have an unpleasant sound. So playing a C# in the key of C would sound dissonant.
+The key system originates from western music around the 16th century (long before DJs ever existed). While keys were originally designed for musicians and composers, it is equally essential for DJs to understand keys.
+When mixing, have you ever noticed how some songs sound good together, and others sound a bit awkward? This is all to do with their keys.
+DJs need to understand how keys work so they can create cohesive, smooth-sounding mixes. Besides matching BPMs, matching keys is probably the second most important skill for DJs.
+For listeners, the difference between DJs who consider keys, and those who don't, can be very noticeable.
+It makes a huge difference when transitioning between two songs. Mixing songs in the same key will sound a lot more natural and satisfying than songs that clash. If you mix songs with supporting keys, it almost sounds like the tracks were made for each other. However, if you mix in clashing keys it can sound clunky and awkward. When you use harmonic mixing, you can prevent this from happening.
+In practice, using keys correctly can determine whether you fill or empty the dance floor.
+If you want to level up your DJ sets, mixing in key is one of the best techniques to sound like a professional.
+Don't worry though - you don't need to be Mozart to understand and mix keys correctly. There are powerful tools to do the hard work for you.
+To mix in key, you need to first work out the key signatures of your songs, and then follow some simple rules to determine which songs you can play together.
+I like to use this 3 step process to make my life easier as a DJ:
+Identify the key of a song, then tag your tracks by key.
+Use a music key graph like the Camelot wheel or circle of fifths to work out what tracks work well together.
+The circle of fifths shows how keys are connected. If a song is in the key of C, it doesn't mean you can only mix it with tracks in the exact same key.
+You can use either the next or previous step around the circle, or even the key directly opposite which is the relative minor key.
+All of these connections show you keys that are harmonically related.
+The Camelot wheel from Miked in Key is an adapted version of the circle of fifths which is designed to be easier for DJs to understand. It shows you the same connections, but gives each key a label which makes it quicker to navigate, and less cluttered.
+After you've identified the keys of your tracks, simply use one of these charts to work out which songs have complementary keys. Now mix these together, and you're mixing in key!
+The easiest way to identify musical keys is by using software.
+The problems with working out keys manually are:
+It can take a long time to identify the key of each song.
+It isn't practical for DJs, particularly when they are mixing live.
+For DJs it's far quicker and easier to use software like DJ.Studio.
+Software makes the process of identifying and matching keys lightning-fast and perfectly accurate.
+Simply import your tracks and DJ.Studio automatically detects the key. You don't have to do any of the hard work and you don't need to worry about making any mistakes.
+DJ.Studio also offers a range of other helpful features related to keys - for example, it gives a compatibility percentage between the current song and others in your library. This shows how well the keys of two songs will mix together. 100% compatibility and you're good to mix, 0-25% and it might be worth selecting a different beat.
+Watch this video to find out more - DJ.Studio's key and automix features.
+Looking at the concepts of keys in more detail, you'll hear the term "key signature". This is a system that is used in written music (notation) to inform musicians of the song's key.
+The key signature isn't a key itself, these are actually two different things. Although the terms are often incorrectly used interchangeably.
+Key signatures are just a system used to quickly communicate a song's key through sheet music.
+As a DJ, understanding how to read key signatures isn't super important because you won't be reading sheet music. Although it does help to further understand how keys work - which is vital knowledge for DJs.
+For example, as a professional DJ, I never need to read a key signature off the top of my head, although I have a perfect understanding of keys, how they fit together, and why it's important for me to understand.
+I can also hear when keys are clashing, or harmonizing between two songs.
+Reading key signatures is an easy process if you have a key signature chart at hand.
+The quantity of these symbols indicates the different key signatures for the following passage of sheet music.
+This list shows you the various major and minor key signatures:
+If there are no flats or sharps, then the music is in the key of C Major - this is the only key to have no symbols (although it could also indicate the relative minor key of A.)
+This list shows all the key signatures. There are no specific minor key signatures, although any key signature will work with the relative minor key and minor chords.
+So the key of C Major (and the C Major scale) uses all the same notes as A Minor. Use the circle of firths to work out which minor keys correspond to different keys in major.
+If a note is sharp, it's one semitone higher than the original note. So sharp key signatures typically use sharp keys, and flat key signatures use flat keys. If you have an key signature chart, you don't need to remember this, you can just look it up.
+As far as music theory goes, understanding major and minor keys and how they work is one of the most beneficial skills for anybody working with music - whether you are a musician, DJ, composer, or anything else.
+As a DJ, working correctly with keys will make a massive improvement to the sound of your sets.
+If you want to make the mixing process easier you should check out our DJ.Studio Software - this does all the hard parts for you, so you can focus on getting the dancefloor moving!
+There are a few methods to work out a song's key. The quickest and easiest technique is to use DJ software with key reading features - like DJ.Studio. This instantly accurately identifies a track's key at the click of a button.
+A key signature in music is a set of instructions that tells musicians which notes work within the context of the song's key. Keys and key signatures, while closely related, are actually two different concepts. The key signature is a component of written sheet music that indicates what key a piece of music is in. The signature is found by the clef at the start of a piece of notation.
+To identify key signatures, you need to count the number of sharps or flats printed by the treble clef at the beginning of a piece of sheet music. The number of sharps or flats indicates which key the music is in. This system is explained in more depth in the guide above.
+The DJ Mix. Redefined
+Copyright © 2024 DJ.Studio B.V. All rights reserved.

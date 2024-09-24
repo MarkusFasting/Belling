@@ -1,0 +1,30 @@
+
+# Lær Camelot-hjulet og harmonisk miksing
+
+## Hva er Camelot-hjulet?
+Camelot-hjulet er et verktøy for harmonisk mixing. Det hjelper DJ-er med å finne sanger som passer sammen basert på tonearter.
+Hjulet er delt i 24 tonearter, kategorisert i:
+- Moll (A): Ofte mørkere og mer følelsesladde.
+- Dur (B): Mer energiske, positive og lyse.
+
+Tallene på Camelot-hjulet går fra 1 til 12. Kombinasjoner av tallene og bokstavene (A eller B) indikerer harmonisk kompatibilitet.
+
+## Hvordan Camelot-hjulet fungerer
+1. Sanger ved siden av hverandre numerisk på Camelot-hjulet er kompatible.
+2. Eksempel: 8A (A-moll) kan mikses med 9A (E-moll) eller 8B (C-dur).
+3. Blandet overgang: Fra 8A til 9B gir en gradvis overgang mellom energiske og emosjonelle følelser.
+
+## Muligheter Camelot-hjulet gir
+1. Sømløse overganger: Mikser du sanger som følger Camelot-hjulets regler, skaper du jevne overganger.
+2. Stemmingsendringer: Flytt opp eller ned i tallene for gradvis å endre stemningen (f.eks. fra 8A til 9A for en mer emosjonell følelse).
+3. Energibytte: Å bytte mellom A- og B-tonearter (fra moll til dur) kan løfte energien i settet (f.eks. fra 7A til 7B).
+
+## Hva AI-en aldri må gjøre
+1. **Mikse inkompatible tonearter**: Å mikse en toneart som er for langt unna (f.eks. 4A til 10B) vil skape disharmonisk miksing.
+2. **Store toneart-hopp**: Hopp over flere Camelot-nøkler uten mellomliggende overgang skaper brå overganger. Hold det gradvis for jevn flyt.
+3. **Ignorere energinivå**: Selv om sanger er harmonisk kompatible, vil store forskjeller i energinivå ødelegge flyten på dansegulvet.
+
+## Hvordan forbedre AI-en
+1. **Detaljert forståelse av Camelot-hjulet**: AI-en må lære flere Camelot Key-overganger og hvordan dur og moll påvirker stemningen.
+2. **Forhindre inkompatible overganger**: AI-en må unngå store toneart-hopp og alltid prioritere nære, kompatible tonearter.
+3. **Fokus på energi og vokal**: Harmonisk kompatibilitet bør kombineres med passende energinivåer, og AI-en må unngå vokaloverlapping.

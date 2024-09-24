@@ -1,0 +1,54 @@
+Nøkkelord brukt for utvalg: cue, points, dj, mixing
+
+Master cue points with DJ.Studio!
+Master cue points with DJ.Studio!
+Cue points are one of those DJ tools that often slip under the radar for newer DJs - or even the old-schoolers who aren’t used to digital DJ gear. However, harnessing cue points correctly can open up a huge amount of creative and expressive potential in your mixes, as well as make the logistics of mixing easier.
+In essence, cue points are custom markers created by DJs to highlight certain sections of a track. Most DJ software lets the DJ instantly jump to any of their assigned cue points - making it easy to skip to the verse, chorus, breakdown, or any other key moments the DJ wants on rapid recall.
+In this guide, you’ll learn all the important techniques, tips, and tricks relating to cue points. You’ll quickly see how you can use these to your advantage, both in the preparation and live performance stages of DJ mixing.
+Cue points are a powerful DJing tool, letting DJs mark and quickly jump to key points in a track
+Below, you’ll learn all the most vital cue point techniques
+DJ.Studio is a unique DJ app which makes it super easy to find and create the best cue points
+Cue points have been made possible thanks to the advent of digital DJ tools. On old vinyl turntables, these wouldn’t have been possible - you would have to manually remember sections of a track's arrangement, and skip through the record to find it mid-performance.
+Cue points made the lives of DJs much easier, and made navigating songs faster.
+A cue point is a marked timestamp in an audio file, for example - 2 minutes 50 seconds.
+Most DJ controllers and software allow users to create 8 (or more) hot-cue points per track. The DJ assigns these hot cues to a time location. For example, at the start of a chorus, the beginning of a build-up, at the drop, at the start of a drum break, or any other key parts of the music.
+These are typically created when the DJ pushes the hot-cue button - it marks the location that is currently playing (at the playhead point. (Most DJ software uses beat-match technology, so the marker is placed on the beat, rather than the exact time location).
+Now, whenever the DJ re-pushes the hot-cue button, the track jumps to the marked cue location.
+The basic workflow process for setting and loading cue points:
+2. Push the cue/hot cue buttons on your decks or software to set cue points.
+3. When you want to recall the cue location, simply push the corresponding cue button.
+Cue points can be used in an infinite number of ways based on a DJ's ideas and creativity. Here are some cool techniques:
+The most basic use for cue points is as a ’logistical’ tool. In their rawest form, they give DJs a method to quickly jump around to any part of a song.
+Rather than having to manually scrub through the intro to the verse every time you play the song, you can instead set a cue point at the start of the verse. Now when you load the track up, simply hit the allocated cue button, and the playhead will automatically jump to the desired point!
+This just makes DJing a bit easier and means you don’t have to waste time navigating songs.
+Cue points are also super useful for the phrasing technique. When you start phrase mixing, you can create hot cues to mark out the important phrases of a track, like the verse, chorus, etc, meaning you can quickly phrase mix your tracks without needing to find the parts each time.
+As you will see, DJ.Studio can import the phrase analysis from rekordbox, making it very quick to see and cue up phrases when preparing your DJ sets (more on this later).
+To make your mixes more unique and dynamic, cue points can help enable fluid looping and live remixing techniques.
+You can use the hot-cue systems to mark out sections of tracks that you’ll want to use as loops or when live-remixing tracks. This can help make your performances more expressive with less effort.
+Simply mark out any sections you want to loop, or parts of tracks that you’d want to trigger when live-remixing, and you have your ‘palette’ of hot cues ready to bust some improvised grooves on the dance floor.
+Hot cues also lend themselves well to scratching techniques. Some parts of a track might work well as scratching material. Rather than having to manually scroll to the parts, just mark them as a hot cue so you can instantly recall them whenever the itch to scratch arises.
+The "Cue Drumming" technique used by mechanically skilled DJs like DJ EZ, James Hype, and others turns the decks into an instrument and is a very cool and exciting skill to show off in mixes.
+(See it in action at 14:30 of this DJ EZ Boiler Room)
+The DJ finds part of a song they want to ’sample’. It could be a cool vocal hook, an instrumental stab, or any other sound that lends itself to this technique.
+The DJ sets a cue point here, and then rhythmically hits the cue button, essentially playing it like a sample pad on a drum machine. You can also get the crossfader involved.
+This can then be combined with manipulation of the pitch slider, to change the pitch/note of the cue in real time. It takes a bit of skill and practice, but when pulled off, this technique shows the audience that you’re a skilled DJ and can be the foundation of some exciting and groovy unique moments on the dance floor.
+You can see James Hype showing off his Cue Drumming skills in this short video: James Hype: Cue Drumming
+2. Create a hot cue at that point - accuracy and precision are important.
+3. When the performance time comes, start hitting the cue button rhythmically.
+4. If you have the skill, simultaneously move the pitch fader to change the note of the sample. You can use this to create melodies with the cued sample on the fly and make dramatic buildups.
+5. This works well before a drop, and in combination with other effects. Although it requires some speedy DJ dexterity - and definitely practice it before using it on stage!
+DJ.Studio is a new piece of DJ software with some cool integrations with rekordbox - making it super easy to plan DJ sets and cue points.
+1. Open the DJ.Studio app, and connect your rekordbox library.
+3. Browse your rekordbox library inside DJ.Studio, and select songs you want to mix.
+6. Export to rekordbox - using the export menu, you can send your prepared mix to rekordbox, make sure to enable 'Add Hot Cues'
+8. You will now see the ordered playlist of songs. Each song will have hot-cue markers showing the mix-in and mix-out points for transitions, making it easy to prepare and anticipate when you need to push the buttons. You will see a cue point set at all the key locations.
+9. This can also be copied to a USB stick and plugged into Pioneer CDJs/Controllers which are used in most venues - retaining all the information.
+This demonstrates just one of the countless powerful workflows DJs can exploit using DJ.Studio. There are many other techniques that won’t fit in this article, so make sure you check out the rest of our website to find out more.
+With your new cue point knowledge, it’s time to get out there and start experimenting with these techniques. Who knows, maybe you’ll invent a new technique not listed here.
+If you want to start accelerating your mix and cue point planning, check out the free 14-day trial for DJ.Studio.
+The exact way to set up cue points depends on your software and process, but it's generally the same. If you're using a hardware controller, typically you will have 4 to 8 hot cue buttons per deck. Simply push one of these to create a cue point at the current location of the songs. Push the same button again to jump to the cue.
+If you're preparing a mix using software and not hardware, usually you'll be able to see 8+ virtual cue buttons in the user interface. These work the same way - press once to save the cue, and press again to load it.
+Cue points aren't essential, but they are very helpful. Primarily they are a time-saving feature, meaning you can instantly skip to certain parts of a track without needing to manually scroll through it. Additionally, they open up new layers of creativity and dynamism in your performances.
+It depends on the DJ, but the majority of DJs do use cue points in their DJing. Whether it is to help them phrase mix, or for more virtuosic cue drumming performances, you'll see cue points being utilized by DJs across the board of genres and notoriety.
+The DJ Mix. Redefined
+Copyright © 2024 DJ.Studio B.V. All rights reserved.

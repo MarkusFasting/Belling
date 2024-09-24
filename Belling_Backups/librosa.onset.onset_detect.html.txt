@@ -1,0 +1,33 @@
+Nøkkelord brukt for utvalg: librosa, onset, detection
+
+Locate note onset events by picking peaks in an onset strength envelope.
+https://github.com/CPJKU/onset_db
+(optional) pre-computed onset strength envelope
+The units to encode detected onset events in.
+By default, ‘frames’ are used.
+If True, detected onset events are backtracked to the nearest
+preceding minimum of energy.
+This is primarily useful when using onsets as slice points for segmentation.
+An energy function to use for backtracking detected onset events.
+If none is provided, then onset_envelope is used.
+If True (default), normalize the onset envelope to have minimum of 0 and
+maximum of 1 prior to detection.  This is helpful for standardizing the
+parameters of librosa.util.peak_pick.
+Otherwise, the onset envelope is left unnormalized.
+If True (default), detections are returned as an array of frames,
+samples, or time indices (as specified by units=).
+If False, detections are encoded as a dense boolean array where
+onsets[n] is True if there’s an onset at frame index n.
+See librosa.util.peak_pick for details.
+estimated positions of detected onsets, in whichever units
+are specified.  By default, frame indices.
+If sparse=False, onsets[…, n] indicates an onset
+detection at frame index n.
+If no onset strength could be detected, onset_detect returns
+an empty array (sparse=True) or all-False array (sparse=False).
+if neither y nor onsets are provided
+compute onset strength per-frame
+backtracking onset events
+Get onset times from a signal
+Or use a pre-computed onset envelope
+© Copyright 2013--2023, librosa development team.

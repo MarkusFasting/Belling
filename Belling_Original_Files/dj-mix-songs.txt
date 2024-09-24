@@ -1,0 +1,125 @@
+Nøkkelord brukt for utvalg: mix, songs, dj, bpm
+
+DJ mix your own songs with DJ.Studio
+DJ mix your own songs with DJ.Studio
+Welcome to the ultimate DJing tutorial - this shows you all the skills and techniques you need to learn to start DJing.
+DJing is a beautiful and fun artfom - not only is it a great way to enjoy music and express yourself, but it helps to connect with people and get a party going!
+Many people think that you need a lot of expensive gear to start making mixes... but this isn't true at all. These days, all you need is a music collection (or even just some YouTube playlists), a computer, some software, and the passion to make music!
+I've been DJing for over a decade, and I've learnt all the skills, techniques, and lessons that it takes to become a pro DJ (or even just a hobbyist).
+I've put this guide together, with the help of DJ.Studio, to help teach the next generation of killer DJs to get to grips with the core skills.
+In this guide you'll learn everything you need to know to DJ, from core concepts, music library management, equipment, and techniques. Now let's get started!
+Make sure you check out our DJ Dictionary to learn any terms you're not sure of!
+Before I explain the step-by-step process for DJ mixing, let's first have a look through some of the basic concepts and questions that new DJs need to understand.
+There are a few pieces of essential equipment for DJs, and some other 'nice-to-haves', but you can get by without them.
+As for essential pieces of gear, you'll need at least the following items to DJ:
+DJ controllers
+DJ Decks (CDJ or Turntables)
+A DJ mixer
+If you use the studio style of mixing, then all you need is a laptop and something to listen to your mix on (speakers or headphones).
+If you go for the live mixing method, you can mix purely with software, although it isn't as effective to make cool performances, as you're only mixing live with a keyboard and mouse. It's better to use a controller for live performances.
+Another key part of DJing is discovering music.
+If you don't find new music all the time, your DJ sets will be samey, stale, and boring. Finding new music makes your DJing exciting to the audience, and keeps it fresh every time.
+Knowing where and how to find good music that you want to DJ is just as important as being able to DJ, and is a skill itself. Finding music is the DJs secret dark art - so you need to master this as much as you learn the physical techniques.
+For a list of the best places to find music, check out our main post - How To Find Music For DJ Sets.
+A cool feature of DJ.Studio is the Beatport Streaming Integration, which is the perfect tool for discovering new music, and experimenting with songs in your mixes before buying.
+One of the most important elements of becoming a successful DJ is finding and playing the right music. Even if you're the most technically talented mixing virtuoso - if you play bad, boring music that nobody wants to hear, you won't make it very far.
+If you're DJing for weddings, radio stations, or generic events, you might need to build up a collection of the most popular songs - crowdpleasers. As this will ensure that you have any song you need if you get requests.
+Learning How To Make a DJ Playlist is another important skill, and is the foundation of making a great DJ set.
+Framework refers to the overall approach you take to the ebbs and flows and intensity of your DJ set throughout.
+While this does not have to be a hard or fast rule, there are several common frameworks that can be used as a rough starting point to guide the flow of your mix.
+Some examples of these are ramps, hills, and waves. It's referring to how the intensity tension and release of your DJ mix flow. Read more about DJ Frameworks here!
+Another core concept of DJing is beat matching, and understanding how to count beats and phrases.
+Making sure the tracks are playing at the same tempo (BPM - beats per minute).
+Manually beat matching is a core skill of any live DJ, although it does take some time practicing to really master the technique.
+With studio mixing, it's much easier to make sure that beats are perfectly matched without much practice, meaning you can spend more time on the creative elements of your mix.
+Harmonic mixing involves analyzing the key of your songs and mixing two songs together which have a compatible key.
+This is a large and complex topic, so check out our full guide on Harmonic Mixing and the Camelot Wheel for in-depth tutorials.
+If you want to create professional-sounding, seamless mixes, then you need to understand how to mix harmonically and use it to your advantage. Harmonic mixing is a powerful tool that enables you to control the energy level of your mix.
+Working out how to mix harmonically live is a tricky skill that takes a lot of practice and research to pull off. However, with studio mixing it's a lot easier. Particularly when you use tools like DJ.Studio which has a suite of helpful harmonic mixing tools mixed into the software, including full key analysis, and harmonic automixing!
+One important concept to understand within DJ mixing is the difference between the crossfader and the channel fader. These are both two different types of gain control.
+Typically mixers will feature both channel faders and a cross fader - giving you the best of both.
+This also opens up some other creative choices and techniques you can use in your DJ mixing.
+EQ, short for equalization, is a core tool in a DJs toolkit. The main purpose of EQ is to control the frequency content of the music being played. Frequency content is a term that describes how the tone of the music is affected. Frequencies can be split into three main bands - Bass, Mids, and Treble. (Or Low, Mid, and High).
+These divisions of the frequency spectrum are used by DJs for creative effects, particularly during transitions.
+For example, the DJ can cut the bass to remove the kick drum and bass line of the incoming track, only mixing the mid and high elements into the last track. The DJ can then cut out the bass on the first track, to make room for the second track. When the time is right, the DJ can then bring in the low end on the second track, to make a punchy transition.
+Understanding how to use EQ is essential. Check out our full tutorial on How To Use Equalization for DJs.
+Transitions are one of the most exciting parts of DJing, and separate it from simply being a playlist where not much thought is given to how you move from song to song.
+Understanding how to use transitions for an entertaining and creative effect is one of the key parts of becoming a proficient DJ with the ability to create unique and exciting mixes.
+There is an unlimited variety in the way a DJ can transition between two songs. If you give the same two songs to any DJs, they will probably all transition through it in a slightly different way.
+The key to creating exciting transitions is in understanding the core techniques for mixing music - like beat-matching and harmonic mixing. Using these skills is the foundation of a good transition, and you can then learn the additional tools you have to add some spice, color, and expression to your blends.
+If tracks are harmonically mixed, the melodies, chords, bass lines and harmonies will all be in key. Meaning you won't have awkward or dissonant musical elements.
+You should learn how to use the crossfaders, channel faders, equalization, cue buttons, loops, filters, and all the other common effects you can find on mixers to make your transitions more interesting.
+You can imagine all of these tools as different paintbrushes or colors in an artist's toolbox, where the DJ can use these tools to paint different kinds of transitions based on their own groove and expression.
+Ultimately mastery of this skill just comes down to practice. Understand the tools available, learn how you can use them, and practice as much as you can to develop your own unique style and taste of transitions. For some inspiration. Some inspiration. Check out the full guide on 16 DJ Transition Techniques.
+There are two main ways you can go about DJ Mixing, either the 'Live style' or the 'Studio style'.
+I'll start by giving a brief overview of each type, with their pros and cons. Then I'll explain some of the core principles of DJing that apply to both methods.
+After this, I'll explain the workflow process for each type in more detail so you can get a better sense of how they both work - and learn to mix yourself!
+Live mixing is the original and longest-standing method of DJing. This involves using some kind of equipment (be it decks or software) which allows the DJ to cue up songs live, and blend them together. This is done in real-time using the volume controls, EQ, and other effects provided on a mixer - the mixer can also be hardware or digital.
+When somebody says "DJing" this is what most people imagine. Although, that's not to say it's the best method, just the oldest one.
+There are certain situations where this method is the best choice - if a DJ wants to be able to pick and mix songs on the fly. For example, at parties, weddings, nightclubs, live radio, live streams, raves, or just having some fun on the decks.
+However, this isn't a completely perfect method, as it is time-consuming, and leaves the DJ vulnerable to making mistakes. It also takes a long time to learn the techniques.
+If you don't need to mix live, and just want to create a mix that can be listened to anywhere at any time, then studio mixing is better. But more on that later...
+Lets DJs perform live and improvise the music they pick.
+Time-consuming (recording a 1-hour mix takes 1 hour or longer with mistakes).
+DJs can make mistakes.
+Requires practice to understand and use essential techniques (beatmatching, harmonic mixing).
+You need hardware for the best experience (a controller, or mixer and decks.) Using just software for live mixing isn't good.
+The traditional format of Live mixing has been the paradigm ever since the dusty origins of DJing. The exact start is contested, although the use of two decks and a mixer evolved sometime during the '60s and '70s.
+The main thing to understand about Studio DJ mixing is that it uses a different workflow and approach to live mixing, although the final mix outcome is the same (or actually better, I'll explain why later).
+Rather than mixing live using two decks and a mixer, with Studio mixing you arrange the mix in the timeline of an audio-editor-like software. This has a huge range of advantages.
+While this method doesn't work for live performances like parties and nightclubs, it's the best solution for many other situations, where the main final product is a recorded mix as an audio file.
+This could be if you're making a mix for a radio show, in stores and events as a background playlist, to share online as a promotional tool, for listening in car journeys, or a huge range of other situations.
+A studio technique lets DJs craft mixes in much more detail, in as much time as they need. They don't need to worry about recording and performing it in real time - they can create God-like mixes without needing the physical skills!
+These reasons are partly why we have been driven to make a modern tool for DJing - DJ.Studio. This is a modern tool for the modern DJ, and it takes full advantage of all the technological advancements of the last decades, including AI and a range of other powerful tech.
+Gives more creative freedom - you can do any kind of mix and transition imaginable, you're not limited by hardware or two hands.
+You can come back and refine mixes over time, without needing to re-record every time.
+Integrations of additional tools and technology (automix, faster rendering, video creation).
+More affordable - no hardware needed to have fun and create perfect mixes.
+Great for mixing on a laptop when you don't have a controller.
+May be unfamiliar to old-school DJs.
+Now I will outline the basic steps and process involved with live DJ mixing.
+If you run through this process and learn each step, you will quickly be ready to start live DJ mixing.
+This tutorial is based on the process of using a computer with a DJ controller. However, the process is essentially identical for using CDJs and a mixer or turntables, it's just different tools but the principles are the same.
+First, you need to build up a collection of music. A nice diverse music library gives you more options when it comes to mixing, whether you like electronic music, hip hop, or folk - build that library up! When you're new to DJing, you might want to stick to the same genre for your first mixes. Focus on mastering one genre you enjoy before moving onto others.You may want to plan out a setlist, including the order of tracks. Or you may just want to pick tracks and go the flow and see what feels right at the time.
+Next, you can start to bring the second song in through the main speakers. The exact way you pull off a transition is up to you. You could do a hard cut, or you could do a slower blend. See our guide on DJ Transition Techniques for inspiration.
+When the transition is complete, you can mute the first channel, and load in the next song you want to mix!
+If mix you want to record your mix (to share with your DJ friends or audience) using this technique you'll need some additional equipment depending on what hardware you're using.
+Some software lets you record directly from inside it (like rekordbox and Traktor), however, if you're using hardware like it turntable or CDJ setup, you'll need to use an audio interface to plug the decks into a computer to record it through audio software.
+But if you use studio mixing techniques, this is not necessary...
+If you want to learn to DJ live, these are some decent software options:
+Virtual DJ
+Now I'll explain the alternative method for DJ mixing, which is the studio mixing technique.
+This is called the studio method as it's the perfect option for mixing and creating sets when you don't need to mix live in real-time.
+For example, maybe you just want to make a mix to share online. This is the better option for radio DJs or a music producer who wants to make playlists without needing to practice their mixing skills. There are also many other situations where this technique is better than live mixing.
+There are not many tools available for the studio mixing method (and none which are specifically designed for it), which is why at DJ.Studio, we have created a piece of software that is specifically designed to offer a powerful studio DJing solution.
+Here is the workflow for using DJ.Studio to create mixes using the studio technique:
+The first stage is discovery. Which is something that DJ.Studio enables much better than other DJ software. All you need to do is use the integrated music platforms like YouTube, Beatport, and others, to search and find the music you want to include in your sets. You can also connect DJ.Studio to other DJ software to link your libraries from rekordbox, Traktor, Serato, etc.
+After you've decided on the songs you want to use, simply drag them into the playlist box. Note, that when creating a project you will be prompted to choose either a Local File type, or a YouTube mix type.
+Next, just hit the AUTOMIX button. This analyses the key and tempo of all the chosen songs and works out the best order to arrange them in. You're given a slider to choose between tempo or key as the leading automix factor. Let DJ.Studio work its magic and watch as it scans through every single possible combination to bring you the best order.
+You will then see your songs on a timeline with some automatic transitions between each track. You can skim through the mix and listen to the overall flow. You can easily rearrange songs if you want to change the order, just by dragging them around in the playlist window.
+When you're happy with the order and arrangement of the mix, it's time to fine-tune the transitions. Click on the blue transition between each song to open the transition editor. Here you can apply a range of transition presets, like filters, crossfades, hard volume cuts, slow EQ transitions, and a bunch of other automatic slopes and transitions. Alternatively, you can manually draw in the transitions on the timeline using the automation lines. Here you can draw the values however you please, which gives you an unlimited amount of creative freedom.
+After you're pleased with the whole mix, it's time to export and share your project!Simply hit the export button and you'll be presented with a range of export options. You can export your mix as an mp3 or wav file which is easily shared. Or, you can export the mix directly to a range of other platforms including Mixcloud, YouTube, and even Ableton Live. Additionally, you can export mixes as a DJ Set file, which can be imported into most other DJ software.
+When exporting to these other platforms, DJ.Studio generates a text document that contains all the track information including track names, artist names, and the timestamps. This automatically creates chapter dividers in platforms like YouTube and Mixcloud, which makes it easy to give credit to the artist without having to manually go through and update all the information.The export process is quick too, and often takes less time that the total length of your mix (depending on your computer power). You can leave it running in the background while you do other work, saving you a lot of time overall. Also, you don't have to worry about re-recording the mix if you make any mistakes.
+Voila! Enjoy your finished mix!
+A cool additional feature of DJ.Studio is the built-in video creator and audio visualizer.
+This lets you create audio-reactive visuals for the entirety of your mix. It has over 100 animations to choose from, and you can also display artist and track information, as well as album artwork.
+Videos can be exported as MP4 files, or uploaded directly to YouTube. You can even export these in 4K quality, creating crystal-clear graphics! See DJ.Studio's Music Visualizer in action!
+An AI-powered automixing algorithm with beat matching and harmonic analysis.
+A one-of-a-kind timeline interface for building your perfect mix.
+A built-in video creator for making visuals for your DJ mixes.
+Here are some extra tips and bits of info about DJ.Studio.
+If you own a lot of audio files (and have them on your hard drive) the best way to use DJ.studio is to download the app.
+You can do this by using the DJ.Studio Downloader, and following the installer. This now runs directly on your PC rather than through a browser.
+DJ.Studio has a bunch of integrations with other DJ software including rekordbox, Traktor, Mixed In Key, and Serato. These let you send playlists to and from DJ.Studio, making it easier to work with other software and use a hybrid Live/Studio mixing workflow.
+If you use the downloaded DJ.Studio app and import files from rekordbox or Mixed In Key, you get extra information in the app showing you the best places to make transitions in the songs.
+Integrations for Serato, Engine DJ, and Virtual DJ are coming soon!
+Now you understand the best options for DJ mixing! You might also be interested in our guide on How To DJ For Beginners.
+Both of these DJ mixing styles have very strong uses, and they are not incompatible.
+For example, you can use DJ studio to create playlists and find the best sequence using harmonic mixing, and then use live tools to play this crafted set in front of an audience.
+DJ.Studio offers a fast and powerful workflow that helps people at all corners of the industry - from beginner DJs to seasoned pros.
+Try DJ.Studio out for yourself today!
+Mixing two songs like a DJ is easy. All you need is a collection of music and some kind of DJ software. You don't even need to use any hardware equipment these days. With software like DJ.Studio you can quickly create full mixes without even needing to spend years practicing beat-matching and other DJ skills.
+Mixing songs together couldn't be easier - even if you have no experience with DJ equipment. Thanks to DJ.Studio, you can use the simple app to automatically make custom mixes of any song. DJ.Studio does all the hard work, like beat matching, harmonic mixing, and recording, so you can focus on building your dream playlists, rather than fiddling with the technical stuff!
+Certain elements of learning to DJ can be quite tricky, mostly beat-matching, and harmonic mixing. These can take years of practice to be able to pull off smoothly. No need to worry though, as you can use software like DJ.Studio to do all the hard work for you - so you can focus on the selection!
+The DJ Mix. Redefined
+Copyright © 2024 DJ.Studio B.V. All rights reserved.

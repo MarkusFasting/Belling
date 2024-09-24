@@ -1,0 +1,6 @@
+Nøkkelord brukt for utvalg: onset, audio, detection, music
+
+Onset refers to the beginning of a musical note or other sound. It is related to (but different from) the concept of a transient: all musical notes have an onset, but do not necessarily include an initial transient.
+In signal processing, onset detection is an active research area. For example, the MIREX annual competition features an Audio Onset Detection contest.
+Approaches to onset detection can operate in the time domain, frequency domain, phase domain, or complex domain, and include looking for:
+The aim is often to judge onsets similarly to how a human would: so psychoacoustically-motivated strategies may be employed. Sometimes the onset detector can be restricted to a particular domain (depending on intended application), for example being targeted at detecting percussive onsets. With a narrower focus, it can be more straightforward to obtain reliable detection.

@@ -1,0 +1,20 @@
+Nøkkelord brukt for utvalg: onset, pitch, detection
+
+According to wikipedia Onset detection:
+Onset refers to the beginning of a musical note or other sound, in
+  which the amplitude rises from zero to an initial peak. It is related
+  to (but different from) the concept of a transient: all musical notes
+  have an onset, but do not necessarily include an initial transient.
+And the Pitch detection
+A pitch detection algorithm (PDA) is an algorithm designed to estimate
+  the pitch or fundamental frequency of a quasiperiodic or virtually
+  periodic signal, usually a digital recording of speech or a musical
+  note or tone. This can be done in the time domain or the frequency
+  domain or both the two domains.
+The two definitions are clear to me. Onset tries to find the start of a musical note, pitch detection tries to detect the fundamental frequency.
+The confusion arise, because I think of the two concepts as highly related. For example if I want to track a musical note doesn't it mean that I already detected the pitch? or that frequency could be a harmonic and not the fundamental frequency ?
+Onset detection is concerned with finding the points in time at which sounds start. Doing this does not require prior knowledge of the particular pitch (or fundamental frequency) of the sound. It may indeed rely on the property that at the beginning of a sound, there is an increase of energy. Actually, you can very well perform onset detection on recordings which do not have a well-defined pitch (for example: drums, machine noises...).
+You can think of pitch and onsets/rhythm as related to the "vertical" and "horizontal" organization of music. There exists types of material in which changes along these two dimensions coincide - so that a detection algorithm can take advantage of a change in one dimension to infer that a change has occurred on the other dimension. But this coincidence/correlation is contingent.
+okay, you can do pitch detection without onset detection.  that's for sure.  when you do pitch detection and the input is either mostly silent or not well pitched, usually the pitch detector will not update the pitch value from whatever was the most recent "good" pitch value.  also not-well-pitched sounds normally have a very low "periodicity measure" because the signal is not periodic nor quasi-periodic.  the attack of pitched notes will also have a low periodicity measure and that information can sometimes be useful for onset detection.  sudden changes of pitch over more than a semitone can also be used for onset detection.
+so, in a typical audio-to-MIDI scheme, first pitch detection is done with results are more than just the pitch.  the output of the pitch detector will also have an amplitude parameter, a periodicity parameter (sometimes called "pitch confidence"), perhaps a timbre parameter (or a couple of timbre parameters), in addition to pitch.  a good onset detector might make use of all 3 or 4 parameters and look for change or "novelty" and will combine those parameters in an alchemical fashion to make the best guess of whether and when the onset is.
+also check on publications like this and this.  changes in pitch are definitely a cue about note onsets.  i just must disagree with pichenettes original answer that they have nothing (or even little) to do with each other.  if you're humming a tune, changes in pitch might be the only physical parameter that you hear changing to clue you in to the fact that there is a new note.

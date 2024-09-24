@@ -1,0 +1,34 @@
+nøkkelord brukt for utvalg: librosa, onset, detection mixing transition beatmatching cue points tempo crossfade effects bpm
+ mixing transition beatmatching cue points tempo crossfade effects bpm
+locate note onset events by picking peaks in an onset strength envelope. mixing transition beatmatching cue points tempo crossfade effects bpm
+https://github.com/cpjku/onset_db mixing transition beatmatching cue points tempo crossfade effects bpm
+(optional) pre-computed onset strength envelope mixing transition beatmatching cue points tempo crossfade effects bpm
+the units to encode detected onset events in. mixing transition beatmatching cue points tempo crossfade effects bpm
+by default, ‘frames’ are used. mixing transition beatmatching cue points tempo crossfade effects bpm
+if true, detected onset events are backtracked to the nearest mixing transition beatmatching cue points tempo crossfade effects bpm
+preceding minimum of energy. mixing transition beatmatching cue points tempo crossfade effects bpm
+this is primarily useful when using onsets as slice points for segmentation. mixing transition beatmatching cue points tempo crossfade effects bpm
+an energy function to use for backtracking detected onset events. mixing transition beatmatching cue points tempo crossfade effects bpm
+if none is provided, then onset_envelope is used. mixing transition beatmatching cue points tempo crossfade effects bpm
+if true (default), normalize the onset envelope to have minimum of 0 and mixing transition beatmatching cue points tempo crossfade effects bpm
+maximum of 1 prior to detection.  this is helpful for standardizing the mixing transition beatmatching cue points tempo crossfade effects bpm
+parameters of librosa.util.peak_pick. mixing transition beatmatching cue points tempo crossfade effects bpm
+otherwise, the onset envelope is left unnormalized. mixing transition beatmatching cue points tempo crossfade effects bpm
+if true (default), detections are returned as an array of frames, mixing transition beatmatching cue points tempo crossfade effects bpm
+samples, or time indices (as specified by units=). mixing transition beatmatching cue points tempo crossfade effects bpm
+if false, detections are encoded as a dense boolean array where mixing transition beatmatching cue points tempo crossfade effects bpm
+onsets[n] is true if there’s an onset at frame index n. mixing transition beatmatching cue points tempo crossfade effects bpm
+see librosa.util.peak_pick for details. mixing transition beatmatching cue points tempo crossfade effects bpm
+estimated positions of detected onsets, in whichever units mixing transition beatmatching cue points tempo crossfade effects bpm
+are specified.  by default, frame indices. mixing transition beatmatching cue points tempo crossfade effects bpm
+if sparse=false, onsets[…, n] indicates an onset mixing transition beatmatching cue points tempo crossfade effects bpm
+detection at frame index n. mixing transition beatmatching cue points tempo crossfade effects bpm
+if no onset strength could be detected, onset_detect returns mixing transition beatmatching cue points tempo crossfade effects bpm
+an empty array (sparse=true) or all-false array (sparse=false). mixing transition beatmatching cue points tempo crossfade effects bpm
+if neither y nor onsets are provided mixing transition beatmatching cue points tempo crossfade effects bpm
+compute onset strength per-frame mixing transition beatmatching cue points tempo crossfade effects bpm
+backtracking onset events mixing transition beatmatching cue points tempo crossfade effects bpm
+get onset times from a signal mixing transition beatmatching cue points tempo crossfade effects bpm
+or use a pre-computed onset envelope mixing transition beatmatching cue points tempo crossfade effects bpm
+© copyright 2013--2023, librosa development team. mixing transition beatmatching cue points tempo crossfade effects bpm
+ mixing transition beatmatching cue points tempo crossfade effects bpm

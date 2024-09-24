@@ -1,0 +1,73 @@
+import librosa
+import librosa.display
+import numpy as np
+import os
+import matplotlib.pyplot as plt  # Importér matplotlib
+
+# Camelot-hjulet for å finne musikknøkkelen.
+CAMALOT_WHEEL = {
+    '1A': 'A-flat minor', '2A': 'E-flat minor', '3A': 'B-flat minor', '4A': 'F minor',
+    '5A': 'C minor', '6A': 'G minor', '7A': 'D minor', '8A': 'A minor',
+    '9A': 'E minor', '10A': 'B minor', '11A': 'F# minor', '12A': 'D-flat minor',
+    '1B': 'B major', '2B': 'F# major', '3B': 'D-flat major', '4B': 'A-flat major',
+    '5B': 'E-flat major', '6B': 'B-flat major', '7B': 'F major', '8B': 'C major',
+    '9B': 'G major', '10B': 'D major', '11B': 'A major', '12B': 'E major',
+}
+
+def midi_to_note_name(midi_number):
+    notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+    return notes[midi_number % 12]
+
+def detect_key(y, sr):
+    chroma = librosa.feature.chroma_cqt(y=y, sr=sr)
+    chroma_mean = chroma.mean(axis=1)
+    key_idx = chroma_mean.argmax()
+    key_note = midi_to_note_name(key_idx)
+    return key_note
+
+def get_camelot_key(key_note):
+    for camelot_key, key_name in CAMALOT_WHEEL.items():
+        if key_note.lower() in key_name.lower():
+            return camelot_key
+    return "Unknown"
+
+def analyze_track(filepath):
+    y, sr = librosa.load(filepath)
+
+    # Oppdag BPM (beats per minute)
+    tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
+    print(f"BPM: {tempo}")
+
+    # Oppdag musikknøkkelen
+    key_note = detect_key(y, sr)
+    camelot_key = get_camelot_key(key_note)
+    print(f"Nøkkel (Camelot): {camelot_key}")
+
+    # Onset detection
+    onsets = librosa.onset.onset_detect(y=y, sr=sr, units='time')
+    
+    onset_times_str = [f"{int(onset_time // 60):02}:{int(onset_time % 60):02}.{int((onset_time * 100) % 100):02}" for onset_time in onsets]
+    print(f"Onset segmenter (tidspunkter): {onset_times_str}")
+    
+    # Beregn RMS-energien
+    rms = librosa.feature.rms(y=y).mean()
+    print(f"RMS Energinivå: {rms}")
+
+    # Lagre resultatene
+    output_dir = os.path.splitext(filepath)[0]
+    os.makedirs(output_dir, exist_ok=True)
+
+    with open(os.path.join(output_dir, 'analysis.txt'), 'w') as f:
+        f.write(f"BPM: {tempo}\n")
+        f.write(f"Nøkkel (Camelot): {camelot_key}\n")
+        f.write(f"Onset segmenter (tidspunkter): {', '.join(onset_times_str)}\n")
+        f.write(f"RMS Energinivå: {rms}\n")
+
+    # Lagre onset tidspunktene som en plot
+    librosa.display.waveshow(y, sr=sr)
+    plt.vlines(onsets, -1, 1, color='r')
+    plt.savefig(os.path.join(output_dir, 'onsets.png'))
+    plt.close()
+
+if __name__ == "__main__":
+    analyze_track("../music_library/17985216_Spring Girl_(Extended).mp3")

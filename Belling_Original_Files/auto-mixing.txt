@@ -1,0 +1,22 @@
+Nøkkelord brukt for utvalg: ai, automation, software, mixing
+
+Automix DJ software - if you've got your ear to the ground in the DJ scene you'll have heard this term picking up momentum.
+Auto mixing is a feature that uses key and tempo detection to recommend song mixes for DJs.
+Some auto-mixing programs are designed better than others.
+Automixing is a powerful new tool available for DJs. I'll preface this by saying - not all automix gear is made equal, but I'll get into the details of that later.
+Essentially, the best automix uses a range of analysis algorithms to suggest a logical, and theoretically sound playlist (based on keys and tempo). Then, depending on the features of the software, it automatically mixes these tracks together using various mixing techniques.
+To understand how automixing works it's best to have a look at the kind of workflow this software offers.
+The software then detects the keys and tempos of each of these tracks which makes it easy to see how they are arranged.
+Most automix software relies on BPM (beat matching) to arrange the mixes. This works well in many settings when the focus is not on the harmony or the keys of music. It also keeps the flow and tempo of the DJ set consistent from one song to the next.
+However, the issue with relying purely on BPM is that the keys don't match - meaning that mixes are not always going to sound good. Harmonically, this can create clashing keys with a dissonant sound that interrupts the flow and melody, and harmony of a musical performance or DJ set.⁠Be aware: ⁠Most software products that claim they do automixing only automix based on key, givimg you suboptimal results and bad transitions.
+The underlying technology used to detect keys and BPMs is complex and deep to explain in full, but here are the basics.
+The main thing to know is that these smart features save you a huge amount of time compared to if you were to do this stuff manually. Manual key detection requires years of experience and ear training and is also generally incredibly time-consuming and inaccurate. For example, the amount of time it would take to manually work out all the keys of the tracks in your library could literally be days.
+You can use additional key detection software like Mixed In Key, however, this tool isn't integrated into a system that lets you mix the tracks - it just shows you the key information which you can import in DJ mixing software.
+Requires little knowledge of music theory to engage with advanced DJ techniques like harmonic mixing.
+There are other options, such as more traditional, automix systems, which are more useful for live DJs. For example, if they had to leave the stage for a moment, this automatic software could keep the set going without having to stop the dancers due to dead air.
+DJ.Studio is easily one of the most advanced and powerful automix programs available and has a bunch of certain features which you won't find anywhere else.
+This software is designed with a range of features that no other programs offer - so if you are in the market for an automixing solution, DJ.Studio is ideal. And of course DJ.Studio automixes taking both Tempo and key into account.
+One significant advantage of DJ.Studio is that it gives you the option to choose the balance between BPM and key as the determining factor for mixing your tracks. Unlike older software like Serato DJ and Virtual DJ, DJ.Studio's automix feature aligns each track at its optimal mix point and will remove silence at the start and end of a track.
+Moreover, it also gives you a range of automatable transition tools, so you can edit, develop, and control transitions for your tracks in serious detail - ideal for perfectionists. On the left side of the interface, you can see EQ and filter controls, all of which can be automated and recorded live!
+This gives you an advantage over managing standard live mixing DJ tools and hardware, where you can only use two hands at the same time. DJ.Studio lets you tweak any factors simultaneously; creating new, unprecedented possibilities for the creativeness of a mix.
+Auto mixing uses key and tempo detection to recommend song mixes for DJs to make smoother transitions in mixes. A lot of software products claim they offer automix, but, to say it in a decent way: some auto-mixing programs are designed better than others. DJ.Studio's automix feature presents more options and power than any other program on the market.

@@ -1,0 +1,51 @@
+Nøkkelord brukt for utvalg: mixing, cue, bpm, transition, onset, build-up, breakdown, drop, intro, outro
+
+So make sure to bookmark this one! We are always updating this list, so feel free to drop us a line at [email protected].
+Acoustic Treatment – The process of reducing acoustic inaccuracies and reflections in physical spaces by introducing dampening materials, such as foam and bass traps etc., in key areas.
+Aliasing – Subtle distortion that occurs in the digital realm when the input frequency is higher than the sample rate. The sample cannot be measured accurately and thus introduces imperfections into the sound.
+Attenuation – The lowering of the loudness of a signal, usually measured in dB (decibels). The attenuation knob on a piece of gear or on a plugin is used to reduce increases in loudness introduced by other effects, such a distortion or amplification.
+Audio Engineering – The process of recording, mixing and mastering studio or live recordings.
+Bass – The lower frequencies in a sound – typically from ~20Hz to ~400Hz. Usually ‘dropped’ at some point in a track, if you know what I mean.
+Beatdown – See Breakdown.
+Beatmatch – A DJing process whereby two or more tracks are matched in time and tempo to ensure a seamless transition between the two. When someone has failed to beat-match and you can hear it, it is usually referred to as a trainwreck. It sounds awful, to be honest.
+BPM – Beats Per Minute. Refers to the tempo, measured in the number of beats per minute. For example, a lot of house music is 128bpm.
+Break (Breakdown) – A lower-energy section of a track. Usually has some or all of the drums removed, and adds macro dynamics to a track.
+Build(up) – A section that leads into a drop – creates energy and tension in a track.
+Clipping – A type of distortion introduced when the audio peaks above the headroom within an analogue or digital domain. Analog clipping is called soft clipping, whereas digital clipping is called hard clipping, and is less pleasant.
+Clock Signal – A MIDI signal that provides BPM information for devices to stay in time. One device usually outputs the signal and the others are a slave to the timing.
+Cue – A control on any DJ system that allows a track to be played from a certain point while being held down. Helps to find a point to bring a track in during a DJ mix. Not a place to line up.
+DJ – Stands for Disc Jockey – someone who plays recorded music in a live scenario by mixing tracks together. Most producers
+DJ Mix – Not to be confused with a mixdown, a DJ mix is a live recording of a DJ mixing multiple tracks together over a period of time.
+Drop – The main section of an EDM song which contains most of the energy and loudness in comparison to the rest of the track. Does not usually feature vocals, unlike a chorus.
+Drum & Bass (DnB) – A subgenre of electronic music that consists of fast breakbeat patterns at around 174bpm, and low, rumbling basslines. There are many different subgenres within DnB.
+Dubstep – A bass music genre characterised by half time 140bpm drum patterns with bass wobbles and heavy compression. Can range from subtle to heavy.
+Dynamic Tube – An audio effect that emulates tube distortion introduced by hardware units. Often sounds harmonically pleasing and changes character dependant on the input material.
+Echo – A time-based effect introduced by delay, however, echo usually refers to an analogue delay as opposed to a digital-sounding one.
+Edit – Can mean either an edit of a track, perhaps to change the structure or introduce a new element, or can refer to the audio editing process.
+FabFilter – A software company that makes both mixing and creative plugins such as Pro-Q, Pro-L and Saturn. They are pretty fab.
+Flat (Mixing) – Refers to when studio monitors or a playback device has an even response curve across the frequency spectrum and doesn’t feature boosts or cuts in areas to colour the sound.
+Gabber – A genre defined in the late 1990s that was the precursor to hard dance, hardstyle and other hard dance music genres. Features distorted kick drums at 140bpm+ tempos. The genre is very prominent at raves.
+Genre – A term used to describe a subset of music that has similar elements or sounds (e.g. the genre of dubstep features ~140bpm half-time drum patterns with bass wobbles).
+Happy Hardcore – A subgenre of EDM that features ~180bpm, four-on-the-floor rhythms, similar to hairstyle but faster and with more bright, happy sounding synths and sounds. Not for the faint of heart.
+Hardcore – A genre similar to hairstyle but usually ~180bpm, but shares similarities in darker timbres and distorted kicks.
+Hard Dance – A genre that sits between trance and hardstyle, usually 140-150bpm and features a prominent kick drum and synthesisers.
+Hardstyle – A genre of EDM which features distorted kicks at ~150bpm, usually with a darker timbre.
+Harmonic Distortion – Any type of distortion that introduces frequency content that is harmonic to the fundamental, as opposed to inharmonic.
+IM Distortion – Distortion introduced when the sample rate is not high enough to capture all the frequency content – the audio has to lock on to the nearest frequency and can introduce unwanted artefacts.
+In Phase – When the left and right audio channels are in time with each other. When they are not, phase cancellation can be introduced.
+Intro – In the structure of a track, the intro is the first section that you usually hear. This can be short in pop tracks, and longer in DJ-friendly tracks.
+Jitter – An modulation effect that introduces randomness into the modulated parameter. For example, an LFO might have a jitter control that allows it to drift off its current value to add more of a human feel.
+Mixing – The art and science of blending the individual audio channels of a track into one so that they function as one whole track. The mixing process often includes volume/gain adjustments, EQ, compression, group processing, layering and parallel processing, among other things.
+Music Production – Following the theme of obvious definitions, music production is the art of creating music and arranging sound into a musical form. Although music production is still a very new discipline (in comparison to being a musician), some producers do not write their own music (instead they arrange other people’s songwriting into a full track) and some are responsible for the entire creative process, including writing, sound design, mixing and mastering. It can be whatever you want it to be.
+Offset – Can mean multiple things, but often means a timing offset in ms from the grid, or DC offset, an artefact introduced by very low frequencies.
+Outro – A section in the structure of a track at the end.
+Phase Distortion – A type of distortion introduced by phase differences in a sound. Sometimes it is a desirable effect for sound design purposes (included as an effect in Logic Pro), but usually, it is an unwanted artefact.
+Phaser – A time-based effect that introduces a delay under 1ms, introducing noticeable ‘whooshing’ sounds especially when modulated with an LFO. Phasing introduces audible peaks into the spectrum, creating a pleasing, coloured sound.
+Pink Noise – A type of noise similar to white noise, except with the high frequencies slightly dampened. Producers and mixing engineers use pink noise as a reference level for mixing due to its ideal response curve.
+Post-Production – A process performed after recording and production to tidy up any issues or errors present in the previous process. Post-production usually includes mixing and mastering.
+Pro Tools – A DAW popular with audio engineers and mixing professionals due to it’s DSP environment and ideal workflow. The industry standard in many professional recording environments.
+Quantization Error (Distortion) – An artefact introduced by a difference in bit depth of a project and the bit depth of a sound in the project.
+Reference Track – A track that is used as a reference point for your own while you create it. This can help with composition, sound design and mixing.
+Tap Tempo – A control on a delay where tapping determines the bpm for the delay time.
+Trim – A gain control on some audio effects to counteract an increase in volume introduced by some effects.
+Verse – A section of a vocal track that normally comes after the intro. Individual verses usually only feature once per track, with future verses sounding similar but containing different lyrics.

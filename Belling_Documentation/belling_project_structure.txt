@@ -1,0 +1,279 @@
+Belling_Project/
+    Belling_Roadmap_And_Instructions/
+        Belling_Roadmap.md
+        Belling_Main_Instructions.md
+        Belling_Workflow_Instructions.md
+    Belling_Codebase/
+        train_ai_dj.py
+        export_to_csv.py
+        parse_rekordbox.py
+        clean_data.py
+        train_dj_ai.py
+        analyze_dj_techniques.py
+        mixxx_data_extract.py
+    Belling_Music_Dataset/
+    Belling_Mixxx_Files/
+    Belling_Documentation/
+        music_analysis_results.csv
+        librosa.onset.onset_detect.html.txt
+        onset_detection.html.txt
+        what-is-the-difference-between-pitch-detection-and-onset-detection.txt
+    Belling_Training_Data/
+        DJ_Techniques_and_Guides/
+            Guides/
+                Glossary_of_music_terminology.txt
+                guide-music-keygraph.txt
+                camelot-wheel.txt
+            Techniques/
+                dj_mixing_beginners.txt
+                dj-tempo-change-techniques.txt
+                phrasing-dj-mixing.txt
+            Training_Videos/
+    Belling_Results/
+    Belling_Backups/
+        superdj_project.py
+        SuperDJ_Project.ipynb
+        test.py.txt
+        music_analysis_results.csv
+        camelot_wheel_ai_learning.txt
+        mixxx_data_extract.py
+        MIXXX Test playlist.m3u
+        MIXXX Test playlist.m3u8
+        MIXXX Test playlist.pls
+        MIXXX Test playlist.txt
+        Analyzed_MIXXX_Test_Playlist.csv
+        MIXXX Test playlist.csv
+        train_ai_dj.py
+        export_to_csv.py
+        music_files.csv
+        parse_rekordbox.py
+        rekordbox_tracks.csv
+        clean_data.py
+        cleaned_rekordbox_tracks.csv
+        train_dj_ai.py
+        dj_mixing_beginners.txt
+        analyze_dj_techniques.py
+        dj_mixing_techniques.txt
+        extract_text.py
+        word2vec_model.model
+        word2vec_model_finetuned.model
+        word2vec_model_no_stopwords.model
+        Glossary_of_music_terminology.txt
+        Onset_(audio).txt
+        what-is-the-difference-between-pitch-detection-and-onset-detection.txt
+        music-terminology.txt
+        librosa.onset.onset_detect.html.txt
+        onset_detection.html.txt
+        onset_program.py.txt
+        auto-mixing.txt
+        dj-tempo-change-techniques.txt
+        phrasing-dj-mixing.txt
+        dj-mixing-beginners.txt
+        ai-dj-software.txt
+        best-dj-software-for-mac.txt
+        dj-crossfade-techniques.txt
+        ai-mixing-apps.txt
+        dj-cue-points.txt
+        dj-beatgridding.txt
+        dj-inspiration.txt
+        mixing-db-levels.txt
+        beat-matching-app.txt
+        dj-with-spotify.txt
+        master-a-dj-mix.txt
+        dj-mixing-effects.txt
+        dj-mix-songs.txt
+        advanced-dj-mixing-techniques.txt
+        bad-dj-mixing-mistakes.txt
+        basic-transition-techniques.txt
+        bpm-house-music.txt
+        guide-music-keygraph.txt
+        camelot-wheel.txt
+        .txt
+        17752861_Donkers_(Original Mix).mp3
+        17440571_Eat Sleep Rave Repeat_(Original Mix).mp3
+        17791537_Sweating on the Dancefloor_(Original Mix).mp3
+        17576432_All The Things_(Original Mix).mp3
+         ai_dj_music_analysis.py
+        17951242_The Ladies Gon Feel Me_(Original Mix).mp3
+        17536420_1vs1 (Joann remix) feat. Joann_(Original Mix).mp3
+        17951244_Everytime I_m In The Streets_(Original Mix).mp3
+        17788126_GATE_(Original Mix).mp3
+        17564479_KOKA_(Original Mix).mp3
+        17588819_Sitar_(Original Mix).mp3
+        17944376_Who Was In Paris__(Original Mix).mp3
+        17646318_Mini Skirt On_(Original Mix).mp3
+        17880959_Fuck This_(Original Mix).mp3
+        17863930_Music, Baby_(Original Mix).mp3
+        18420294_Got That Booty_(Extended Mix).mp3
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3
+        17843367_Push Up (Club Version)_(Club Version).mp3
+        17810954_The Ultimate Sex Track_(Original Mix).mp3
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3
+        17420303_Anxiete_(Original Mix).mp3
+        17757614_Fearless_(Phoenix Movement Remix).mp3
+        17985216_Spring Girl_(Extended).mp3
+        18081983_T.O.K.Y.O._(Extended Mix).mp3
+        17997183_My Gasoline_(Extended Mix).mp3
+        17923279_Fine Day Anthem_(Extended Mix).mp3
+        17399872_Ashika_(Original Mix).mp3
+        17399873_RavPower_(Original Mix).mp3
+        17723361_F_CK THE POLICE_(Original Mix).mp3
+        17558154_Ride or Die_(Original Mix).mp3
+        17906546_Black Magic_(Extended Mix).mp3
+        17477194_Boom Boom Boom_(Extended Mix).mp3
+        17446613_Hybrid Boom_(Original Mix).mp3
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3_onsets.png
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3_analysis.txt
+        18420294_Got That Booty_(Extended Mix).mp3_onsets.png
+        18420294_Got That Booty_(Extended Mix).mp3_analysis.txt
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3_analysis.txt
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3_onsets.png
+        18081983_T.O.K.Y.O._(Extended Mix).mp3_onsets.png
+        18081983_T.O.K.Y.O._(Extended Mix).mp3_analysis.txt
+        17588048_Believer_(Original Mix).mp3_analysis.txt
+        17588048_Believer_(Original Mix).mp3_onsets.png
+        17997183_My Gasoline_(Extended Mix).mp3_analysis.txt
+        17997183_My Gasoline_(Extended Mix).mp3_onsets.png
+        .DS_Store
+        17399871_Brembo_(Original Mix).mp3
+        17588048_Believer_(Original Mix).mp3
+    Colab_Notebooks/
+        AI_Training/
+            Choose-Songs-By-Energy-Mood.py
+            AI_DJ_Harmonic_Mixer.py
+            AI_Training_Harmonic_Mixing.py
+        Music_Analysis/
+            harmonisk_mixing_v2.py
+            Harmonic-Mixing-Analysis.py
+            Choose-Songs-For-Mixing.py
+            Identify-Sections-With-Chorus.py
+            Energy-Sections-Detection-Reduced.py
+            Music_Data_Loader_and_Mixer.py
+            Music_Data_Loader_and_Mixer_v2.py
+            Section_Identifier_Energy_Profile.py
+            Music_Section_Identifier.py
+        Mixxx_Integration/
+            Simulate-Mixing-With-BPM-Analysis.py
+            Simulate-Mix-Process.py
+            Simulate-Mixing-From-Analyzed-Playlist.py
+            Mixxx_Integration_Music_Data_Analyzer.py
+            AI_Mixing_Simulation.py
+    Belling_Processed_Files/
+        cleaned_rekordbox_tracks.csv
+        music_data_clean.csv
+        Analyzed_Playlist.csv
+        ai-dj-software_processed.txt
+        dj-cue-points_processed.txt
+        dj-mixing-beginners_processed.txt
+        dj_mixing_beginners_processed.txt
+        dj-crossfade-techniques_processed.txt
+        dj-tempo-change-techniques_processed.txt
+        best-dj-software-for-mac_processed.txt
+        dj_mixing_techniques_processed.txt
+        auto-mixing_processed.txt
+        ai-mixing-apps_processed.txt
+        dj-beatgridding_processed.txt
+        dj-with-spotify_processed.txt
+        mixing-db-levels_processed.txt
+        dj-inspiration_processed.txt
+        advanced-dj-mixing-techniques_processed.txt
+        phrasing-dj-mixing_processed.txt
+        dj-mixing-effects_processed.txt
+        master-a-dj-mix_processed.txt
+        dj-mix-songs_processed.txt
+        beat-matching-app_processed.txt
+        bad-dj-mixing-mistakes_processed.txt
+        basic-transition-techniques_processed.txt
+        guide-music-keygraph_processed.txt
+        camelot-wheel_processed.txt
+        bpm-house-music_processed.txt
+    Belling_Original_Files/
+        17752861_Donkers_(Original Mix).mp3
+        17440571_Eat Sleep Rave Repeat_(Original Mix).mp3
+        17791537_Sweating on the Dancefloor_(Original Mix).mp3
+        17576432_All The Things_(Original Mix).mp3
+        17951242_The Ladies Gon Feel Me_(Original Mix).mp3
+        17536420_1vs1 (Joann remix) feat. Joann_(Original Mix).mp3
+        17951244_Everytime I_m In The Streets_(Original Mix).mp3
+        17788126_GATE_(Original Mix).mp3
+        17564479_KOKA_(Original Mix).mp3
+        17588819_Sitar_(Original Mix).mp3
+        17944376_Who Was In Paris__(Original Mix).mp3
+        17646318_Mini Skirt On_(Original Mix).mp3
+        17880959_Fuck This_(Original Mix).mp3
+        17863930_Music, Baby_(Original Mix).mp3
+        18420294_Got That Booty_(Extended Mix).mp3
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3
+        17843367_Push Up (Club Version)_(Club Version).mp3
+        17810954_The Ultimate Sex Track_(Original Mix).mp3
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3
+        17420303_Anxiete_(Original Mix).mp3
+        17757614_Fearless_(Phoenix Movement Remix).mp3
+        17985216_Spring Girl_(Extended).mp3
+        18081983_T.O.K.Y.O._(Extended Mix).mp3
+        17997183_My Gasoline_(Extended Mix).mp3
+        17923279_Fine Day Anthem_(Extended Mix).mp3
+        17399872_Ashika_(Original Mix).mp3
+        17399873_RavPower_(Original Mix).mp3
+        17723361_F_CK THE POLICE_(Original Mix).mp3
+        17558154_Ride or Die_(Original Mix).mp3
+        17906546_Black Magic_(Extended Mix).mp3
+        17477194_Boom Boom Boom_(Extended Mix).mp3
+        17446613_Hybrid Boom_(Original Mix).mp3
+        test.py.txt
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3_onsets.png
+        18222120_It_s That Time (Dimension Remix)_(Original Mix).mp3_analysis.txt
+        18420294_Got That Booty_(Extended Mix).mp3_onsets.png
+        18420294_Got That Booty_(Extended Mix).mp3_analysis.txt
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3_analysis.txt
+        16149902_Own Methods (Extented Mix)_(Original Mix).mp3_onsets.png
+        18081983_T.O.K.Y.O._(Extended Mix).mp3_onsets.png
+        18081983_T.O.K.Y.O._(Extended Mix).mp3_analysis.txt
+        17588048_Believer_(Original Mix).mp3_analysis.txt
+        17588048_Believer_(Original Mix).mp3_onsets.png
+        17997183_My Gasoline_(Extended Mix).mp3_analysis.txt
+        17997183_My Gasoline_(Extended Mix).mp3_onsets.png
+        music_files.csv
+        rekordbox_tracks.csv
+        extract_text.py
+        .DS_Store
+        everynoise_genres.txt
+        17399871_Brembo_(Original Mix).mp3
+        17588048_Believer_(Original Mix).mp3
+        word2vec_model.model
+        word2vec_model_finetuned.model
+        word2vec_model_no_stopwords.model
+        electronic_music_production_glossary.txt
+        cleaned_camelot_wheel.txt
+        camelot_wheel_ai_learning.txt
+        MIXXX Test playlist.m3u
+        MIXXX Test playlist.m3u8
+        MIXXX Test playlist.pls
+        MIXXX Test playlist.txt
+        Analyzed_MIXXX_Test_Playlist.csv
+        MIXXX Test playlist.csv
+        dj_mixing_techniques.txt
+        music-terminology.txt
+        onset_program.py.txt
+        dj-mixing-beginners.txt
+        ai-dj-software.txt
+        best-dj-software-for-mac.txt
+        Onset_(audio).txt
+        ai-mixing-apps.txt
+        dj-inspiration.txt
+        dj-crossfade-techniques.txt
+        dj-beatgridding.txt
+        dj-with-spotify.txt
+        beat-matching-app.txt
+        dj-cue-points.txt
+        mixing-db-levels.txt
+        master-a-dj-mix.txt
+        auto-mixing.txt
+        dj-mixing-effects.txt
+        bad-dj-mixing-mistakes.txt
+        bpm-house-music.txt
+        basic-transition-techniques.txt
+        .txt
+        dj-mix-songs.txt
+        advanced-dj-mixing-techniques.txt
+         ai_dj_music_analysis.py

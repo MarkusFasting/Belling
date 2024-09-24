@@ -1,0 +1,12 @@
+Nøkkelord brukt for utvalg: onset, music, information, detection
+
+Automatic detection of musical events in an audio signal is one of the most fundamental tasks in music information retrieval. Here, we will show how to detect an onset, the very instant that marks the beginning of the transient part of a sound, or the earliest moment at which a transient can be reliably detected.
+librosa.onset.onset_detect works in the following way:
+Compute the frame indices for estimated onsets in a signal:
+Convert onsets to units of seconds:
+Plot the onsets on top of a spectrogram of the audio:
+Let's also plot the onsets with the time-domain waveform.
+We can add a click at the location of each detected onset.
+Listen to the original audio plus the detected onsets. One way is to add the signals together, sample-wise:
+In librosa.onset.onset_detect, use the backtrack=True parameter. What does that do, and how does it affect the detected onsets? (See librosa.onset.onset_backtrack.)
+In librosa.onset.onset_detect, you can use the keyword parameters found in librosa.util.peak_pick, e.g. pre_max, post_max, pre_avg, post_avg, delta, and wait, to control the peak picking algorithm. Adjust these parameters. How does it affect the detected onsets?

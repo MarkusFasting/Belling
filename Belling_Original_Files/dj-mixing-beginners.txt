@@ -1,0 +1,55 @@
+Nøkkelord brukt for utvalg: mixing, cue, bpm, transition
+
+Start mixing with our intuitive software!
+Start mixing with our intuitive software!
+DJing and mixing music is one of life's greatest joys - although many people never experience it because they're too intimidated to learn. This guide shows you everything beginner DJs need to know to improve their game.
+I'm excited to share these DJ mixing techniques for beginners and lessons to help you accelerate your DJ skills!
+Don't forget to bookmark this page for quick reference later! If you're ready for deeper tips, have a look at our Advanced DJ Mixing Technique Guide!
+Beginner DJs should practice regularly to improve their mixing skills.
+Ultimately, the type of music you want to DJ is up to you - although it helps to try mixing all genres to get a broader range of experience and expose yourself to more techniques.
+One of the most important DJ mixing techniques for beginners is to learn all of the tools and how to use them in a DJ set.
+These are used to set the volume and EQ balance for music playing from the decks. They also have a separate cue output, which lets you preview music through headphones before you bring the volume up for the crowd.
+Using the volume faders and EQ controls, you use a mixer for smoothly mixing songs, making clean and seamless transitions in your DJ set.
+DJ Headphones let you hear the next song in cue, so you can make sure it's lined up right before you play it to the audience. This means you can check music other than the current tracks playing, making sure it's aligned before playing it through the main speakers.
+As a beginner, you don't need to buy the most expensive professional equipment to get started DJing. These days you can pick up a basic (but sufficient) DJ controller at an affordable price to start practicing your skills. These are also good for house parties or mixing on the move!
+All you really need to get started mixing music is:
+There are really two types of DJ software, which both have been designed for slightly different purposes. The distinction is, that some DJ software is designed to be used for live performances for instance - DJs mixing live in a nightclub or on the radio.
+For example, live mixing software is great for real-time, live performances, however, putting together a set (when you don't need to do it live) is much more time-consuming as you have to record it at a 1:1 use of time. 1 hour of mixing = 1 hour of recording to share. If you make any mistakes you have to go back and edit it or even record the whole set, which makes the process even more inefficient.
+At the same time, studio software is far quicker to use, and it saves a huge amount of time. You can get more creative with transitions and effects by doing things not in real-time and by manually arranging things. It also doesn't matter if you make mistakes or want to change things around. It gives you a whole new perspective on DJing. However, it can lack the hands-on feeling, and obviously wouldn't work for a nightclub.
+After you've got your hands on the right equipment, it's time to understand the core controls used for mixing music and making DJ sets. Throughout all the different genres that DJs perform, they all use the exact same controls.
+Cue and play
+Each of these types of gain control has different uses when making DJ sets. Understanding how to use them all, and why you need all three, is important to help you make transitions and manage the volumes of your tracks.
+This is used to slowly bring the gain up and down as you transition a song in or out of the mix.
+So in a neutral position, the track will play at exactly the same speed that it was released at. So if a track is released at 120 BPM, it will play at 120 BPM.
+Say you had a track that was originally 120 BPM. If you increase the pitch slider to plus 10%, it will play around 132 bpm
+However, if you put the pitch slider down 10% the track will play at 108 BPM. You can use these to match the playback speed of two songs to make a seamless transition. Pro DJs will use this tool many times in their DJ set.
+Alternatively, they're useful for transitions. When you're mixing two tracks together you might not want to have both bass lines blasting at the same time. So, you might introduce the next track in your DJ set with the bass cut and then slowly bring up the new bass while you turn down the old bass line - making a switch-over effect.
+See our guide on EQ Mixing for a deeper dive into this topic.
+Filters are similar to EQs but work in a more aggressive way. These are also great for making transitions or just playing with the crowd by adjusting the music.
+These are ideal for transitions and for getting creative with the dance floor whether you're mixing electronic dance music or old school disco classics.
+On most DJ decks and controllers, you will see two separate buttons for triggering music - one is a Play/Pause button and the other is the Cue button.
+The Cue button, on the other hand, works differently, and is an important tool for beginner and pro DJs alike.
+When you hold down the Cue button, the track plays - as soon as you let go of the Cue button, the track stops and returns back to the start. (Or wherever you had it set to you as the cue point.)
+The Cue button is useful for beat matching, as you can repeatedly test whether the new track is aligned to the first track playing without having to press play, then press pause, then skip back to the start. You can simply keep pressing and holding the Cue button and adjusting the pitch slider.
+All of these, and other effects are super useful for transitions, or just for creative expression in your DJ set.
+Beat matching is an absolutely essential skill for DJs. This is arguably one of the most important DJ Mixing Techniques to learn to enable you to make seamless transitions between tracks.
+The first step is detecting the BPM of the two tracks. Much modern software and DJ gear have automatic tempo detection which will show you the BPM of your track automatically. Alternatively, you can use a BPM counter like this website where you just tap along with the track to count the BPM.
+Now you just need to match the two BPMs together. You change the speed of a track by using the pitch slider. Either speed up or slow down the tempo of your track. This lets you match up the BPMs so that the two tracks are playing at the same speed. Doing this by ear can be quite tricky, and it takes practice, but when you learn the technique it will become second nature.
+The key is to use the Cue button. You have one track playing out to the main PA system speakers. Then as you're counting the beats 1, 2, 3, 4 of the first track, you line up the second track to start on the first beat of a bar.
+Then, on the first beat of the first track, you press and hold the Cue button on the second track, and listen to see if the tempos are in time. It's usually easiest to hear if the kicks and the snares match up.
+When the beats are aligned, you can bring up the volume of the second track, or make another kind of transition.
+Manually matching beats will take a long time to master, but there is software that does all the hard work for you. It can be easier to use this kind of software in the early days just to understand how BPM matching works before you start practicing the manual technique. DJ.Studio is a great example of this.
+The cue button is an essential component of mixing and the whole cue system is the mechanism that enables DJs to prepare the next track for a seamless transition.
+The cue channel comes out of the headphones rather than the main speakers.
+Transitioning between tracks is another one of the pillars of DJing.
+If you're not transitioning smoothly then you may as well just play a playlist and just let it switch between songs.
+To transition between tracks there are several tools, techniques, and theories which you should learn. There are also different styles of transition.
+There are several other tools that help to make your transitions smoother and let you sculpt the flow of your sets. These are mostly EQs, filters, and effects like reverbs, delays, and loops. I've explained these in more detail above, but you should check out this article on DJ Transition Techniques for more info.
+Harmonic mixing is a more advanced DJ technique that gives you consistent and flowing sets by utilizing music theory surrounding musical keys.
+If you pay attention to the keys of each song you mix and then choose a second song that is compatible with the first song's key, you won't have any clashes or dissonant transitions - which can be awkward and cringey.
+Harmonic mixing is a complex topic, which is beyond the scope of this article. So I'd recommend you check out our full guides on related topics:
+What Is Harmonic Mixing?
+When you're mixing, you're in the moment - so you might not hear your mix properly.
+The road to becoming a DJ isn't short, but it's a hell of a fun ride. With these DJ mixing techniques for beginners, you'll have a head start to becoming a pro DJ.
+It is pretty easy to start DJ mixing. All you need to do is build a collection of music, and get your hands on the right DJ tools. Check out the guide above for the full details.
+A beginner DJ should practice mixing music as much as possible. They should find music they want to mix (it doesn't all have to be the same genre), learn the tools and techniques of DJing, and get as much experience and practice as they can. Recording mixing and listening back to them is important for new DJs to get an accurate perspective of how they sound.
