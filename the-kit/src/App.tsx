@@ -1,29 +1,33 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/components/theme-provider";
-import { KITApp } from "./pages/KITApp";
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
+import { KITProvider } from "@/contexts/KITContext";
+import MobileLayout from "@/components/layout/MobileLayout";
+import DashboardPage from "@/pages/DashboardPage";
+import ChatPage from "@/pages/ChatPage";
+import ModulesPage from "@/pages/ModulesPage";
+import StatsPage from "@/pages/StatsPage";
+import ProfilePage from "@/pages/ProfilePage";
+import NotFound from "@/pages/NotFound";
 
 const App = () => (
-  <ThemeProvider defaultTheme="light">
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+  <KITProvider>
+    <TooltipProvider>
+      <Toaster />
+      <BrowserRouter>
+        <MobileLayout>
           <Routes>
-            <Route path="/" element={<KITApp />} />
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/modules" element={<ModulesPage />} />
+            <Route path="/stats" element={<StatsPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
+        </MobileLayout>
+      </BrowserRouter>
+    </TooltipProvider>
+  </KITProvider>
 );
 
 export default App;
