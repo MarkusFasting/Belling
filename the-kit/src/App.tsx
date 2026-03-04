@@ -1,10 +1,29 @@
-import React from "react";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme-provider";
+import { KITApp } from "./pages/KITApp";
+import NotFound from "./pages/NotFound";
 
-export default function App() {
-  return (
-    <div style={{padding:40,fontFamily:"sans-serif"}}>
-      <h1>K.I.T</h1>
-      <p>Autonomous AI system</p>
-    </div>
-  );
-}
+const queryClient = new QueryClient();
+
+const App = () => (
+  <ThemeProvider defaultTheme="light">
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<KITApp />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
+);
+
+export default App;
