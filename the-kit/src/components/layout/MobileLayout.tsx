@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useKIT } from "@/contexts/KITContext";
 import {
   Home,
   MessageSquare,
@@ -11,6 +12,7 @@ import {
   X,
   Cpu,
   Wifi,
+  WifiOff,
 } from "lucide-react";
 
 const navItems = [
@@ -24,6 +26,7 @@ const navItems = [
 export default function MobileLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { profile, isConnected } = useKIT();
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,7 +46,11 @@ export default function MobileLayout({ children }: { children: ReactNode }) {
           </div>
 
           <div className="p-2">
-            <Wifi className="w-5 h-5 text-success" />
+            {isConnected ? (
+              <Wifi className="w-5 h-5 text-success" />
+            ) : (
+              <WifiOff className="w-5 h-5 text-warning" />
+            )}
           </div>
         </div>
       </header>
@@ -93,10 +100,12 @@ export default function MobileLayout({ children }: { children: ReactNode }) {
               <User className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-medium">Markus</p>
+              <p className="text-sm font-medium">{profile.name}</p>
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-success" />
-                <span className="text-xs text-muted-foreground">Tilkoblet</span>
+                <div className={`w-2 h-2 rounded-full ${isConnected ? "bg-success" : "bg-warning"}`} />
+                <span className="text-xs text-muted-foreground">
+                  {isConnected ? "Tilkoblet" : "Lokal modus"}
+                </span>
               </div>
             </div>
           </div>

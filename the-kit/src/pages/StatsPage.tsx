@@ -8,45 +8,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-interface StatCard {
-  label: string;
-  value: string;
-  sub: string;
-  icon: any;
-  color: string;
-}
-
-const stats: StatCard[] = [
-  {
-    label: "Totale Interaksjoner",
-    value: "1 247",
-    sub: "23 i dag",
-    icon: MessageSquare,
-    color: "text-blue-500 bg-blue-50",
-  },
-  {
-    label: "Responstid",
-    value: "850ms",
-    sub: "Gjennomsnittlig",
-    icon: Clock,
-    color: "text-green-500 bg-green-50",
-  },
-  {
-    label: "Aktive Moduler",
-    value: "8",
-    sub: "av 13 totalt",
-    icon: Zap,
-    color: "text-orange-500 bg-orange-50",
-  },
-  {
-    label: "Læringsfremdrift",
-    value: "73%",
-    sub: "Personalisering",
-    icon: GraduationCap,
-    color: "text-purple-500 bg-purple-50",
-  },
-];
+import { useKIT } from "@/contexts/KITContext";
 
 interface ProgressItem {
   label: string;
@@ -54,16 +16,65 @@ interface ProgressItem {
   icon: any;
 }
 
-const progressItems: ProgressItem[] = [
-  { label: "Humør Score", value: 85, icon: Smile },
-  { label: "Produktivitet", value: 78, icon: TrendingUp },
-  { label: "Måloppnåelse", value: 62, icon: Target },
-];
-
 export default function StatsPage() {
+  const { stats, avgResponseTime } = useKIT();
+
+  // Beregn læringsfremdrift basert på antall interaksjoner (maks 100% ved 500+)
+  const learningProgress = Math.min(100, Math.round((stats.totalInteractions / 500) * 100));
+
+  // Personlig utvikling basert på faktisk bruk
+  const moduleCount = Object.keys(stats.moduleUsage).length;
+  const progressItems: ProgressItem[] = [
+    {
+      label: "Humør Score",
+      value: Math.min(100, 50 + stats.totalInteractions * 2),
+      icon: Smile,
+    },
+    {
+      label: "Produktivitet",
+      value: Math.min(100, 30 + moduleCount * 10 + stats.todayInteractions * 5),
+      icon: TrendingUp,
+    },
+    {
+      label: "Måloppnåelse",
+      value: Math.min(100, 20 + stats.totalInteractions + moduleCount * 8),
+      icon: Target,
+    },
+  ];
+
+  const statCards = [
+    {
+      label: "Totale Interaksjoner",
+      value: stats.totalInteractions.toLocaleString("nb-NO"),
+      sub: `${stats.todayInteractions} i dag`,
+      icon: MessageSquare,
+      color: "text-blue-500 bg-blue-50",
+    },
+    {
+      label: "Responstid",
+      value: avgResponseTime > 0 ? `${avgResponseTime}ms` : "–",
+      sub: "Gjennomsnittlig",
+      icon: Clock,
+      color: "text-green-500 bg-green-50",
+    },
+    {
+      label: "Aktive Moduler",
+      value: "8",
+      sub: "av 14 totalt",
+      icon: Zap,
+      color: "text-orange-500 bg-orange-50",
+    },
+    {
+      label: "Læringsfremdrift",
+      value: `${learningProgress}%`,
+      sub: "Personalisering",
+      icon: GraduationCap,
+      color: "text-purple-500 bg-purple-50",
+    },
+  ];
+
   return (
     <div className="p-4 space-y-6">
-      {/* Overskrift */}
       <div>
         <h1 className="text-xl font-bold flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-primary" />
@@ -74,7 +85,7 @@ export default function StatsPage() {
 
       {/* Stat-kort */}
       <div className="space-y-3">
-        {stats.map((stat) => {
+        {statCards.map((stat) => {
           const Icon = stat.icon;
           const [iconColor, iconBg] = stat.color.split(" ");
           return (
