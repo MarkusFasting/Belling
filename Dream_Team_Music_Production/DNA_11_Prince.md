@@ -66,7 +66,7 @@ Prince var en av de første som integrerte LinnDrum/LM-1 som fullt kreativt inst
 
 🎭 **"Control the Whole Chain" — Fra komposisjon til masterferdig**
 
-Paisley Park Studios: 65 000 kvadratfot. Studio A med SSL 8088-konsoll (80 kanaler), Studer A800 24-spors tape. Studio B modellert etter Sunset Sound Studio 3 etter Princes spesifikke ønske — fordi det var der han spilte inn Purple Rain. Studio C med dansegulv og basketballkurv for kreative pauser. Studio D med DAW-oppsett for digital produksjon. Prince kontrollerte hele kjeden fra idé til ferdig master — og etter Warner Bros-konflikten, også distribusjon og eierskap.
+Paisley Park Studios: 65 000 kvadratfot. Studio A med 64-kanals SSL 6000E-konsoll, Studer A800 24-spors tape. Prince nektet å bruke konsollautomatisering under Susan Rogers' periode (1983–87) — alt ble mikset for hånd. Studio B: custom-bygget API-konsoll kommisjonert av Frank DeMedio, modellert etter Sunset Sound Studio 3s API/DeMedio — all-discrete signal path, flat frekvensrespons fra 0 Hz til 70 kHz, ingen integrerte kretser. Prince valgte dette fordi det var der han spilte inn Purple Rain. Før Paisley Park: hjemmestudio med liten API-konsoll og Ampex MM-1200 tapemaskiner. Studio C med dansegulv og basketballkurv for kreative pauser. Prince kontrollerte hele kjeden fra idé til ferdig master — og etter Warner Bros-konflikten, også distribusjon og eierskap.
 
 ---
 
@@ -80,15 +80,15 @@ Alt Prince skapte var forankret i groove. Selv hans mest eksperimentelle arbeid 
 
 ### A. "One-Man-Band"-metoden — Alt selv, steg for steg
 
-Steg 1: **Start med grooven på LinnDrum.** Sving stolen ved SSL-konsollen. Programmér et minimalt drum-mønster — kick, snare, hi-hat. Men gi det karakter: detune kick-en 2–3 halvtoner ned for tyngde, legg til ghost notes på snare, programmér hi-hat med swing (55–60% shuffle). Princes LinnDrum-programmering var aldri metronomisk — den hadde menneskelig pocket.
+Steg 1: **Start med grooven på LinnDrum.** Sving stolen ved SSL-konsollen. Prince eide minst fem LM-1-enheter, noen modifiserte. Programmér et minimalt drum-mønster — kick, snare, hi-hat. Men gi det karakter: bruk individuelle utganger på baksiden av LM-1 for å rute hvert trommelyd separat. Detune kick-en 2–3 halvtoner ned for tyngde via tuning-knotten, legg til ghost notes på snare, programmér hi-hat med swing (57–60% shuffle). Kjør perkusjons-submiksen gjennom Boss gitarpedaler — hi-hat, cymbaler, cabasa og claps gjennom distortion og flanger. Roger Linn: "He would detune drums until they no longer sound like drums." Princes LinnDrum-programmering var aldri metronomisk — den hadde menneskelig pocket.
 
 Steg 2: **Bass direkte i konsollen.** Plugg inn bassen (typisk Fender Jazz Bass eller Warwick) direkte i SSL-en uten amp. Ren DI-signal. Spill basslinjen live over drum-grooven. Funk-pocket: noter som lander marginalt bak beaten for groove. Princes basslinjer var aldri bare root notes — de var melodiske kontrapunkter til vokalen.
 
-Steg 3: **Gitarlag, lag for lag.** Plugg inn gitar direkte eller gjennom pedalboard (Boss DS-1 Distortion, MXR Phase 90, Boss CE-1 Chorus, Boss DD-2 Digital Delay). Legg rytmegitar først — gjerne med single-coil Hohner Telecaster for funk-riffene. Deretter lead-fills med Fender Stratocaster eller custom Cloud Guitar. Deretter solo — gjerne med Mesa/Boogie amp for distortion. Alt i separate pass, lagvis oppbygging.
+Steg 3: **Gitarlag, lag for lag.** Plugg inn gitar direkte via Countryman DI eller gjennom pedalboard. Princes primære signalkjede på "Let's Go Crazy": Colorsound Wah → Boss DS-1 (Tone: 6, Level: 7, Dist: 9) → Boss OC-2 Octave (Oct 2: 10, Direct: 7, Oct 1: 6.5) → Boss BF-2 Flanger (Manual: 9, Depth: 9, Rate: 3, Res: 10) → Mesa/Boogie Mark IIB inn i to Bag End Q12 4x12 kabinetter med JBL D120F-høyttalere. Legg rytmegitar først — gjerne med Hohner Madcat (japansk Telecaster-kopi med leopardprint pickguard, DiMarzio→Kinman pickups, GHS Boomers .011-.050). Deretter lead-fills med Cloud Guitar (bygget av Dave Rusan/David Husain). For clean funk-tone: gitar rett inn i Countryman DI til konsollen — på "Kiss" brukte han en noise gate for å skape brå stillhetspauser. Alt i separate pass, lagvis oppbygging.
 
-Steg 4: **Keyboards og synther.** Oberheim OB-Xa for brede synth-pads — Princes signatur-pad-sound. Yamaha DX7 for metalliske, perkussive lyder og FM-bass. Fairlight CMI for sampling og digitale teksturer. Hohner Clavinet D6 for funk-crunch. Hvert keyboard har en spesifikk rolle i arrangementet.
+Steg 4: **Keyboards og synther.** Oberheim-progresjon gjennom karrieren: 4 Voice (debut 1978) → OB-X (*Dirty Mind*) → OB-SX (*Controversy*) → OB-Xa (*1999*) → OB-8 (*Purple Rain*). Lisa Coleman: "Prince was incredibly bold in the way he would just use a preset and then brighten the fuck out of it!" — han grabbet presets og skrudde opp brightness. Yamaha DX7 for FM-bass og metalliske lyder. Fairlight CMI IIx (~$70 000) fra *Parade*-sesjonene — konstruerte "Sign o' the Times" nesten helt på Fairlight. Roland D-50 tungt brukt på *Lovesexy* og *Batman* (patches: "Soundtrack," "DigitalNativeDance," "Gamelan Bell"). Roland JD-800 som hovedkeyboard gjennom 90-tallet. Hohner Clavinet D6 for funk-crunch. Hvert keyboard har en spesifikk rolle i arrangementet.
 
-Steg 5: **Vokal i mørket.** SM57 på svingende arm over konsollen. Syng lead først — gjerne i brystregisteret med nasal kvalitet for vers, deretter falsett for chorus eller hook. Legg harmonier: Princes falsett-stacking var unik — opptil 8–12 lag falsett panned i stereofeltet for eterisk, androgyn kvalitet. Alt uten å forlate konsollposisjonen.
+Steg 5: **Vokal i mørket.** Rør-Neumann U47 på svingende arm over konsollen — alle Prince-vokaler ble spilt inn sittende ved konsollen, aldri i booth. Ingen andre i rommet. Mikrofonen var "multied across many tracks" — flere tape-spor armert simultant slik at han kunne hoppe mellom lag øyeblikkelig. Syng lead først — gjerne i brystregisteret med nasal kvalitet for vers, deretter falsett for chorus eller hook. Prince hadde hele vokalarrangementet ferdig i hodet — ingen comps, ingen punching in. For Camille-alter-egoet: Publison IM90 Infernal Machine pitch-shifter eller varispeed på tape (senk tape, syng, speed opp igjen). Falsett-stacking: 8–12 lag panned L/R, med gospel-harmoniforståelse — "sevenths, ninths, thirteenths, and elevenths." Komplett vokal ferdig på ~30 minutter.
 
 Steg 6: **Miks underveis.** Prince mikset mens han spilte inn — innspilling og miksing var simultane prosesser. Nivåer, panorering, EQ og effekter ble satt under tracking. Når siste overdub var ferdig, var miksen 90% komplett. "He didn't separate recording and mixing. By the time the last overdub was done, the song was basically mixed." — Susan Rogers.
 
@@ -124,7 +124,7 @@ Steg 1: **Programmér LinnDrum med menneskelig groove.** Detuned kick og snare. 
 
 Steg 2: **Synth-bass, ikke live-bass.** For renere, strammere funk: bruk Moog Minimoog eller Oberheim OB-Xa bass-programmer i stedet for live-bass. Synth-bassen gir perfekt timing og pitch som komplementerer den programmerte trommemaskinen.
 
-Steg 3: **Gated reverb på snare.** Kort, eksplosiv gated reverb (300–500ms decay, hard gate) på snare for den 80-talls Minneapolis-snaren som definerte epoken. Bright og attacky, ikke boomy.
+Steg 3: **AMS RMX16 reverb-prosessering.** Prince var blant de første til å bruke AMS RMX16 (lansert 1982). Kick-trommen spesifikt gjennom "Non Lin 2"-presetet som utvidet kick-lyden. Gated reverb på snare og claps ga "firecracker quality." Ulik prosessering for samme sample avhengig av posisjon i takten — forskjellige reverb/gate-innstillinger for beat 2 vs beat 4.
 
 Steg 4: **Single-coil funk-gitar.** Hohner Telecaster eller Fender Stratocaster med bridge pickup. Ren, knitrende tone. Funk-strumming: 16-dels noter med ghost strums og mutede strings. Chicken-picking teknikk for staccato funk.
 
@@ -281,15 +281,16 @@ Aldri la utstyret diktere soundet. Da LinnDrum-presetene var for sterile, detune
 
 | KATEGORI | UTSTYR |
 |---|---|
-| **Gitarer** | Hohner Telecaster (funk), Fender Stratocaster, custom Cloud Guitar (symbol-gitaren), Rickenbacker 330 |
+| **Gitarer** | Hohner Madcat Telecaster-kopi (japansk, ask-kropp, leopardprint pickguard, DiMarzio→Kinman pickups, GHS Boomers .011-.050), custom Cloud Guitar (bygget av Dave Rusan), Fender Stratocaster, Rickenbacker 330 |
 | **Bass** | Fender Jazz Bass, Warwick, eller synth-bass via Moog/Oberheim |
-| **Keyboards** | Oberheim OB-Xa (signatur-pads), Yamaha DX7 (FM-lyder), Fairlight CMI (sampling), Hohner Clavinet D6 (funk-crunch) |
-| **Trommemaskiner** | Linn LM-1, LinnDrum, Roland TR-808 (sjelden) |
-| **Gitarpedaler** | Boss DS-1 Distortion, MXR Phase 90, Boss CE-1 Chorus, Boss DD-2 Digital Delay, Electro-Harmonix Big Muff |
-| **Forsterkere** | Mesa/Boogie, Fender Twin Reverb |
-| **Konsoll** | SSL 8088 (80 kanaler) i Paisley Park Studio A |
-| **Tape** | Studer A800 24-spors, 2" tape |
-| **Mikrofoner** | Shure SM57 (vokal og gitar), Neumann U87 (vokal for spesielle prosjekter) |
+| **Keyboards** | Oberheim 4 Voice → OB-X → OB-SX → OB-Xa → OB-8 (kronologisk), Yamaha DX7, Fairlight CMI IIx (~$70K), Roland D-50, Roland JD-800 (90-tallet), Hohner Clavinet D6, Mini Moog, Synclavier |
+| **Trommemaskiner** | Linn LM-1 (minst 5 enheter, noen modifiserte), LinnDrum, Yamaha RX-5 |
+| **Gitarpedaler** | Boss DS-1, Boss SD-1 Super Overdrive, Boss OC-2 Octave, Boss BF-2 Flanger, Boss DD-3 Delay, Boss CE-2 Chorus, Boss DS-2 Turbo, Boss BD-2 Blues Driver, Boss MT-2 Metal Zone, Dunlop Crybaby Wah, Colorsound Wah |
+| **Forsterkere** | Mesa/Boogie Mark IIB (1981), Bag End Q12 4x12 med JBL D120F, Peavey Delta Blues (senere karriere) |
+| **Konsoll** | SSL 6000E 64-kanals (Paisley Park A), custom API/DeMedio (Paisley Park B), API/DeMedio (Sunset Sound Studio 3) |
+| **Tape** | Studer A800 24-spors, 2" tape, Ampex MM-1200 (tidlig karriere) |
+| **Mikrofoner** | Neumann U47 rør (primær vokalmikrofon), Shure SM57 (gitar, overhead) |
+| **Effekter** | AMS RMX16 reverb (Non Lin 2-preset for kick), Kepex noise gate (rytmisk triggering) |
 
 **BPM-ranges:**
 
@@ -308,8 +309,8 @@ B♭-dur og F-dur for horn-vennlig skriving. E-moll og A-moll for gitar-drevne g
 **Referanse-tracks:**
 
 - "Purple Rain" (rock-ballade, gitar-solo, ~62 BPM, B♭-dur, live-innspilt First Avenue)
-- "When Doves Cry" (bassløs funk, LinnDrum, ~112 BPM, A-moll)
-- "Kiss" (minimalistisk funk — bare gitar, drum machine, vokal, ~112 BPM, A-dur)
+- "When Doves Cry" (bassløs funk, LinnDrum, ~112 BPM, A-moll, skrevet og spilt inn 1. mars 1984, Sunset Sound — bassen ble spilt inn men mutet i endelig miks. Synth-solo spilt inn på halv hastighet en oktav lavere, deretter speedet opp for harpsikord-aktig kvalitet)
+- "Kiss" (minimalistisk funk, ~112 BPM, A-dur — "keyboard chop" er egentlig akustisk gitar kjørt gjennom Kepex noise gate trigget av hi-hat-sporet. Kick gjennom AMS RMX16 Non-Linear reverb for å kompensere for fraværet av bass)
 - "Sign O' the Times" (drum machine-funk, minimalistisk, ~112 BPM, A-dur)
 - "1999" (synth-funk, Oberheim-pads, ~115 BPM, B♭-dur)
 - "Little Red Corvette" (pop-rock, ~128 BPM, D-dur)
@@ -412,7 +413,7 @@ Total tid per låt: 2–4 timer for en komplett produksjon fra ingenting til fer
 
 **Vault-system:**
 
-Paisley Parks vault var klimakontrollert med tusenvis av tapes, DAT-kassetter, og harddisker. Alt var katalogisert. Prince kunne be om en spesifikk innspilling fra 1985, og den ble funnet innen minutter. Han visste nøyaktig hva som lå i vaulten.
+Paisley Parks vault var en fysisk safe under bygningen — "a room full of shelves floor to ceiling, with tapes." Innhold: anslagsvis 8 000+ sanger, minst 1 000 fullt ferdige master-kvalitet uutgitte spor (ifølge ingeniør Ian Boxill), over 50 fullt produserte uutgitte musikkvideoer, og flere komplette uutgitte album. Bare Prince kjente kombinasjonen — etter hans død i 2016 måtte en profesjonell safeknekker bore den opp. Tapene ble flyttet til Iron Mountain-anlegget i Los Angeles i 2017 for katalogisering og digitalisering. Estatet beregnet nok materiale til å gi ut et nytt album hvert år i hundre år.
 
 ---
 
@@ -429,7 +430,7 @@ Paisley Parks vault var klimakontrollert med tusenvis av tapes, DAT-kassetter, o
 
 **Innflytelse på moderne produsenter:**
 
-The Weeknd har eksplisitt sitert Prince som primær inspirasjon — "Blinding Lights" bærer Minneapolis Sound-DNA (synth-pads, falsett, 80-talls estetikk). Bruno Mars kanal Prince gjennom funk-grooves og live-virtuositet. D'Angelo's "Voodoo" er direkte arvtaker til Princes funk-estetikk. Frank Ocean bruker Princes falsett-stacking-teknikk. Janelle Monáe videreførte sjangerkryssingen.
+The Weeknd har eksplisitt sitert Prince som fundament — Prince presenterte ham med AMA-pris i 2015: "He's the reason I get to constantly challenge the genre of R&B." *Starboy* var direkte påvirket av Princes synth-pop/R&B/rock-blanding. Bruno Mars kanaliserer Princes multisjangerApproach og scenepresens. D'Angelo's "Voodoo" er direkte arvtaker til Princes funk-estetikk. Frank Oceans *Channel Orange* trakk umiddelbare sammenligninger med Prince for sjangerfluiditet. Janelle Monáe videreførte sjangerkryssingen. Viktigst: Princes individuelle trommesample-prosessering (pitch-shifting, effekter per slag, ulik behandling per taktposisjon) forutså moderne DAW-basert produksjon med tiår. Hans kamp for masters inspirerte Jay-Z, Rihanna, Taylor Swift og andre til å insistere på eierskap.
 
 **Princes produksjonsprinsipper i moderne kontekst:**
 
