@@ -51,7 +51,7 @@ Emosjonell ærlighet — føles dette ekte? Kan du høre at personen bak ordene 
 
 💔 **"Raw Over Polished" — Ærlighet trumfer produksjon**
 
-"My defenses were so great. The cocky rock and roll hero who knows all the answers was actually a terrified guy who didn't know how to cry." Plastic Ono Band strippes ned til bein: piano, gitar, bass (Klaus Voormann), trommer (Ringo Starr), vokal. Ingen lag, ingen effekter, ingen distraksjoner — bare sannheten. Polering er skjuling. Produksjon kan være et forsvarsverk. Lennon valgte å rive det ned. Phil Spectors "Wall of Sound" på noen av Lennons solo-utgivelser var noe Lennon senere beklaget: "He was all over it. I should have done it myself."
+"My defenses were so great. The cocky rock and roll hero who knows all the answers was actually a terrified guy who didn't know how to cry." Plastic Ono Band strippes ned til bein: piano, gitar, bass (Klaus Voormann), trommer (Ringo Starr), vokal. Ingen lag, ingen effekter, ingen distraksjoner — bare sannheten. Polering er skjuling. Produksjon kan være et forsvarsverk. Lennon valgte å rive det ned. Kjernetrioen: Lennon (vokal, gitar, piano), Ringo Starr (trommer), Klaus Voormann (bass). Sesjonene varte 26. september – 23. oktober 1970 i Abbey Road. Yoko: "If Phil had done it from the beginning I am sure it would have been a totally different album, lush, walls of sound. John Lennon/Plastic Ono Band is a strip down of John's soul." Ringo: "The simplicity of what Klaus and I played with him gave him a great opportunity to actually, for the first time, really use his voice and emotion how he could."
 
 ---
 
@@ -83,7 +83,7 @@ Lennon var ikke bare tekstforfatter — han var en sonisk eksperimentator som br
 
 ### A. "Primal Writing"-metoden — Rå emosjonell skriving
 
-Steg 1: **Identifiser smerten.** Hva plager deg? Hva holder deg våken? Hva gjør deg redd, sint, trist? Skriv fra det stedet — ikke fra intellektuell distanse, men fra emosjonell nærvær. Lennons primalterapi med Janov lærte ham å konfrontere smerte direkte: "Feel the pain. Don't run from it. Don't cover it up."
+Steg 1: **Identifiser smerten.** Hva plager deg? Hva holder deg våken? Hva gjør deg redd, sint, trist? Skriv fra det stedet — ikke fra intellektuell distanse, men fra emosjonell nærvær. Arthur Janov sendte Lennon en uoppfordret kopi av *The Primal Scream* (1970). Lennon slukte den. Janov gjennomførte innledende sesjoner på Tittenhurst Park, deretter London, deretter fløy Lennon og Ono til Los Angeles i fire måneder. Janov: "John had about as much pain as I've ever seen in my life." Terapien endte etter ca. fem måneder (Janov ønsket minimum ett år). Lennon etterpå: "I no longer have any need for drugs, the Maharishi or the Beatles." Direkte berørte låter: "Mother," "God," "Working Class Hero," "Remember," "I Found Out," "Isolation," "Well Well Well," "My Mummy's Dead" — pluss *Imagine*-albumets "How?"
 
 Steg 2: **Skriv uten filter.** Lennons tidlige Beatles-tekster gjemte følelser i "gobbledegook" — vitser, ordspill og surrealistiske bilder for å skjule sårbarhet ("I Am the Walrus", "Come Together"). Plastic Ono Band ble skrevet uten filter. Si det direkte: "Mother, you had me / But I never had you." Ingen metaforer som skjul. Ingen ironi som forsvarsverk.
 
@@ -97,7 +97,7 @@ Steg 4: **Strip produksjonen.** Piano og vokal. Gitar og vokal. Ingenting mer me
 
 Steg 1: **Skriv i dag.** Fang idéen umiddelbart. Ikke vent til "riktig tidspunkt." Skriv på servietter, telefonopptak, hva som helst. Lennon bar alltid en opptaker. "Instant Karma" ble skrevet om morgenen over frokost.
 
-Steg 2: **Spill inn samme dag.** Ring musikerne. Book studioet. "Instant Karma" ble spilt inn samme ettermiddag med Phil Spector på produksjon, George Harrison på gitar, Klaus Voormann på bass, Alan White på trommer, og Billy Preston på piano. Et rom fullt av mennesker som klappet på refrenget. Spontanitet = autentisitet.
+Steg 2: **Spill inn samme dag.** Ring musikerne. Book studioet. "Instant Karma" ble skrevet over frokost 27. januar 1970, sesjon fra kl. 19 i Abbey Road Studio Three — 10 takes for å lande grunnlaget, ferdig rundt midnatt. Lennon (vokal, gitar, piano), George Harrison (gitar, piano, backing-vokal-dirigent), Klaus Voormann (bass, piano), Billy Preston (orgel), Alan White (trommer, piano), pluss folk hentet inn fra en nattklub i nærheten for å synge kor — dirigert av Harrison. Spector forlangte doble/triple piano-partier. Lennon sa til ham: "I want 1950s but now." Mikset fire ganger i stereo mellom kl. 03–04. I butikkene ti dager senere. Spontanitet = autentisitet.
 
 Steg 3: **Gi den ut umiddelbart.** Vent aldri med å dele arbeidet. "Instant Karma" var ute innen 10 dager. Perfeksjonisme dreper momentum. Det første instinktet er ofte det riktige. Vent du, kjølner energien.
 
@@ -121,11 +121,11 @@ Steg 4: **Akseptér ubalansen.** Ikke alle samarbeid er 50/50. Noen ganger er de
 
 Steg 1: **Utfordr ingeniøren.** Lennon ba George Martin og Ken Townsend om ting som var "umulige": "I want to sound like a thousand monks chanting on a hilltop" ("Tomorrow Never Knows"). "I want the sound of an orange" ("Being for the Benefit of Mr. Kite!"). La den tekniske løsningen bli den kreative oppdagelsen.
 
-Steg 2: **Tape-loops og baklengs-lyd.** "Tomorrow Never Knows" brukte fem separate tape-loops (fugler, sitar, gitarer, Paul som lo) spilt simultant fra fem tapemaskiner. "Rain" hadde den første baklengs-vokalen i popmusikk. "Revolution 9" var 8+ minutter av tape-collage.
+Steg 2: **Tape-loops og baklengs-lyd.** "Tomorrow Never Knows" (6.–7. april 1966): McCartney, inspirert av Stockhausens *Gesang der Junglinge*, oppfordret alle fire Beatles til å lage tape-loops hjemme ved å deaktivere sletthodet på en båndopptaker. De brakte George Martin over 30 loops; 16 ble valgt, hver ca. 6 sekunder. BTR3-tapemaskiner spredt over Abbey Roads studioer, hver monitorert av en EMI-tekniker som holdt en blyant i loopen for å opprettholde spenning. Åtte loops om gangen, byttet halvveis gjennom låten. De fire Beatles kontrollerte faderne, Martin varierte stereopanoreringen, Emerick overvåket meterne. **Alt mikset live.** Den berømte "måkelyd" = et oppspeedet opptak av noen (muligens McCartney) som ler. Lennons vokal gjennom roterende Leslie-kabinett. Harrisons gitar spilt inn baklengs. George Martin: "It is the one track that could never be reproduced." "Revolution 9" brukte alle tre studioer simultant med EMI-ansatte som løp mellom kontrollrom med blyanter for å holde tape-loops. Minst 45 lydsnutter fra 12 effekttaper fra Abbey Road-arkivet. Lennon: "I spent more time on 'Revolution 9' than I did on half the other songs I wrote."
 
-Steg 3: **Splice uforenlige elementer.** "Strawberry Fields Forever": Lennon ba George Martin splice to helt ulike innspillinger — én akustisk i A-dur, én orkestral i B♭-dur, i ulike tempo. Martin justerte tape-hastigheten på begge for å matche pitch og tempo. Resultatet: en drømmende, surrealistisk textur som ingen hadde hørt før.
+Steg 3: **Splice uforenlige elementer.** "Strawberry Fields Forever": tre versjoner spilt inn over fem uker (45 timer totalt) fra november 1966. Lennon likte både den milde Take 7 og den intense orkestrale Take 26 (arrangert av Martin for fire trompeter og tre celloer). Han ba Martin spleise dem: "Why don't we join them together?" Martins svar: "There are only two things wrong with that: the takes are in completely different keys, a whole tone apart; and they have wildly different tempos." Lennon: "You can fix it, George." Løsningen (22. desember 1966): Martin og Emerick brukte klippesaks, to tapemaskiner og vari-speed-kontroll — speedet opp Take 7 og senket Take 26 med 11,5%. Splitsepunktet er nøyaktig ved **0:59**, mellom "cause I'm" og "going to." Den berømte Mellotron-fløyten i åpningen = en leid mahognifarget enhet, ikke Lennons personlige svarte MK II.
 
-Steg 4: **ADT og vokaleffekter.** Automatic Double Tracking ble oppfunnet av Abbey Road-ingeniør Ken Townsend spesifikt fordi Lennon hatet å doble vokaler manuelt. ADT tok vokal-signalet, forsinket det noen millisekunder, og la det tilbake. Resultatet: en tykkere, bredere vokal uten manuell doubling. Lennon kalte det "Ken's flanger" — og teknikken ble standard i rockeproduksjon.
+Steg 4: **ADT og vokaleffekter.** Oppfunnet våren 1966 av Ken Townsend, EMI vedlikeholdsingeniør, som kjørte hjem etter en session der McCartney hadde doblet vokal manuelt. Teknisk: Studer 4-sporsmaskinen hadde to replay-utganger per spor — én synkron fra opptakshodet, én fra avspillingshodet, ca. 1,5 tommer fra hverandre. Ved å mate synkronutgangen inn i en EMI BTR2 monomaskin kontrollert av en krystalloscillator, kunne tidsforskjellen mellom de to stemmene styres presist — normalt **8–12 millisekunder**. Med 180-graders faseforskyvning og oscillator-wobbling ble **phasing** oppnådd. Lennon kalte det "Ken's Flanger" — som noen krediterer som opprinnelsen til begrepet "flanging" i studioproduksjon. Brukt ekstremt på *Revolver* (1966) og alle påfølgende Beatles-innspillinger.
 
 ---
 
@@ -263,9 +263,11 @@ ADT, tape-loops, baklengs-lyd — Lennon brukte alt dette. Men alltid i tjeneste
 
 | TEKNIKK | BESKRIVELSE |
 |---|---|
-| **Stripped-down piano/vokal** | Steinway piano, én vokal, ingenting mer. "Imagine" er blueprinten for all stripped-down popmusikk. |
-| **Akustisk gitar/vokal** | "Working Class Hero", "Julia." Fingerpicking eller enkel strumming. Gibson J-160E eller Epiphone Casino akustisk. |
-| **Primalskrik-vokal** | Rå, ubehandlet vokal med ekstraordinær emosjonell intensitet. "Mother"-outroen. "Cold Turkey." |
+| **Stripped-down piano/vokal** | Steinway Model Z upright, én vokal, ingenting mer. "Imagine" er blueprinten for all stripped-down popmusikk. |
+| **Akustisk gitar/vokal** | "Working Class Hero", "Julia." Fingerpicking eller enkel strumming. Gibson J-160E. |
+| **Primalskrik-vokal** | Rå, ubehandlet vokal med ekstraordinær emosjonell intensitet. "Mother"-outroen. "Cold Turkey." Sean Lennon: faren var "very influenced by Yoko's vocal approach — you can hear it in songs like 'Mother'... He screams at the end." |
+| **DI-distortion ("Revolution")** | Geoff Emerick plugget Lennons Epiphone Casino og Harrisons Gibson Les Paul "Lucy" direkte inn i konsollen via DI-bokser, overbelastet inngangspreampen på EMI REDD-desken, deretter rutet signalet inn i en andre overbelastet preamp. Dobbel preamp-overbelastning. Emerick: "If I was the studio manager and saw this going on, I'd fire myself." |
+| **Ringo-trommesound** | Tehåndklær på snare for bone-dry lyd. Myk sigaretpakke eller lommebok for subtilere demping. Stramme topskinn, løsere bunnskinn. Frontskinn fjernet på basstrommen med tepper/puter inni. Mono-miks av tre mikrofoner sendt til Fairchild 660 — pumper kick hardt for dynamisk kompresjon. |
 | **ADT (Automatic Double Tracking)** | Oppfunnet av Ken Townsend ved Abbey Road for Lennon. Vokal-signal forsinket noen ms og lagt tilbake for tykkere lyd uten manuell doubling. |
 | **Slapback echo** | Kort tape-delay (75–140ms) på vokal for romfølelse uten reverb. Elvis-inspirert. Standard Lennon-vokal-effekt. |
 | **Tape-loops** | Separate tape-loops spilt simultant fra flere maskiner. "Tomorrow Never Knows": 5 loops (fugler, sitar, gitarer, latter, orgel). |
@@ -276,13 +278,14 @@ ADT, tape-loops, baklengs-lyd — Lennon brukte alt dette. Men alltid i tjeneste
 
 | KATEGORI | UTSTYR |
 |---|---|
-| **Gitarer** | Rickenbacker 325 (tidlig Beatles), Epiphone Casino (stripped, sen Beatles/solo), Gibson J-160E (akustisk) |
-| **Piano** | Steinway grand (Imagine), Yamaha upright |
-| **Orgel** | Hammond B-3 med Leslie-kabinett |
-| **Studio-effekter** | ADT, Leslie-kabinett for vokal ("Tomorrow Never Knows"), Fairchild 660 limiter, EMI RS124 kompressor |
-| **Mikrofoner** | Neumann U47 (vokal ved Abbey Road), Neumann U67, AKG C12 |
-| **Tape** | Studer J37 4-spors (Abbey Road), 3M M79 |
-| **Konsoll** | EMI REDD, TG12345 (Abbey Road) |
+| **Gitarer** | Rickenbacker 325 Capri (1958, én av bare 8 natural-finish, kort skala 20 3/4", tre single-coil "toaster-top" pickups, refinished glossy black ~1962), Epiphone Casino (fullhul archtop, 2x P-90, opprinnelig sunburst, strippet til bart tre 1968, Gold Grover-tuners, pickguard fjernet — bevisst utnyttet feedback fra hul konstruksjon), Gibson J-160E (akustisk-elektrisk med P-90 — selve gitaren brukt på "I Feel Fine"-riffen) |
+| **Piano** | Steinway Model Z upright ("Imagine" — IKKE en grand), hvit Steinway baby grand (Tittenhurst Park, forlatt pga. akustikk) |
+| **Mellotron** | Mark II svart modell (én av bare seks laget), levert til Kenwood 16. august 1965, brukt til å komponere "Strawberry Fields Forever" |
+| **Studio-effekter** | ADT (Ken Townsend, 8–12ms delay via Studer/BTR2/krystalloscillator), Leslie-kabinett for vokal ("Tomorrow Never Knows"), Fairchild 660 limiter (signatur trommekompresjon) |
+| **Mikrofoner** | Coles 4038 ribbon (overhead), STC 4056 kondensator (under snare), AKG D19 (snare topp, inni toms), Neumann U47 (vokal), Neumann KM56 |
+| **Tape** | Studer 4-spors (med doble replay-utganger for ADT), EMI BTR2 og BTR3 monomaskiner |
+| **Konsoll** | EMI REDD (brukt for "Revolution" DI-overbelastningsteknikk), TG12345 (Abbey Road) |
+| **Hjemmestudio** | Ascot Sound Studios ved Tittenhurst Park — 8-spors setup der *Imagine* hovedsakelig ble spilt inn |
 
 **BPM-ranges:**
 
@@ -299,15 +302,17 @@ C-dur for åpenhet og tilgjengelighet ("Imagine"). A-moll for melankolsk ærligh
 
 **Referanse-tracks:**
 
-- "Imagine" (ultimate enkelhet, C-dur, ~75 BPM, piano/vokal/strykere)
+- "Imagine" (ultimate enkelhet, C-dur, ~75 BPM, Steinway Model Z upright piano + Nicky Hopkins elpiano. Take 10 = master. Strykere av Torrie Zito, spilt inn 4. juli 1971 i Record Plant East med 27 medlemmer av New York Philharmonic — Lennon kalte dem "The Flux Fiddlers." 8-spors multitrack. Lennon om Spector: "I just take what I need from him and it doesn't get completely 'Spector-ised'.")
 - "Working Class Hero" (rå ærlighet, A-moll, ~96 BPM, kun akustisk gitar og vokal)
 - "Instant Karma" (spontanitet, ~132 BPM, skrevet og innspilt samme dag)
 - "Mother" (primalskrik, A-moll, ~72 BPM, piano/bass/trommer/vokal)
 - "Jealous Guy" (sårbarhet, G-dur, ~72 BPM, Mellotron-intro)
 - "Strawberry Fields Forever" (eksperimentell, A-dur/B♭-dur splicet, Mellotron, tape-manipulering)
-- "Tomorrow Never Knows" (avant-garde pop, C-dur, tape-loops, ADT, reversed lyd)
-- "God" (dekonstruksjon, A-moll, systematisk avvisning av illusjoner)
+- "Tomorrow Never Knows" (avant-garde pop, C-dur drone, 5+ tape-loops mikset live, Leslie-vokal, reversert gitar, 6.–7. april 1966)
+- "A Day in the Life" (orkestral crescendo 10. februar 1967: 40 musikere instruert å starte stille på lav note, stige til høyeste mulige note uavhengig av hverandre. Martin tegnet et diagram med en skvetting stigende linje. Fire overdubs til ett massivt crescendo. Siste akkord: Lennon, McCartney, Starr + Mal Evans på tre pianoer + Martin på harmonium, alle slår E-dur-akkord simultant, gain gradvis økt — sustain ~40 sekunder. Totalt 34 timer innspilling vs. 10 timer for hele *Please Please Me*)
+- "God" (dekonstruksjon, A-moll, Billy Prestons gospel-piano, Lennon spurt av Janov: "You mean that God is a concept by which we measure our pain?" som ble åpningslinjen. Greil Marcus: "John's singing in the last verse of 'God' may be the finest in all of rock.")
 - "#9 Dream" (drømmende, ~100 BPM, lag av vokaler og strykere)
+- "I Feel Fine" (første bevisste bruk av feedback på en rockeplate, 1964 — Lennons Gibson J-160E lent mot McCartneys bass-forsterker, P-90 pickup fanget resonansen. Lennon: "I defy anybody to find a record that uses feedback that way.")
 
 ---
 
@@ -405,7 +410,7 @@ Studio Two var Beatles' hjem. EMI REDD-konsollen (senere TG12345). Studer J37 4-
 
 **Samarbeid med George Martin:**
 
-Martin var "the Fifth Beatle" — arrangør, produsent, og teknisk oversetter av Lennons visjoner. Lennon sa: "George Martin made us what we were in the studio." Martin arrangerte strykerne på "Eleanor Rigby", det orkestrale crescendoet i "A Day in the Life", og løste det tekniske puslespillet med "Strawberry Fields Forever."
+Martin var "the Fifth Beatle" — arrangør, produsent, og teknisk oversetter av Lennons visjoner. Lennon sa: "George Martin made us what we were in the studio." Martin arrangerte strykerne på "Eleanor Rigby", det orkestrale crescendoet i "A Day in the Life" (40 musikere, squiggly stigende linje som partitur, betalt 18 pund for "arrangementet"), og løste det tekniske puslespillet med "Strawberry Fields Forever" (spleising av to takes i ulike tonearter og tempo med 11,5% vari-speed-justering). Lennon var åpent kritisk under oppbruddperioden, mistenkte Martins "jiggery pokery" og foretrakk Spectors tilnærming for soloarbeid.
 
 ---
 
