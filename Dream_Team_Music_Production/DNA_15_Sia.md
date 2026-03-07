@@ -20,7 +20,7 @@ Dream Team — Music Production
 
 **Rolle:** Topliner & Vokal-arkitekt
 
-Sia er teamets mest produktive topline-skriver og vokal-kraftverk. Hun skriver melodi og tekst over ferdige beats med en hastighet som er legendarisk: "Chandelier" tok 4 minutter for akkordene, 12–15 minutter for teksten, 10–15 minutter for å kutte vokalen. "Diamonds" (Rihanna) ble skrevet på eksakt 14 minutter. Hun mottar ca. 10 tracks om dagen fra produsenter verden over og velger de som trigger en umiddelbar emosjonell respons.
+Sia er teamets mest produktive topline-skriver og vokal-kraftverk. Hun skriver melodi og tekst over ferdige beats med en hastighet som er legendarisk: "Chandelier" tok 4 minutter for akkordene, 12–15 minutter for teksten, 10–15 minutter for å kutte vokalen. "Diamonds" (Rihanna) ble skrevet på 14 minutter (Stargate hevder nærmere 12). Hun mottar 20–30 tracks per uke fra produsenter verden over og velger de som trigger en umiddelbar emosjonell respons. Sia selv: "The reason I'm successful is because I'm really productive, not necessarily that I'm a great songwriter."
 
 **Primært ansvar:**
 
@@ -30,7 +30,7 @@ Vokal som instrument. Sias stemme er ikke bare en ordformidler — den er et ins
 
 Skrive hits for andre. Rihanna ("Diamonds"), David Guetta ("Titanium"), Beyoncé ("Pretty Hurts"), Flo Rida ("Wild Ones"), Katy Perry ("Double Rainbow"), Jessie J ("Domino" co-write). Sia skrev hits andre artister signerte med, ofte uten at Sia selv ønsket å fronte dem. "I prefer to write for others. I don't want to be famous."
 
-Emosjonell intensitet som komposisjonsverktøy. Sia kanaliserer personlig smerte (alkoholisme, depresjon, bipolar lidelse, tap) direkte inn i melodier og tekster. "Chandelier" handler om alkoholisme — "I'm gonna swing from the chandelier" er desperat eskapisme, ikke feiring. Men den fungerer som universell anthem om overlevelse fordi smerten er ekte.
+Emosjonell intensitet som komposisjonsverktøy. Sia kanaliserer personlig smerte (alkoholisme, depresjon, bipolar lidelse, tap) direkte inn i melodier og tekster. "Chandelier" handler om alkoholisme — "I'm gonna swing from the chandelier" er desperat eskapisme, ikke feiring. Opprinnelig skrevet med Rihanna eller Beyoncé i tankene; Sia beholdt den fordi teksten var selvbiografisk. Hun er en selvbeskrevet arbeidsnarkoman som bruker arbeid for å unngå "less kind addictions."
 
 **KPIer:**
 
@@ -50,7 +50,7 @@ Hastighet — under 30 minutter for en komplett topline? Emosjonell impact — g
 
 🎯 **"One Concept" — Én idé per låt**
 
-Sias manager Jonathan Daniel sa henne å "focus on a single concept" for pop-låter. "Titanium" ble bygget rundt metaforen om et slitesterkt metall — ubrytelighet under press. "Chandelier" rundt lysekronen — desperat feiring. "Elastic Heart" rundt et elastisk hjerte — resiliens. Denne formelen ble hennes signatur: ett sentralt konsept, sykliske akkorder, filler-tekst som skaper "an easy roadmap to the idea of the song." Klarhet trumfer poetikk. Én metafor, ikke ti.
+Sia fired sin forrige manager og hyret Jonathan Daniel, som foreslo å skrive låter for andre artister. Daniels regel: pop-hits henger på et single konsept eller metafor — "something precise and Googleable." "Titanium" ble bygget rundt metaforen om et slitesterkt metall — ubrytelighet under press. "Chandelier" rundt lysekronen — desperat feiring. "Elastic Heart" rundt et elastisk hjerte — resiliens. Sias egen formulering: "The songs that work best are broad lyrically and have one strong concept in the metaphor. You have to sing the metaphor a lot of times in a lot of different ways." Klarhet trumfer poetikk. Én metafor, ikke ti.
 
 ---
 
@@ -116,7 +116,7 @@ Steg 2: **Gi artisten en vokal-blåkopi.** Rihanna fulgte Sias demo for "Diamond
 
 Steg 3: **Tilpass til artistens register og stil.** Sia skriver i eget register og lar artisten tilpasse. Noen ganger betyr det å senke tonearten. Noen ganger betyr det å forenkle vokal-ornamentikken. Men essensen — melodien, konseptet, den emosjonelle kurven — skal forbli intakt.
 
-Steg 4: **Slipp kontrollen.** Når låten er gitt bort, er den gitt bort. Artisten eier prestasjonen. Sia: "I never even knew it was gonna happen, and I was really upset" (om "Titanium"-utgivelsen med hennes demo). Men resultatet talte for seg selv — og Sias karriere som solo-artist ble mulig nettopp fordi folk hørte demo-vokalen.
+Steg 4: **Slipp kontrollen.** Når låten er gitt bort, er den gitt bort. Artisten eier prestasjonen. "Titanium"-historien: Sia skrev demo-vokalen, Katy Perry takket nei ("for lik Firework"), Alicia Keys takket nei, Mary J. Blige spilte inn men lekket. Katy Perry sa til Guetta: "I think you're crazy not to just keep Sia." Guetta brukte Sias demo uten å fortelle henne: "He took her vocal off it, and put my vocal back on, my demo vocal, without asking and released it." Sia var opprørt — hun hadde pensjonert seg fra fremføring. Men resultatet talte for seg selv — #1 i UK, global anthem.
 
 ---
 
@@ -174,7 +174,7 @@ Steg 5: **Repetér med intensivering.** Andre vers → andre chorus med enda mer
 
 ---
 
-**Greg Kurstin (Primær produksjonspartner)** — Ikke et Dream Team-medlem, men Sias viktigste samarbeidspartner i praksis. Kurstin bygger beats og musikalske rammer, Sia fyller dem med toplines. "We write songs almost every day when we're working together. I'll play something, and within minutes she has a melody and words."
+**Greg Kurstin (Primær produksjonspartner)** — Ikke et Dream Team-medlem, men Sias viktigste samarbeidspartner i praksis. Møttes i 2003 gjennom Beck (Kurstin var på turné med Beck). Kurstin spilte trommer, bass, gitar, Mellotron, piano, xylofon, Chamberlin og keyboards på alle 12 sporene på *1000 Forms of Fear*. Hans metode: hybrid av live-spilling chopped opp med programmering. Kurstin: "She is very fast to write with, and I feel like I'm fast as well, so together it's fine because we move right along." Hele *Everyday Is Christmas*-albumet ble fullført på to ukers sessions i mai 2017.
 
 ---
 
@@ -267,15 +267,23 @@ Sia skriver fra personlig smerte — selv for andre artister. "Diamonds" er ikke
 
 ---
 
+🚫 **Skrive negative chorus uten oppløftning**
+
+Sias egen regel: "Songs that have a negative chorus and sad songs without an uplifting chorus are harder to place." Smerten hører hjemme i verset; choruset trenger en "victim to victory"-arc — fra sårbarhet til empowerment. Selv "Chandelier" har en form for katarsis i chorus.
+
+---
+
 ## 08 SONISK SIGNATUR & TEKNIKKER
 
 **Vokalteknikker:**
 
 | TEKNIKK | BESKRIVELSE |
 |---|---|
-| **Cry technique** | Kontrollert vokalbreaking der stemmen "knekker" på emosjonelt ladede ord. Ikke en feil — et designet øyeblikk av rå sårbarhet. |
-| **Falsett-til-belting-switch** | Umiddelbar overgang fra luftig falsett til full beltingkraft, ofte innen én frase. Dramatisk kontrast. |
-| **Dynamisk vokal-kontrast** | Sårbar nærhet i vers (nesten hviskende) → eksplosiv belting i chorus (full kraft). Kontrasten ER den emosjonelle reisen. |
+| **Cry technique** | Kontrollert vokalbreaking der stemmen "knekker" på emosjonelt ladede ord. Ikke en feil — et designet øyeblikk av rå sårbarhet. Bruker mixed voice (blanding av bryst- og hoderesonans) for varm, kraftfull tone uten å miste klarhet. |
+| **Glottal onset** | Skarp initiering av lyd ved å brått slippe lufttrykk i strupehodet. Skaper assertive attack, spesielt på beltede noter. Hørbar i staccato-åpningen av "Elastic Heart." |
+| **Falsett-til-belting-switch** | Umiddelbar overgang fra luftig falsett til full beltingkraft, ofte innen én frase. I "Chandelier" hopper choruset omtrent en oktav fra vers-registeret, krever committed belting opp til Eb5. |
+| **Dynamisk vokal-kontrast** | Sårbar nærhet i vers (reggae-påvirket, nesten mumlet) → eksplosiv belting i chorus (full kraft). Hugh Montgomery i *The Independent*: "segue from reggae verse to shockingly melodramatic, wind-machine-worthy chorus." |
+| **Slack annunciation** | Bevisst løsner uttalen, gir en uformell, samtalende kvalitet til vers som kontrasterer med presisjonen i chorus-belting. |
 | **One-concept anchoring** | Hele låten forankret i én fysisk metafor. Alt refererer tilbake til ankeret. Konseptet er kompasset. |
 | **Filler-tekst** | Bevisst bruk av ikke-meningsbærende linjer i vers som skaper "easy roadmap" uten å kreve intellektuell prosessering. |
 | **Demo-as-final** | Demo-vokal med full intensitet. Ofte sterkere enn artistens endelige versjon fordi den fanger rå emosjon. |
@@ -288,7 +296,7 @@ Sia skriver fra personlig smerte — selv for andre artister. "Diamonds" er ikke
 | PARTNER | HVA SIA TILFØRER | HVA PARTNEREN TILFØRER |
 |---|---|---|
 | **Greg Kurstin** | Topline, vokal, emosjonell intensitet | Beat, akkordprogresjoner, musikalsk ramme. Kurstin bygger fundamentet, Sia bygger overbygningen. |
-| **Diplo** | Topline, melodi, vokal | Tropical vibes, global groove, perkussive elementer. "Cheap Thrills" — Diplos minimalistiske beat + Sias euforiske vokal. |
+| **Diplo** | Topline, melodi, vokal | Produksjon, drum-programmering, global groove. "Elastic Heart" — Diplo håndterte trommer fra Mad Decent-studioet, Kurstin engineered. Sia, Diplo og Labrinth dannet supergruppen **LSD** i 2018. |
 | **David Guetta** | Demo-vokal som ble offisiell, melodi, tekst | EDM-produksjon, festival-kontekst, bass drops. "Titanium" — Guetta la til EDM-rammen, Sias vokal bærer alt. |
 | **Jesse Shatkin** | Topline, kreativ retning | Produksjon, lyddesign, arrangement. "Chandelier" — Shatkin og Kurstin bygde beatet, Sia toppet det med melodi og vokal i minutter. |
 
@@ -297,22 +305,22 @@ Sia skriver fra personlig smerte — selv for andre artister. "Diamonds" er ikke
 | SJANGER | BPM | EKSEMPEL |
 |---|---|---|
 | Ballader/midtempo | 78–95 | "Breathe Me" (~80 BPM), "Bird Set Free" (~88 BPM) |
-| Pop-midtempo | 95–115 | "Chandelier" (~96 BPM), "Elastic Heart" (~100 BPM) |
-| Pop-uptempo | 115–128 | "Cheap Thrills" (~120 BPM), "Move Your Body" (~125 BPM) |
+| Pop-midtempo | 85–100 | "Chandelier" (~87 BPM, Bb-moll), "Cheap Thrills" (~90 BPM, F#-moll) |
+| Pop-uptempo | 100–130 | "Elastic Heart" (~130 BPM, F#-moll), "Move Your Body" (~125 BPM) |
 | Dance/EDM | 125–130 | "Titanium" (~126 BPM), "Wild Ones" (~128 BPM) |
 | Anthem/power | 100–115 | "Unstoppable" (~106 BPM), "Alive" (~110 BPM) |
 
 **Foretrukne tonearter:**
 
-Moll for emosjonell intensitet: A-moll, E-moll, C-moll, F#-moll ("Chandelier" i F#-moll). Dur for oppløftende anthems: C-dur, G-dur, B♭-dur. Sia foretrekker tonearter som gir rom for belting i øvre register (A4–D5 for chorus-hooks).
+Moll for emosjonell intensitet: Bb-moll ("Chandelier"), B-moll ("Diamonds"), C-moll ("Titanium"), F#-moll ("Elastic Heart", "Cheap Thrills"). Dur for oppløftende anthems: C-dur, G-dur, B♭-dur. Vokalregister: ca. D3–E6 (~3 oktaver), tessitura i rikt mellomregister med belting opp til Eb5–E6 i chorus.
 
 **Referanse-tracks:**
 
-- "Chandelier" (vokal-dynamikk, cry technique, F#-moll, ~96 BPM, 4+12+10 min å skrive)
-- "Titanium" (one-concept, demo-as-final, ~126 BPM, E-moll, EDM-anthem)
-- "Diamonds" (14-min hit, universell metafor, ~92 BPM, B-dur, skrevet for Rihanna)
-- "Elastic Heart" (sårbarhet + kraft, ~100 BPM, D-moll, vokal-kontrast)
-- "Cheap Thrills" (pop-hook-perfeksjon, ~120 BPM, F-moll, Diplo-produsert)
+- "Chandelier" (vokal-dynamikk, cry technique, Bb-moll, ~87 BPM half-time feel, produsert av Jesse Shatkin + Greg Kurstin. Akkorder: vers Bbm–Gbmaj7–Ab–Fm, chorus Gbmaj7–Ab–Db/F–Gbmaj7. 14 kanaler i multisporet. Skrevet under downtime — Sia på piano, Shatkin på marimba, spilt inn på iPhone)
+- "Titanium" (one-concept, demo-as-final, 126 BPM, C-moll, skrevet på ~40 min. Guetta/Tuinfort/Afrojack-produsert. Katy Perry og Alicia Keys takket nei. Skrevet samme dag som "Pretty Hurts")
+- "Diamonds" (14-min hit (Stargate sier nærmere 12), universell metafor, 92 BPM, B-moll, Stargate + Benny Blanco-produsert. Rihanna kopierte Sias demo så nøyaktig at Sia trodde det var hennes egen stemme)
+- "Elastic Heart" (sårbarhet + kraft, 130 BPM, F#-moll, Diplo + Kurstin-produsert. Chopped sample fra Billy Stewart "Baby, You're My Only Love" 1957. Opprinnelig for Hunger Games-soundtrack)
+- "Cheap Thrills" (pop-hook-perfeksjon, 90 BPM, F#-moll, Greg Kurstin-produsert — IKKE Diplo. Opprinnelig skrevet for Rihanna ("for Brit-pop for henne"). Most Shazamed song of 2016)
 - "Unstoppable" (anthem-formula, ~106 BPM, empowerment-konsept)
 - "Breathe Me" (sårbar ballade, ~80 BPM, sakte byggande intensitet)
 - "Alive" (primal skriving, ~110 BPM, survival-anthem)
@@ -406,19 +414,19 @@ Sia og Greg Kurstin (eller annen produksjonspartner) jobber typisk 4–6 timer o
 4. **Demo-vokal (5–15 min):** Kutt vokalen umiddelbart. Full intensitet. Én eller to takes.
 5. **Evaluering (5 min):** Er dette en hit? Gi det 30 sekunders-testen. Hvis det sitter — bra. Hvis ikke — next.
 
-**"14 låter på en dag"-metoden:**
+**Sias prosess for beat-kurasjon:**
 
-I sin mest produktive fase kunne Sia skissere 14 låter på én dag — ikke alle ferdige, men alle med melodi, konsept, og demo-vokal. Fra disse 14 ville kanskje 3–5 bli videre utviklet, og 1–2 bli hits. "I'm a factory. I make songs. Most of them are bad. Some of them are good. A few are great."
+Sia mottar 20–30 tracks per uke fra produsentvenner. En produsent spiller 3–10 tracks i en session, og Sia synger over hver den første gangen hun hører den. Hun scatter til ord tar form: "For me, it's all channels. Words come out and it's just like, 'bluh.' It comes out, and I'll just write the lyrics. I don't overthink it." Den mye siterte "14 songs a day"-statistikken refererer egentlig til at hun skrev Rihannas "Diamonds" på 14 minutter — men hennes output er genuint ekstraordinær: 2–5 ferdige toplines per dag er vanlig.
 
 **Skrive for andre — prosessen:**
 
-1. Motta brief fra artist/label: "Vi trenger en uptempo empowerment-anthem for Rihanna."
+1. **Terapi-samtale først:** Før skriving, la artisten snakke om hva de går gjennom. Sia diskuterte skilsmisse med Christina Aguilera, sorg med Lea Michele. Dette gir den emosjonelle kjernen.
 2. Velg beat fra produsenter (eller jobb med Kurstin for å bygge et).
 3. Skriv topline som om DU skulle synge den — full personlig investering.
 4. Kutt demo-vokal med full intensitet.
-5. Send demo til artist/label.
-6. Artisten replikerer demo-vokalen som instruksjon.
-7. Slipp kontrollen. Låten er nå artistens.
+5. Send demo til artist/label. Artisten replikerer demo-vokalen som instruksjon.
+6. **Beyoncé-metoden:** "She's very Frankenstein — she picks elements from different songs: 'I like the verse from that. I like the pre-chorus from that. Can you try mixing it with that?'" Sia skrev 25 spor for Beyoncés selvtitulerte album; bare "Pretty Hurts" kom med.
+7. **Seller's remorse & pipeline:** Låter pitches gjennom flere artister. "Bird Set Free" ble skrevet for Pitch Perfect 2 (avvist), sendt til Rihanna (returnert), sendt til Adele (returnert), endte opp på Sias eget album *This Is Acting* — som utelukkende består av låter andre artister avviste.
 
 ---
 
@@ -432,6 +440,8 @@ I sin mest produktive fase kunne Sia skissere 14 låter på én dag — ikke all
 - "Diamonds" — Rihannas mest streamede låt, skrevet på 14 minutter
 - Beviste at du kan ha en massiv karriere uten å vise ansiktet — Sia opptrådte med ryggen til publikum og med parykk for å unngå berømmelse
 - Pionér for "songwriter-as-brand" — synliggjorde den usynlige låtskriveren
+- *This Is Acting* — et helt album bestående av låter andre artister avviste, som bevis på at profesjonell craft har egenverdi
+- "It took me 15 years to take 20 minutes" — hun brukte 15 år (1997–2012) på å lære seg å skrive en hit på minutter. Endret syn på empowerment-anthems etter å se PS22 skolekor synge "Titanium" og lære at låten hjalp mobbede barn
 
 **Innflytelse på moderne artister og låtskrivere:**
 
