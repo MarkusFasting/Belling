@@ -273,11 +273,11 @@ Pianoets største fordel er dynamisk range. En pianist som spiller alt på same 
 | TEKNIKK | BESKRIVELSE |
 |---|---|
 | **Arpeggierte piano-introver** | "Tiny Dancer" (C-dur), "Your Song" (E♭-dur), "Someone Saved My Life" (G-moll) — definerende figurer fra første note. |
-| **Gospel-hammering** | Repetitive, insisterende akkordslag med Little Richard-energi. Oktav-hamring i venstrehånden. Fysisk, perkussiv piano. |
-| **Voice-leading melodikk** | Øverste note i akkordvoicingene følger melodiens kontur. Inversjonene tjener melodien. |
-| **Root-5th-Root bass** | Venstrehånds bass-mønster som gir solid harmonisk fundament. Walking oktaver for uptempo. |
+| **Gospel-hammering** | Aggressive venstrehånds-oktaver for rytmisk drive. Høyrehånds akkordpunktueringer (clusters, tremolos). Call-and-response mellom hendene. "Border Song" og "Burn Down the Mission" pulserer med gospel-kraft. |
+| **Voice-leading melodikk** | Høyrehåndsakkorder i 4-note voicings med treklanger der én note dobles. Voicings valgt for å minimere håndbevegelse — smooth voice leading uten hopp. Øverste note følger melodiens kontur. |
+| **Root-5th-Root bass** | Venstrehånds bass: root og kvint i begynnelsen av takten, root gjentatt på slag 3. Avansert: antesipere kvinten i neste akkord på "og" av slag 4 for fremadrettet momentum. |
 | **Dynamisk range** | Fra pianissimo balladevers til fortissimo rock-chorus. Pianistens dynamikk styrer hele bandets dynamikk. |
-| **Uventede modulasjoner** | Brå toneartsskift for emosjonell intensivering. Klassisk trening gir verktøyene; rock-instinkt gir motet. |
+| **Uventede modulasjoner** | Slash-akkorder (A/E, F#m7/E), kromatiske mediant-relasjoner (E→C#m), modal interchange — "Tiny Dancer" (C-dur) skifter gradvis til C-moll via lånte akkorder. "GYBR" bruker circle-of-fifths (Gm-C-F-B♭) med non-diatonisk E♭. |
 | **Sustain-pedal som instrument** | Bevisst pedalbruk for resonans i ballader, kort pedal for perkussivt uptempo. |
 | **Dobbelt-oktav bass** | Kraftfulle doble oktaver i venstrehånden for dramatiske øyeblikk — brukt i live og studio. |
 
@@ -285,31 +285,35 @@ Pianoets største fordel er dynamisk range. En pianist som spiller alt på same 
 
 | TEKNIKK | BESKRIVELSE |
 |---|---|
-| **Buckmaster-strykere** | Paul Buckmaster arrangerte strykere som komplementerte pianoet uten å overdøve det. Kontrapunkt-melodier i strykerne. |
-| **Gus Dudgeon-produksjon** | Dudgeon produserte mange av Eltons klassikere. Hans signatur: klar, bred lyd med pianoet i sentrum. Romlig produksjon med plass mellom elementer. |
-| **Château d'Hérouville** | "Honky Château" — det franske studioet der Honky Château, Don't Shoot Me I'm Only the Piano Player, og Goodbye Yellow Brick Road ble spilt inn. Rommet ga naturlig ambience. |
-| **Live-i-studio** | Band spilte ofte live med Elton — minimale overdubs. Energien i rommet fanget på tape. |
-| **Piano-DI + room** | Mikset signal fra direkte piano-pickup og rommikrofoner for balanse mellom klarhet og ambience. |
+| **Buckmaster-strykere** | Paul Buckmaster (cellist, Royal Academy) arrangerte 52 låter over 8 album (1970–2001). "Mørke, majestetiske orkestrasjoner" — kontrapunkt-melodier i strykerne som ga dramatisk dybde uten å overdøve pianoet. |
+| **Gus Dudgeon-produksjon** | Dudgeon var pionér innen sampling (Guinness-rekord). Foretrakk MCI-konsollen — "I walked into the control room and heard exactly the same sound as the studio. That had never happened." Aldri lukket pianolokket: "It's the worst thing you can possibly do." |
+| **Dudgeons piano-boks** | Ved Château d'Hérouville bygde Dudgeon en spesialtilpasset treboks over pianoet (i stedet for lokket) for å oppnå separasjon fra trommene i det lille live-rommet — nok plass for to mikrofoner inni. |
+| **Château d'Hérouville** | 18. århundre-slott, 30 miles fra Paris. GYBR: 21 låter innspilt på ~12 dager. 16-spors tape. Stortrommen på eget spor, resten av trommene på to spor, piano i stereo, bass på ett spor, gitarer på fire spor. |
+| **Live-i-studio** | Hele bandet spilte live med Elton — mange klassikere er first takes. Mange spor er fanget slik: Elton vekslet mellom flygel og el-piano med scratch-vokal, lead-vokal overdubbet dagen etter. |
+| **"Bennie and the Jets" fake-live** | Dudgeon la inn crowd-noise fra Eltons Royal Festival Hall-konsert 1972 og Jimi Hendrix' Isle of Wight 1970, pluss fløyter fra Vancouver og handclaps bevisst plassert på off-beat (slik britiske rockpublikum klappper). |
 
 **Spesifikke instrumenter og gear:**
 
 | KATEGORI | UTSTYR |
 |---|---|
-| **Piano** | Steinway & Sons Model D konsertflygel (primær), Yamaha CP-80 elektrisk grand (live/tour), Steinway Model B |
-| **Orgel** | Hammond B-3 med Leslie-kabinett (tidlig karriere), Farfisa orgel |
-| **El-piano** | Fender Rhodes (noen innspillinger), Wurlitzer 200A |
-| **Studio** | Trident Studios (London), Château d'Hérouville (Frankrike), AIR Studios (London) |
-| **Produsent** | Gus Dudgeon (klassisk-perioden), Chris Thomas, Greg Penny |
+| **Piano (historisk)** | 1910 Steinway Model D "The Brown Bomber" — brukt fra *Empty Sky* til *Rock of the Westies*. Varm, tykk low-mid som høres på "Your Song" og "Levon". Bechstein grand på Trident Studios ("Your Song"-innspillingen). |
+| **Piano (nåværende)** | Fire 9-fot Yamaha Disklavier DCFIII konsertflygler (A–D). "Piano A" = "sannsynligvis det mest spilte, mest reiste pianoet på planeten." Yamaha CFIIIS "Blossom" (Million Dollar Piano). Blüthner Model 6 for celeste-klang. Fazioli F278 "The Ferrari" for Duets-albumet. |
+| **Hvorfor Yamaha:** | Elton gikk offstage en kveld og erklærte Steinway-en "too muddy." Yamaha ble hentet fra et universitet i New Orleans. Lettere tangenter, raskere respons, lysere tone — han gikk aldri tilbake. |
+| **Synth/keys** | Yamaha DX7 (FM-synth), ARP synthesizer (David Hentschel spilte på "Funeral for a Friend"), Roland RD-1000 (1988 tour), Yamaha CP88 |
+| **Orgel** | Hammond B-3 med Leslie-kabinett (tidlig karriere) |
+| **Mikrofoner** | AKG D12 (bass drum), Neumann KM 56/54 (snare), ribbon-mics (overheads), Neumann U67 eller AKG C12 (Eltons vokal — alltid samme mic), Coles 4038 (brass) |
+| **Studio** | Trident Studios (London), Château d'Hérouville (Frankrike), AIR Studios (Montserrat — "I'm Still Standing") |
+| **Produsent** | Gus Dudgeon (1970–1977, 1985+), Chris Thomas ("I'm Still Standing"), ingeniører Ken Scott, David Hentschel |
 
 **BPM-ranges:**
 
 | SJANGER | BPM | EKSEMPEL |
 |---|---|---|
-| Ballader | 60–78 | "Your Song" (~68 BPM), "Candle in the Wind" (~66 BPM) |
-| Midtempo pop | 90–115 | "Tiny Dancer" (~96 BPM), "Rocket Man" (~102 BPM) |
-| Uptempo rock | 120–145 | "Crocodile Rock" (~130 BPM), "I'm Still Standing" (~134 BPM), "Saturday Night's Alright" (~142 BPM) |
-| Gospel-energi | 100–130 | "Take Me to the Pilot" (~118 BPM), "Bennie and the Jets" (~108 BPM) |
-| Episk/prog | Variabelt | "Funeral for a Friend" (~BPM varierer, 6+ min), "Goodbye Yellow Brick Road" (~126 BPM) |
+| Ballader (halv-tid) | 60–76 | "Your Song" (~64 BPM / halv-tid av 128), "Rocket Man" (~69 BPM / halv-tid av 137) |
+| Midtempo pop | 76–96 | "Tiny Dancer" (~76 BPM, C-dur), "Candle in the Wind" (~66 BPM) |
+| Uptempo rock | 120–177 | "I'm Still Standing" (~177/89 halv-tid BPM, F#-dur), "Saturday Night's Alright" (~142 BPM) |
+| Groove/funk | 66–108 | "Bennie and the Jets" (~66 BPM halv-tid, G-dur), "Crocodile Rock" (~130 BPM) |
+| Episk/prog | Variabelt | "Funeral for a Friend" (BPM varierer, 6+ min, ARP-synth), "GYBR" (~60 BPM halv-tid, F-dur) |
 
 **Foretrukne tonearter:**
 
