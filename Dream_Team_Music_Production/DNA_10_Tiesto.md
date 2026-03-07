@@ -273,26 +273,39 @@ Aldri stapp et drop fullt av 15 lag synther, 4 basslinjer og 3 vokaleffekter. De
 | **Filter automation** | Lowpass filter sweep over 8–16 takter for gradvis buildup. Resonance-peak ved cutoff-frekvens for dramatisk effekt. |
 | **Stereo-imaging** | Mono sub-bass (<200 Hz), gradvis bredere opp i spekteret. Leads og pads super-wide. Mid/side EQ for kontroll. |
 
-**Synther og plugins:**
+**Synther og plugins (bekreftet via Equipboard, Splice, intervjuer):**
 
 | KATEGORI | FORETRUKKET |
 |---|---|
-| **Lead-synther** | Sylenth1 (supersaws), Serum (wavetable leads), Massive (bass), Spire (trance leads) |
-| **Pads/atmosfære** | Omnisphere, Diva (analog-modellering), Nexus (presets for hurtig ide-utvikling) |
-| **Bass** | Serum (FM bass), Massive (neuro-bass), Sylenth1 (sub-bass) |
-| **Effekter** | OTT, Valhalla VintageVerb, Soundtoys EchoBoy, FabFilter Pro-Q 3, iZotope Ozone |
-| **DAW** | Ableton Live (primær), FL Studio (idéutvikling) |
+| **Lead-synther** | Sylenth1 (supersaws — brukt på "Secrets"), Serum (wavetable leads), reFX Nexus 2 (preset-heavy rompler for hurtig lagdeling), KV331 SynthMaster |
+| **Pads/atmosfære** | Arturia virtual synths ("We love using the Arturia virtual synths. They are top notch when it comes to analog synthesizer emulation."), Omnisphere |
+| **Bass** | Serum (FM bass), Sylenth1 (sub-bass) |
+| **Effekter** | FabFilter Saturn (multiband saturation), Dada Life Sausage Fattener (loudness/fatness), CamelCrusher (distortion/komprimering), Xfer LFO Tool (sidechain/volume automation), Illformed Glitch 2 (brukt på "Secrets" drop), Sugar Bytes WOW (filter), Antares Auto-Tune Evo |
+| **Hardware synther** | Roland Juno-60, Moog Sub 37, Moog Prodigy, Alesis Andromeda A6, Access Virus XL, Waldorf Xt, Novation Supernova, Roland TR-909 |
+| **Monitoring** | Yamaha HS80M, Genelec 8040A, Focusrite Red 2 & Red 3 |
+| **DAW** | Ableton Live (primær), Logic Pro (sekundær) — "Logic and Ableton" (Twitter Q&A) |
+
+**"Secrets"-droppet — Supersaw-oppskrift (fra Splice-prosjektfil):**
+
+Ableton Live-prosjektfilen ble offentliggjort på Splice og viser fire distinkte lag:
+1. **Searing main lead** — massiv sidechain-reverb, bærer melodien
+2. **Dry saw wave lead** — håndterer bunnen av lyden, tørr og tight
+3. **Dry saw wave open lead** — mye noise-innhold for aggressivitet
+4. **Wide detuned supersaw lead** — fyller stereofeltet og legger til stab-aksenter
+
+**Produksjonspartner Dennis Waakop Reijers:**
+
+Tiësto møtte Dennis i 1998. Dennis er den primære studiokraften bak mye av katalogen — credits inkluderer "Adagio for Strings", "Silence" remix, *Just Be*, *Elements of Life* (Grammy-nominert), *Kaleidoscope*. Tiësto kaller Dennis "the band." Dennis om samarbeidet: Tiësto har "great ideas for tracks," men produksjonsarbeidet er Dennis' ansvar. Tiësto opererer som kreativ direktør — gir retning, melodier og konsepter, mens lyddesign, programmering og miksing delegeres.
 
 **BPM-ranges:**
 
 | SJANGER | BPM | EKSEMPEL |
 |---|---|---|
-| Klassisk trance | 135–142 | "Adagio for Strings" (~138 BPM) |
-| Progressive trance | 128–136 | "Traffic" (~132 BPM) |
-| Big room EDM | 126–130 | "Red Lights" (~128 BPM) |
-| Pop-crossover | 120–126 | "The Business" (~122 BPM) |
-| Tech house/bass house | 124–128 | "Don't Be Shy" (~126 BPM) |
-| Deep/future house | 122–126 | Remixes og bootlegs |
+| Klassisk trance | 137–141 | "Adagio for Strings" (~140 BPM, B♭-moll), "Flight 643" (~137 BPM, C-moll) |
+| Progressive trance | 128–138 | "Traffic" (~138 BPM, B♭-moll) |
+| Big room EDM | 125–128 | "Red Lights" (~125 BPM), "Secrets" (~128 BPM) |
+| Pop-crossover / tech house | 120–123 | "The Business" (~120 BPM, A♭-moll), "Lay Low" (~122 BPM, C#-moll) |
+| Dance-pop | 122–125 | "Hot In It" (~123 BPM, G-moll), "Don't Be Shy" (~126 BPM) |
 
 **Foretrukne tonearter:**
 
@@ -300,14 +313,15 @@ A-moll og C-moll for melankolske, emosjonelle tracks. F-moll og D-moll for eufor
 
 **Referanse-tracks:**
 
-- "Adagio for Strings" (emosjonell transformasjon, 3/4→4/4, ~138 BPM, D-moll)
-- "The Business" (kommersiell crossover, ~122 BPM, A-moll, bass house-groove)
-- "Traffic" (trance-klassiker, progressive buildup, ~132 BPM)
-- "Silence" remix (mainstream-gjennombrudd, vokal-trance, ~138 BPM)
-- "Red Lights" (EDM-pop-crossover, ~128 BPM, festival-anthem)
-- "Elements of Life" (episk trance, orkestrale elementer, ~140 BPM)
-- "Maximal Crazy" (EDM-pivotering, electro house, ~128 BPM)
-- "Don't Be Shy" (tech house-crossover, ~126 BPM)
+- "Adagio for Strings" (emosjonell transformasjon, 3/4→4/4, ~140 BPM, B♭-moll)
+- "The Business" (kommersiell crossover, ~120 BPM, A♭-moll, 1+ milliard Spotify-streams)
+- "Traffic" (trance-klassiker, progressive buildup, ~138 BPM, B♭-moll)
+- "Silence" remix (mainstream-gjennombrudd, vokal-trance)
+- "Red Lights" (~125 BPM, produsert med Rami Yacoub og Carl Falk)
+- "Secrets" ft. Vassy med KSHMR (~128 BPM, Splice-prosjektfil tilgjengelig, 4-lags supersaw)
+- "Elements of Life" (episk trance, orkestrale elementer, Grammy-nominert)
+- "Hot In It" ft. Charli XCX (~123 BPM, G-moll, dance-pop crossover)
+- "Lay Low" (~122 BPM, C#-moll, tech house)
 
 ---
 
@@ -410,11 +424,11 @@ Tiësto samarbeider digitalt med produsenter verden over. Stems og prosjektfiler
 
 **Tiëstos bidrag til elektronisk musikkhistorie:**
 
-- Første DJ til å spille ved OL (Athen 2004, åpningsseremoni)
-- DJ Mag #1 DJ in the World (2002, 2003, 2004) — tre år på rad
-- Første DJ med Las Vegas-residency av superstar-kaliber (Hakkasan 2013)
-- Populariserte EDM i USA og åpnet dørene for Calvin Harris, David Guetta, Avicii, Martin Garrix
-- Beviste at DJ-er kunne være headlinere og superstjerner, ikke bare "playlist-spillere"
+- Første DJ til å spille ved OL (Athen 2004) — spilte 17 trance-tracks for milliarder av seere. De nederlandske atletene begynte å danse foran booth-en hans. Martin Garrix har sitert denne opptredenen som inspirasjonen til å bli DJ.
+- DJ Mag #1 DJ in the World (2002, 2003, 2004) — tre år på rad. Mixmag kåret ham til "Greatest DJ of All Time."
+- Las Vegas-residencies: The Joint/Hard Rock (2010), Hakkasan/MGM Grand (2013, 7 år), Zouk/Resorts World (2021, 3 år, $150 000–$300 000 per natt), nåværende residencies på Omnia, Tao Beach, Liv
+- Musical Freedom Records (grunnlagt 2009) — lanserte Martin Garrix, Oliver Heldens, Mike Williams. "Most Supported Independent Label" (1001Tracklists) to år på rad.
+- 32 låter med 100M+ streams. "The Business" passerte 1 milliard Spotify-streams. Billboard kalte ham "The Godfather of EDM."
 - In Search of Sunrise-serien definerte mix-album-formatet for trance
 
 **Innflytelse på moderne produsenter:**
