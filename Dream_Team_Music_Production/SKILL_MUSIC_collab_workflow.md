@@ -187,3 +187,43 @@ Steg 5: **Demo-innspilling (30 min).** Kutt en rask demo mens energien er der. S
 | Er kreditt og eierskap avtalt? | ☐ |
 | Føler alle bidragsytere seg hørt? (Rubin-test) | ☐ |
 | Tjener samarbeidet låten? (Jones: "The song decides") | ☐ |
+
+---
+
+## EKSEMPEL
+
+**Oppgave:** Co-writing session mellom produsent og vokalist over 4 timer. Mål: én ferdig demo.
+
+**Kontekst:** Produsent med DAW-oppsett (Ableton Live, Serum, Keyscape, Splice). Vokalist med erfaring innen pop/R&B. Ingen eksisterende materiale — starter fra scratch. Toneart: åpen. Sjanger: mørk pop med elektroniske elementer.
+
+**Prosess:**
+1. **Forberedelse — 30 min før session (produsent alene):**
+   - Lager 3 instrumentale skisser (4–8 takter hver) som startpunkter: Skisse A (D-moll, 100 BPM, piano + mørk pad), Skisse B (F#-moll, 88 BPM, pluck-arp + 808-bass), Skisse C (B-moll, 110 BPM, gitarloop + beat). Ingen er "ferdig" — bare stemninger å reagere på.
+   - Setter opp vokalmikrofon (Neumann TLM 103 → Universal Audio 610 pre → Pro Tools). Popfilter, stativ, god belysning.
+   - Ordner vann, te, snacks. Behagelig stemning — ingen klinisk studiovibe.
+
+2. **Inspirasjonsrunde — Time 1 (0:00–1:00):**
+   - **0:00–0:15:** Viser de 3 skissene. Vokalisten lytter uten press. Snakker om følelser, ikke teori — "Hva får deg til å FØLE noe?"
+   - **0:15–0:25:** Vokalisten reagerer sterkest på Skisse B (F#-moll, 88 BPM). "Den føles som å kjøre alene om natten." Tematisk retning funnet: ensomhet, nattlige tanker, selvreparasjon.
+   - **0:25–0:45:** Produsent utvider Skisse B til 16 takter mens vokalisten begynner å nynne melodier over. Ingen opptak ennå — bare utforsking. Vokalisten finner et melodisk motiv i refrenget — "falling, falling, falling."
+   - **0:45–1:00:** Justerer BPM til 92 (vokalisten trenger litt mer plass). Endrer 808-bass til Reese-bass (Serum, 2 detunede saws + low-pass) for mørkere tekstur. Vokalisten godkjenner.
+
+3. **Skissering — Time 2 (1:00–2:00):**
+   - **1:00–1:20:** Starter opptak. Vokalisten synger chorus-hook over loopen — 5 takes, varierer melodi. Take 3 har den magiske frasen. Produsent looper take 3 og begynner å bygge rundt den.
+   - **1:20–1:40:** Vers-melodi: Vokalisten skriver tekst i sanntid. Produsent reduserer instrumentaltet til kun pluck + sub for å gi vokal plass. Tekst: strøm-av-bevissthet om nattlige biltur, telefonlys, ubesvarte meldinger.
+   - **1:40–2:00:** Pre-chorus: Vokalisten finner overgang fra vers til chorus. Produsent legger til riser og filter-sweep. Strukturen tar form: Vers → Pre-chorus → Chorus.
+
+4. **Iterasjon — Time 3 (2:00–3:00):**
+   - **2:00–2:20:** Spiller gjennom hele strukturen. Identifiserer svakheter: verset er for monotont melodisk (samme note for lenge). Vokalisten prøver alternativ melodi med mer bevegelse — beholder ny versjon.
+   - **2:20–2:40:** Produsent legger til harmonier i chorus (vokalisten synger 2 lag backing, panorert L/R). Legger til delay-throw på siste ord i pre-chorus (1/4 note ping-pong, 3 repetisjoner).
+   - **2:40–3:00:** Bridge/C-del: Vokalisten foreslår å strippe ned til bare vokal + piano. Produsent lager enkel Keyscape-piano i F#-moll (iv–i–VI–III). Vokalisten improviserer — tar den med mest emosjon.
+
+5. **Ferdigstilling — Time 4 (3:00–4:00):**
+   - **3:00–3:20:** Full run-through med alle seksjoner. Markerer vocal comps — beste takes for hver seksjon.
+   - **3:20–3:40:** Produsent gjør rough mix: vokal-volum, EQ (high-pass 80 Hz, presence boost 3 kHz), kompresjon (CLA-76, gentle 4:1). Legger til reverb (Valhalla Vintage Verb, 1.8s hall) og delay (H-Delay, 1/8 dotted).
+   - **3:40–3:55:** Siste lytting sammen. Begge gir tilbakemelding: vokalisten vil ha mer luft i vers (produsent fjerner ett synth-lag), produsent vil ha sterkere siste chorus (legger til en ekstra vocal-stack og åpner filter på synth).
+   - **3:55–4:00:** Eksporterer rough demo (stereo WAV + stems). Avtaler neste steg: vokalisten re-cutter vokaler i eget studio med bedre akustikk. Produsent ferdigstiller produksjonen. Deadline for neste versjon: 5 dager. Splitt: 50/50 produsent/vokalist.
+
+**Tidsbruk:** 4 timer totalt (30 min prep + 3:30 aktiv session).
+
+**Resultat:** Komplett demo i F#-moll, 92 BPM — mørk pop med Reese-bass, pluck-arp, vokal med harmonier, og emosjonell bridge. Struktur: Intro → Vers 1 → Pre-chorus → Chorus → Vers 2 → Pre-chorus → Chorus → Bridge → Final Chorus → Outro. Begge parter fornøyde, tydelig veikart for ferdigstilling, kreditt og splitt avtalt.

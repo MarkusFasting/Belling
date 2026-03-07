@@ -136,3 +136,26 @@ Energi
 | Introduseres elementer gradvis ("one at a time")? | ☐ |
 | Har hvert instrument en tildelt rolle? | ☐ |
 | Fungerer arrangementet på multiple avspillingssystemer? | ☐ |
+
+---
+
+## EKSEMPEL
+
+**Oppgave:** Arrangere en EDM-track med vocal fra 4-bar loop til full 3:30 låt.
+
+**Utgangspunkt:** 4-bar loop i F-moll, 126 BPM. Elementer: kick, hi-hat, bass (Serum), synth-pad (Massive), og vocal hook ("Feel the fire").
+
+**Prosess:**
+1. **Energikurve-planlegging (10 min):** Tegner intensitetskurve på papir: Intro (3/10) → Vers 1 (5/10) → Pre-chorus (7/10) → Drop 1 (9/10) → Breakdown (4/10) → Build-up (8/10) → Drop 2 (10/10) → Outro (3/10). Total: 3:30.
+2. **Intro — 16 takter / 0:00–0:30 (15 min):** Starter med filtrert synth-pad alene (low-pass ved 400 Hz, åpner gradvis over 8 takter). Legger til hi-hat på takt 5, kick på takt 9. Vocal-fragment (reversert "fire") som teaser på takt 13–16. Riser (white noise sweep) siste 4 takter.
+3. **Vers 1 — 16 takter / 0:30–1:00 (20 min):** Full vokal over redusert instrumental — kick, hat, bass (halvert volum), pad. Fjerner én kick per takt for "pusterom." Legger til pluck-synth (Sylenth1, arp-mønster i 8-dels) panorert 40% L/R for bredde. Subtle percussion: shaker 16-dels, panorert 25% R.
+4. **Pre-chorus — 8 takter / 1:00–1:15 (15 min):** Vokal bygger intensitet — dobler vokalen i oktav over. Snare roll bygger fra 8-dels til 16-dels til 32-dels siste 2 takter. Filter-sweep på pad: 400 Hz → 8 kHz over 8 takter. Bass dropper ut siste 2 takter for å skape "vakuum" før drop. Impact FX (sub-boom + cymbal swell) på siste beat.
+5. **Drop 1 — 16 takter / 1:15–1:45 (20 min):** FULL energi. Supersaw-lead (7 voices, Serum) tar over melodien fra vokalen. Kick returnerer med full kraft + sidechain på alle melodiske elementer (LFO Tool, 4/4). Bass opp 3 dB vs vers. Vocal chops ("feel-feel-feel") som rytmisk element, kvantisert til 16-dels. Crash cymbal på takt 1. Hi-hat-mønster dobles til 32-dels for driv.
+6. **Breakdown — 8 takter / 1:45–2:00 (10 min):** Stripped — kun piano (Keyscape, F-moll arpeggio) + vokal a cappella. Ingen trommer. Reverb-tail fra drop blør inn i breakdown (3s tail). Emosjonelt "pustemoment" — kontrasten gjør neste build-up kraftigere.
+7. **Build-up — 8 takter / 2:00–2:15 (15 min):** Snare roll fra 4-dels → 8-dels → 16-dels → 32-dels. White noise riser over alle 8 takter. Pitch-riser på lead-synth (+12 halvtoner over 8 takter). Vocal-delay (1/4 ping-pong, feedback 60%) skaper kaotisk energi. Sub-drop på siste beat (pitch ned fra C3 til C1 over 500ms). Alle elementer kuttet 1 beat før drop for dramatisk stillhet.
+8. **Drop 2 — 16 takter / 2:15–2:45 (15 min):** Samme som Drop 1 men med tillegg: extra lead-lag en oktav over, distortion-parallel på bass (+3 dB i 1–4 kHz), vocal hook i full lengde over droppet. 10/10 energi — dette er låtens klimaks.
+9. **Outro — 16 takter / 2:45–3:30 (10 min):** Gradvis fjerning: lead ut takt 4, vokal ut takt 8, bass ut takt 12. Ender med kun kick + filtrert pad (speilet intro). Siste 4 takter: reverb-tail fader ut. DJ-vennlig ending.
+
+**Tidsbruk:** 2 timer 10 minutter fra loop til ferdig arrangement.
+
+**Resultat:** Komplett 3:30 EDM-track i F-moll, 126 BPM med tydelig energikurve, kontrastrike seksjoner, og DJ-vennlig intro/outro. Vocal er integrert i alle seksjoner — som hook i vers, som chops i drop, som a cappella i breakdown.

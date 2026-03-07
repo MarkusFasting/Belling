@@ -121,3 +121,22 @@ Steg-for-steg prosess for å bygge et komplett beat fra scratch — drum program
 | "Snakker" bassen med kicken? | ☐ |
 | Har beatet menneskelig touch (klapp, shakers, etc.)? | ☐ |
 | Fungerer beatet med et vokalspor over? | ☐ |
+
+---
+
+## EKSEMPEL
+
+**Oppgave:** Produsere et tech house-beat på 124 BPM fra scratch.
+
+**Prosess:**
+1. **Kick-valg (10 min):** Velger en tight, punchy 909-kick med kort sustain fra Splice. Tuner ned 1 halvtone til Eb for å matche planlagt basslinje i Eb-moll. Legger til subtil saturation via FabFilter Saturn (Warm Tape-preset, 15% mix) for harmonisk fylde. High-pass ved 28 Hz for å fjerne sub-rumble.
+2. **Clap/Snare-lag (10 min):** Lagger en akustisk clap med elektronisk snare — clap 5ms foran for "smack." Prosesserer med Valhalla Room (0.3s decay, pre-delay 15ms) sendt via aux for dybde uten å miste attack. Komprimerer med 4:1 ratio, fast attack (5ms), medium release (80ms).
+3. **Hi-hat-programmering (15 min):** Åpen og lukket hi-hat i 16-dels mønster. Varierer velocity manuelt: beat 1 og 3 på 90%, off-beats på 60–75%, ghost hits på 40%. Legger til 8% swing (MPC-feel) for menneskelig groove. Panorerer lukket hat 15% L, åpen hat 20% R.
+4. **Percussion-lag (20 min):** Shaker i 16-dels med velocity-variasjon (Pharrell-prinsipp: shaker er "limet"). Rim shot på beat 2+ (synkopering). Conga-loop fra Splice, pitchet opp 3 halvtoner, filtrert med low-pass ved 3 kHz for å sitte bak i miksen. Tamburin på off-beats, panorert 30% R.
+5. **Bassdesign (20 min):** Serum: single saw-oscillator med sub-osc én oktav under. Low-pass filter ved 800 Hz med envelope follower (attack 10ms, decay 200ms). Sidechain til kick via LFO Tool (Xfer) — 4/4 pumping med 150ms release. Basslinje: Eb-moll pentatonisk, synkoperte åttendedeler som "snakker" med kicken.
+6. **Sonisk forming (15 min):** Master bus: Glue Compressor (2:1, slow attack, auto release) for cohesion. Referansesjekk mot Fisher "Losing It" og Chris Lake "Turn Off The Lights." Justerer hi-hat-volum ned 1.5 dB og kick-transient opp med Transient Master.
+7. **Groove-test (10 min):** Loop i 2 minutter — nikker hodet? Ja. Muter hvert element individuelt — bærer grooven uten det? Kick+hat+bass er kjernen. Legger til subtle vinyl-crackle (iZotope Vinyl) i bakgrunnen ved -28 dB for tekstur.
+
+**Tidsbruk:** 1 time 40 minutter fra tomt prosjekt til ferdig 8-bar beat-loop.
+
+**Resultat:** Tight, hypnotisk tech house-groove på 124 BPM i Eb-moll med organisk swing, sidechain-bass og lagdelt perkusjon. Klar for arrangement og vokal-topline.

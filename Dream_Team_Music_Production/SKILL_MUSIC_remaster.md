@@ -184,3 +184,54 @@ Komplett remastering-prosess for å oppdatere eksisterende mastere til moderne s
 | Er dynamisk range bevart eller forbedret? | ☐ |
 | Er det ingen artefakter (clipping, distortion, pumping)? | ☐ |
 | A/B med referanse: Matcher den sonisk kvalitet? | ☐ |
+
+---
+
+## EKSEMPEL
+
+**Oppgave:** Remastre en 90-talls house-klassiker for streaming i 2026.
+
+**Original:** House-track fra 1994, opprinnelig mastret for CD og vinyl. Format: 16-bit/44.1 kHz stereo WAV (rippet fra DAT master). Original loudness: -12 LUFS integrert, true peak -0.3 dBFS. Toneart: A-moll, 122 BPM.
+
+**Prosess:**
+1. **Analyse av originalen (20 min):**
+   - Lytting på studiomonitorer (3 gjennomhøringer) og hodetelefoner (1 gjennomhøring).
+   - Spektralanalyse (iZotope Insight 2): Mangel på sub under 40 Hz (typisk for 90-talls masters), mild opphopning 200–400 Hz ("boksete" midrange), rullet av toppsider over 14 kHz (DAT-generasjonens lydsignatur).
+   - Dynamisk analyse: DR12 (god dynamikk, typisk for 90-tallet). Ingen ønsket "loudness war"-komprimering.
+   - Stereoanalyse: Grei bredde, men mono-kompatibiliteten har faseproblem rundt 3 kHz (trolig fra chorus-effekt på pads).
+   - Referansetrack: Armand Van Helden "You Don't Know Me" (2024 remaster) og Daft Punk "Around the World" (2022 remaster) — moderne remastre av 90-talls house som referansestandard.
+2. **Restaurering (15 min):**
+   - iZotope RX: Spectral De-noise for å fjerne lavnivå tape-hiss (threshold -60 dB, reduction 6 dB). Forsiktig — behold "varmens" karakter, ikke steriliser.
+   - De-click: Fjerner 3 digitale klikk (trolig fra DAT-overføring).
+   - Ingen aggressiv restaurering — originalens karakter er verdifull.
+3. **EQ-korrigering (20 min):**
+   - FabFilter Pro-Q 3 (linear phase mode for mastering):
+   - Sub-forlengelse: Gentle shelf boost +1.5 dB ved 35 Hz for moderne sub-fundament (sjekket mot referanse).
+   - Mudder-rydding: Cut -2 dB ved 300 Hz (Q=1.5) for å åpne opp det boksete midranget.
+   - Presence: Boost +1 dB ved 4 kHz (wide Q) for å bringe vokalen og hi-hat-attacket frem.
+   - Air: Shelf boost +2 dB ved 14 kHz for å gjenopprette toppen som DAT og 90-talls konvertere rullet av. A/B-sjekk: forbedring uten å endre karakter.
+   - Mid/side EQ: Boost sides +1 dB ved 8 kHz for moderne stereobredde uten å påvirke senterbildet (kick, bass, vokal).
+4. **Dynamisk prosessering (15 min):**
+   - Multiband kompressor (FabFilter Pro-MB):
+     - Sub-bånd (20–80 Hz): Gentle 2:1, kontrollerer sub-variasjon uten å drepe punch.
+     - Mid-bånd (250 Hz–2 kHz): 1.5:1, 1 dB GR — jevner ut uten å flate.
+     - Topp-bånd (8 kHz+): Expander 1:1.5, åpner opp hi-hat og luft dynamisk.
+   - Stereo bus: Analog-emulering compressor (Waves Puigchild 670), 2:1, slowest attack, 1–2 dB GR — legger til "lim" og varme.
+   - Bevarer DR10 minimum — ingen loudness war-knusing.
+5. **Loudness-målsetting (10 min):**
+   - Mål: -14 LUFS integrert (Spotify/Apple Music-normalisert), true peak -1.0 dBTP.
+   - FabFilter Pro-L 2 (True Peak mode): Ceiling -1.0 dBTP. Algorithm: Modern. Gain: +3 dB for å nå -14 LUFS uten aggressiv limiting (maks 2 dB GR).
+   - Sjekker at DR (dynamic range) forblir ≥10 — originalen hadde DR12, remasteret lander på DR10. Akseptabelt.
+6. **A/B-testing (15 min):**
+   - Nivåmatchet A/B (REFERENCE plugin) mot original: Klarere topp, fyldigere sub, renere midrange, bredere stereobilde. Karakteren er intakt.
+   - A/B mot referanser: Matcher Armand Van Helden-remasteren i tonalitet og loudness. Daft Punk-remasteren er litt mer komprimert — vår versjon bevarer mer dynamikk (bevisst valg).
+   - Lyttetest på: studiomonitorer, hodetelefoner (AKG K712), bilstereo (Bluetooth), iPhone-høyttaler. Fungerer overalt.
+7. **Format-eksport (10 min):**
+   - Streaming master: 24-bit/48 kHz WAV, -14 LUFS, -1.0 dBTP.
+   - High-res: 24-bit/96 kHz WAV for Hi-Fi-plattformer (Tidal, Amazon Music HD).
+   - Vinyl pre-master: 24-bit/44.1 kHz, mono under 100 Hz, redusert loudness (-16 LUFS) for cutter-vennlighet.
+   - MP3 referanse: 320 kbps for distribusjon/godkjenning.
+
+**Tidsbruk:** 1 time 45 minutter fra original fil til eksporterte formater.
+
+**Resultat:** 90-talls house-klassiker i A-moll, 122 BPM, remastered for 2026 streaming. Sub-fundamentet er modernisert, toppen er åpnet opp, og stereobildet er bredere — men originalens varme, dynamikk og karakter er bevart. Loudness: -14 LUFS integrert, DR10, true peak -1.0 dBTP.

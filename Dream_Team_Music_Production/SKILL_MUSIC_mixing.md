@@ -153,3 +153,42 @@ Komplett mixing-prosess fra rå spor til ferdig miks. Bygger på Jones' multi-sy
 | Tåler alle spor mute-testen? | ☐ |
 | Fungerer miksen i mono? | ☐ |
 | Matcher den referanse-trackene i loudness og tone? | ☐ |
+
+---
+
+## EKSEMPEL
+
+**Oppgave:** Mikse en pop-track med vokal, synther, trommer og bass. Toneart: G-dur, 118 BPM.
+
+**Materiale:** 32 spor — lead vocal, 4x backing vocal, kick, snare, hi-hat, overhead L/R, 2x synth-pad, synth-lead, akustisk gitar, elektrisk gitar, bass DI, bass amp, piano, FX (reverb throws, delays).
+
+**Prosess:**
+1. **Gain staging (15 min):** Setter alle faders til unity (0 dB). Justerer clip gain/trim på hvert spor slik at toppene treffer -18 dBFS (sweet spot for plugin-prosessering). Master bus peaker rundt -6 dBFS med alle spor oppe. Ingen clipping noe sted i kjeden. Referansetrack: Dua Lipa "Levitating" — importert og matchet i loudness via REFERENCE plugin (Mastering The Mix).
+2. **Subgrupper og bussing (10 min):** Ruter til busser: DRUMS (kick, snare, hat, OH), BASS (DI + amp), SYNTHS (pads + lead), GUITARS (akustisk + elektrisk), VOCALS (lead + BV), FX. Farger og navngir alt. VCA-grupper for rask volumkontroll.
+3. **Trommer — EQ og kompresjon (25 min):**
+   - Kick: High-pass 30 Hz, cut 350 Hz (-3 dB, Q=2) for å fjerne "boksete" resonans, boost 60 Hz (+2 dB) for sub-fundament, boost 4 kHz (+3 dB) for attack. Kompressor: SSL-style (Waves SSL Channel), 4:1, attack 30ms (slipper gjennom transienten), release auto.
+   - Snare: High-pass 80 Hz, boost 200 Hz (+2 dB) for kropp, boost 5 kHz (+2 dB) for crack. Parallel compression via aux: 1176-emulering (CLA-76), all-buttons mode, blandet inn 30%.
+   - Hi-hat: High-pass 300 Hz, gentle shelf boost 10 kHz (+1.5 dB). Panorert 35% R.
+   - Overhead: High-pass 200 Hz (fjerner spill fra kick/snare), stereobredde via mid/side EQ — boost sides 8 kHz (+2 dB) for åpenhet.
+   - Drum bus: Glue Compressor (API 2500-emulering), 2:1, slow attack (30ms), auto release. 2–3 dB gain reduction for "lim."
+4. **Bass (15 min):** Blender DI (klarhet) med amp-spor (karakter) — DI 60%, amp 40%. High-pass 25 Hz. Cut 250 Hz (-2 dB) for å rydde mudder. Boost 700 Hz (+1.5 dB) for "finger-definisjon." Kompressor: LA-2A-emulering (CLA-2A), medium compression, 3–4 dB GR. Sidechain til kick: multiband kompressor (FabFilter Pro-MB) på sub-båndet (20–80 Hz), 4:1, fast attack — kick og bass deler sub-spekteret uten å kollidere.
+5. **Synther (15 min):**
+   - Pads: High-pass 200 Hz (ikke konkurrere med bass). Cut 2–5 kHz (-2 dB) for å gi plass til vokal. Stereobredde: Wider (Polyverse) for immersjon. Panorert: Pad 1 = 40% L, Pad 2 = 40% R.
+   - Lead: Narrow boost 3 kHz (+2 dB) for å kutte gjennom. De-ess ved 7 kHz if nødvendig. Panorert center-ish (10% L).
+6. **Gitarer (10 min):**
+   - Akustisk: High-pass 100 Hz, boost 3 kHz (+2 dB) for strumming-definisjon. Panorert 55% L.
+   - Elektrisk: High-pass 80 Hz, cut 500 Hz (-2 dB). Panorert 55% R. Balanserer med akustisk for stereobredde.
+7. **Vokal — hovedfokus (30 min):**
+   - Lead vocal: High-pass 80 Hz. Subtraktiv EQ: sweep 200–500 Hz for å finne og kutte muddete resonanser (-3 dB, narrow Q). Boost 3 kHz (+2 dB, wide Q) for presence. Air-boost 12 kHz (+1.5 dB shelf). De-esser (FabFilter Pro-DS) ved 6–8 kHz, -4 dB range. Kompresjon i serie: CLA-76 (4:1, fast attack, medium release, 2–3 dB GR) → CLA-2A (gentle, 1–2 dB GR for smoothing). Automerer volum manuelt — vers litt lavere, chorus 1 dB opp, ad-libs -3 dB.
+   - Backing vocals: High-pass 150 Hz. Bredere panorering (L/R 50–70%). Cut 3 kHz (-2 dB) for å ikke konkurrere med lead. Reverb-send høyere enn lead for dybde.
+8. **Romklang og delay (20 min):**
+   - Plate reverb (Valhalla Plate): Decay 1.2s, pre-delay 20ms → sendt fra vokal (20%), snare (15%). Gir "glue" og intimitet.
+   - Hall reverb (Valhalla Vintage Verb): Decay 2.5s, pre-delay 40ms → sendt fra backing vocals (30%), synth-pads (20%). Gir dybde og rom.
+   - Stereo delay (H-Delay): 1/4 note L, dotted 1/8 R, feedback 25%, high-cut 4 kHz → sendt fra lead vocal (10%) for subtil bredde.
+   - Alle reverber/delays high-passed ved 200 Hz for å unngå mudder.
+9. **Stereo-plassering og breddesjekk (10 min):** Sjekker i mono — kollapser noe? Fasekansellering? Justerer panorering deretter. Sjekker stereobredde med korrelasjonsmeter — holder seg over +0.3. Mid/side-sjekk: bass og kick er mono, gitarer og pads gir bredde.
+10. **Master bus (10 min):** Subtle EQ: high shelf +0.5 dB ved 10 kHz for luft. Bus compressor: SSL-style, 2:1, slowest attack, auto release, 1–2 dB GR. Limiter (FabFilter Pro-L 2) kun for loudness-referanse — ikke for endelig mastering. Mål: -14 LUFS integrert som referansepunkt.
+
+**Tidsbruk:** 2 timer 40 minutter fra rå multispor til polert miks.
+
+**Resultat:** Balansert, bred pop-miks i G-dur, 118 BPM. Vokal sitter klart foran, trommer er punchy og definerte, bass og kick deler sub-spekteret rent, synther gir bredde uten å maskere vokalen. Fungerer på hodetelefoner, bilhøyttalere og studiomonitorer.
