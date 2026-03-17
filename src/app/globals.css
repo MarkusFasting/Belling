@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-stone-warm text-ink font-sans;
+  }
+
+  ::selection {
+    @apply bg-mineral/20 text-ink;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6;
+  }
+
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-base {
+    @apply bg-white rounded-card shadow-card border border-stone-border/50;
+  }
+
+  .card-interactive {
+    @apply card-base transition-shadow duration-200 hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-ink text-white rounded-button text-body font-medium transition-all duration-200 hover:bg-ink-800 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-white text-ink border border-stone-border rounded-button text-body font-medium transition-all duration-200 hover:bg-stone-light active:scale-[0.98];
+  }
+
+  .btn-mineral {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-mineral text-white rounded-button text-body font-medium transition-all duration-200 hover:bg-mineral-dark active:scale-[0.98];
+  }
+
+  .input-base {
+    @apply w-full px-4 py-3 bg-white border border-stone-border rounded-input text-body text-ink placeholder:text-ink-400 transition-all duration-200 focus:outline-none focus:border-mineral focus:shadow-input-focus;
+  }
+
+  .label-base {
+    @apply block text-caption text-ink-600 font-medium mb-1.5;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
