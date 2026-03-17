@@ -59,15 +59,42 @@ GET https://ws.geonorge.no/adresser/v1/sok?sok=Karl+Johans+gate+1&treffPerSide=5
 - Sokn/kirkesogn
 - Koordinater
 
+#### Eiendomsgrenser WFS (åpent!)
+- **URL:** `https://wfs.geonorge.no/skwms1/wfs.matrikkelen-eiendomskart-teig`
+- **Auth:** Ingen
+- **Format:** GML/XML (WFS 2.0)
+- **Data:** Eiendomsgrense-geometrier (teig-polygoner)
+- **Bruk:** Vis eiendomsgrenser på kart
+
 #### Matrikkel-bygningspunkt WFS
 - **URL:** `https://wfs.geonorge.no/skwms1/wfs.matrikkelen-bygningspunkt`
 - **Auth:** Ingen (GetCapabilities fungerer)
 - **Status:** Tjenesten er tilgjengelig men feature type-navn må verifiseres nærmere
 
+#### Høydedata-API (åpent)
+- **URL:** `https://ws.geonorge.no/hoydedata/v1/`
+- **Auth:** Ingen
+- **Format:** JSON
+- **Data:** Terrenghøyde for et gitt punkt, datakilder, terrengtyper
+
+#### Koordinattransformasjon-API (åpent)
+- **URL:** `https://ws.geonorge.no/transformering/v1/`
+- **Auth:** Ingen
+- **Batch:** Opptil 10 000 koordinater per kall
+
+#### WMTS Kartfliser (åpent)
+- **URL:** `https://cache.kartverket.no/v1/wmts/1.0.0/WMTSCapabilities.xml`
+- **Auth:** Ingen (tilgangsbegrensning: "Ingen")
+- **Lag:** Topografisk, Topo Gråtone, Sjøkartraster
+- **Fliser:** PNG 256x256, zoom 0-18, flere EPSG-projeksjoner
+
 #### Matrikkel SOAP-API (krever avtale)
 - Full matrikkel med eiendomsdetaljer krever SOAP-tilgang
 - **Krever kontakt:** post@kartverket.no
-- Dette gir tilgang til bygningsdetaljer, areal, etasjer osv.
+- Søknad: https://www.kartverket.no/api-og-data/eiendomsdata
+- Gratis data, men krever signert datadelingsavtale og lovlig grunnlag for behandling av persondata
+- Full tilgang: offentlige etater, kommuner, banker, advokater, eiendomsmeglere, presse
+- Begrenset tilgang (uten heftelser/personnr): organisasjoner med "berettiget interesse"
 
 ---
 
@@ -145,11 +172,32 @@ GET https://ws.geonorge.no/adresser/v1/sok?sok=Karl+Johans+gate+1&treffPerSide=5
 
 #### Relevante tabeller for eiendom:
 
-| Tabell | Innhold |
-|--------|---------|
-| **07221** | Prisindeks for brukte boliger – per region, boligtype og kvartal |
-| **07241** | Borettslagsboliger – gjennomsnittlig kvm-pris og antall omsetninger |
-| **06035** | Boligprisindeksen – detaljert |
+**Aktive tabeller (nåværende data):**
+
+| Tabell | Innhold | Granularitet | Periode |
+|--------|---------|-------------|---------|
+| **07221** | Prisindeks for brukte boliger (2015=100) | Kvartalsvis, per region | 1992K1 – 2025K4 |
+| **07230** | Samme prisindeks, årlig | Årlig, per region | 1992 – 2025 |
+| **14310** | Kvm-pris + antall omsetninger | Kvartalsvis, **per kommune** | 2025K1 – 2025K4 |
+| **14545** | Samme som 14310, årlig | Årlig, **per kommune** | 2025 |
+| **11386** | Prisindeks for nye boliger | Kvartalsvis | 1989K1 – 2025K4 |
+| **13500** | Kvm-pris for nye eneboliger | Årlig, per region/storby | 2021 – 2025 |
+
+**Avsluttede tabeller (historisk data, fortsatt spørrbare):**
+
+| Tabell | Innhold | Periode |
+|--------|---------|---------|
+| **06035** | Selveierboliger kvm-pris, per kommune | 2002 – 2024 |
+| **05963** | Selveierboliger kvm-pris, kvartalsvis, per kommune | 2006K1 – 2024K4 |
+| **07241** | Borettslagsboliger kvm-pris | 2009K1 – 2024K4 |
+| **06696** | Borettslagsboliger kvm-pris, per fylke | 2002 – 2024 |
+
+> **Merk:** Tabellene 06035, 07241 osv. ble erstattet i 2025 av **14310** (kvartal) og **14545** (årlig), som slår sammen selveier og borettslag.
+
+**Verifiserte eksempeldata:**
+- Tabell 07221: Boligprisindeks hele landet Q3-Q4 2025 = `[153.2, 151.5]` (2015=100)
+- Tabell 14310: Gjennomsnittlig kvm-pris hele landet Q4 2025 = `53 092 kr/kvm`
+- Tabell 07241: Borettslagsboliger Q3-Q4 2024 = `[63 796, 61 365] kr/kvm`
 
 **Eksempel POST-spørring mot 07221:**
 ```json
@@ -219,23 +267,28 @@ GET https://api.einnsyn.no/search?q=byggesak&limit=5
 1. **Adressesøk** – Kartverket Adresse-API
    - Fritekst-søk på adresser
    - Oppslag på matrikkeladresser (gnr/bnr)
-   - Koordinatoppslag
+   - Koordinatoppslag og punktsøk
 
 2. **Matrikkeldata (basis)** – Kartverket WFS
    - Adressedata med matrikkelnummer
    - Bygningspunkt-lokalisering
+   - **Eiendomsgrenser (teig-polygoner)** – kan tegnes på kart
 
-3. **Boligprisstatistikk** – SSB
-   - Prisindeks per region og boligtype
-   - Kvadratmeterpriser for borettslagsboliger
-   - Historiske tidsserier
+3. **Kartvisning** – Kartverket WMTS + Geonorge
+   - Topografiske kartfliser (zoom 0-18, PNG)
+   - Bakgrunnskart, gråtone, sjøkart
+   - Stedsnavn og kommuneinformasjon
 
-4. **Geografisk info** – Geonorge
-   - Stedsnavn og stedsoppslag
-   - Kommuneinformasjon og grenser
-   - Bakgrunnskart (WMS/WMTS)
+4. **Boligprisstatistikk** – SSB
+   - Prisindeks per region og boligtype (fra 1992)
+   - Kvm-priser **ned på kommunenivå** (tabell 14310)
+   - Historiske tidsserier (selveier + borettslag)
 
-5. **Offentlige dokumenter** – eInnsyn
+5. **Terrengdata** – Kartverket Høydedata-API
+   - Terrenghøyde for ethvert punkt
+   - Koordinattransformasjon mellom projeksjoner
+
+6. **Offentlige dokumenter** – eInnsyn
    - Søk i postjournaler og saksmapper
    - Byggesak-dokumenter fra kommuner
 
