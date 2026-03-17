@@ -147,6 +147,24 @@ GET https://ws.geonorge.no/eiendom/v1/punkt?nord=59.911&ost=10.733&koordsys=4258
 - Bakgrunnskart, flyfoto, topografiske kart
 - Standardiserte OGC-tjenester
 - Kan integreres direkte i kartvisning (Leaflet, OpenLayers, etc.)
+- Eksempler:
+  - `openwms.statkart.no/skwms1/wms.toporaster3` – Topografisk raster
+  - `openwms.statkart.no/skwms1/wms.fjellskygge` – Fjellskygge/relieff
+  - `openwms.statkart.no/skwms1/wms.matrikkel_bakgrunn2` – Matrikkel bakgrunn
+
+#### Nedlastings-API (bulk-datasett)
+- **URL:** `https://nedlasting.geonorge.no/`
+- **Docs:** `https://nedlasting.geonorge.no/Help`
+- **Auth:** Ingen
+- **Formater:** SOSI, GML, GeoJSON, Shapefile
+- **Bruk:** Last ned komplette datasett for offline/bulk-bruk
+
+#### Tredjepartstjenester (også åpne via Geonorge)
+- **NIBIO:** Jordbruksdata, jordkart (`wms.nibio.no`)
+- **Riksantikvaren:** Kulturminner (`kart.ra.no`)
+- **Met.no:** Vær-API (`api.met.no`)
+- **NGU:** Geologiske data
+- Fullt katalog: `kartkatalog.geonorge.no/apier-og-tjenester`
 
 ---
 
@@ -340,6 +358,28 @@ GET https://api.einnsyn.no/search?q=byggesak&limit=5
 5. Full matrikkeldata (kontakt Kartverket)
 6. Grunnbok/eierforhold (kontakt Ambita)
 
+**Fase 2 – Krever søknad (gratis):**
+5. Full matrikkel + grunnbok (søknad til Kartverket – anbefales å sende ASAP)
+
 **Fase 3 – Krever partneravtaler:**
-7. Reguleringsplan-integrasjon (Norkart/KS Fiks)
-8. Byggesak-integrasjon (DiBK/kommuneleverandører)
+6. Reguleringsplan-integrasjon (Norkart/KS Fiks)
+7. Byggesak-integrasjon (DiBK/kommuneleverandører)
+8. Eiendomsdata-berikelse (Ambita, hvis behov utover Kartverket)
+
+---
+
+## Tekniske begrensninger og lisens
+
+### Rate limits (per spørring)
+| API | Maks treff |
+|-----|-----------|
+| Adresse-API | 10 000 treff per spørring |
+| Stedsnavn-API | 5 000 treff per spørring |
+| Høydedata-API | 50 punkter per batch |
+| SSB | Ingen publisert grense |
+| eInnsyn | Cursor-basert paginering |
+
+### Lisens
+- **NLOD** (Norsk lisens for offentlige data) eller **CC BY 4.0**
+- Gratis for kommersiell bruk med kildeangivelse til Kartverket/dataeier
+- REST-API-ene er **ikke ment for bulk-nedlasting** – bruk nedlastings-API-et for det
