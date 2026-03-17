@@ -59,6 +59,26 @@ GET https://ws.geonorge.no/adresser/v1/sok?sok=Karl+Johans+gate+1&treffPerSide=5
 - Sokn/kirkesogn
 - Koordinater
 
+#### Eiendom-API – Punktoppslag (REST, helt åpent)
+- **URL:** `https://ws.geonorge.no/eiendom/v1/`
+- **Auth:** Ingen
+- **Format:** JSON
+- **Verifisert:** Ja
+
+**Eksempel – finn eiendommer nær et punkt:**
+```
+GET https://ws.geonorge.no/eiendom/v1/punkt?nord=59.911&ost=10.733&koordsys=4258
+```
+
+**Data som returneres:**
+- Gårdsnummer, bruksnummer, festenummer, seksjonsnummer
+- Matrikkelnummertekst (f.eks. "209/496")
+- Kommunenummer
+- Avstand fra punkt (meter)
+- Representasjonspunkt (koordinater)
+- Nøyaktighetsklasse for teig
+- Om det er hovedområde eller tilleggsareal
+
 #### Eiendomsgrenser WFS (åpent!)
 - **URL:** `https://wfs.geonorge.no/skwms1/wfs.matrikkelen-eiendomskart-teig`
 - **Auth:** Ingen
@@ -88,13 +108,15 @@ GET https://ws.geonorge.no/adresser/v1/sok?sok=Karl+Johans+gate+1&treffPerSide=5
 - **Lag:** Topografisk, Topo Gråtone, Sjøkartraster
 - **Fliser:** PNG 256x256, zoom 0-18, flere EPSG-projeksjoner
 
-#### Matrikkel SOAP-API (krever avtale)
-- Full matrikkel med eiendomsdetaljer krever SOAP-tilgang
-- **Krever kontakt:** post@kartverket.no
-- Søknad: https://www.kartverket.no/api-og-data/eiendomsdata
-- Gratis data, men krever signert datadelingsavtale og lovlig grunnlag for behandling av persondata
+#### Matrikkel + Grunnbok SOAP-API (gratis data, forenklet søknad)
+- Full matrikkel med eiendomsdetaljer + grunnbok (eierforhold, heftelser)
+- **Dataene er gratis** – ingen lisenskostnad
+- Krever **forenklet søknad** til Kartverket
+- **Søknad:** https://kartverket.no/api-og-data/eiendomsdata/soknad-api-tilgang
+- Terskelen er beskrevet som "ikke høy" – bedrifter med kommersielt formål kvalifiserer som regel
 - Full tilgang: offentlige etater, kommuner, banker, advokater, eiendomsmeglere, presse
 - Begrenset tilgang (uten heftelser/personnr): organisasjoner med "berettiget interesse"
+- **Anbefaling:** Send inn søknad tidlig – dette er billigste vei til grunnbok/eierdata (i stedet for Ambita)
 
 ---
 
@@ -292,12 +314,15 @@ GET https://api.einnsyn.no/search?q=byggesak&limit=5
    - Søk i postjournaler og saksmapper
    - Byggesak-dokumenter fra kommuner
 
-### Krever manuell kontakt/avtale (kan IKKE fikses av meg):
+### Krever søknad/avtale (kan IKKE fikses av meg, men veien er kort):
 
-6. **Full matrikkel** (bygningsdetaljer, areal, etasjer) → Kartverket SOAP-avtale
-7. **Grunnbok og heftelser** → Ambita kommersiell avtale
-8. **Eierforhold** → Ambita kommersiell avtale
-9. **Reguleringsplaner** → KS Fiks / Norkart avtale
+6. **Full matrikkel + grunnbok** (eier, heftelser, bygningsdetaljer) → **Kartverket forenklet søknad** (gratis data!)
+7. **Arealplaner** → Åpne data på data.norge.no under norsk åpen lisens (kan lastes ned)
+
+### Krever kommersiell avtale:
+
+8. **Ambita** (grunnbok-reseller med tilleggstjenester) → Kommersiell avtale
+9. **Norkart** (eiendomsdata, kart, meglerpakke) → API-nøkkel via salgsavtale
 10. **Byggesaksdata** → KS Fiks / kommuneleverandør-avtaler
 11. **Byggesøknad-integrasjon** → DiBK avtale
 
