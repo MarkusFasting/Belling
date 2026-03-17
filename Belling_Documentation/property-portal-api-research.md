@@ -12,7 +12,7 @@
 | 1 | **Kartverket** (adresse/matrikkel) | ÅPEN | JA | Adresse-API og matrikkel-WFS er åpne |
 | 2 | **Geonorge / Norge digitalt** | ÅPEN | JA | Kart, stedsnavn, kommuneinfo – alt åpent |
 | 3 | **KS Fiks** | LUKKET | NEI | Krever kommunal avtale og onboarding |
-| 4 | **DiBK** | LUKKET | NEI | Krever avtale/tilkobling |
+| 4 | **DiBK** | DELVIS ÅPEN | JA (SGregister) | SGregister åpent; Fellestjenester Bygg krever avtale |
 | 5 | **Ambita** | KOMMERSIELL | NEI | Krever salgsavtale |
 | 6 | **SSB** | ÅPEN | JA | Helt åpent JSON-stat API |
 | 7 | **Kommunesystem-leverandører** | LUKKET | NEI | Krever partneravtaler |
@@ -181,12 +181,24 @@ GET https://ws.geonorge.no/eiendom/v1/punkt?nord=59.911&ost=10.733&koordsys=4258
 
 ### 4. DiBK – Fellestjenester plan og bygg
 
-**Status: KREVER AVTALE – KAN IKKE FIKSES SELV**
+**Status: DELVIS ÅPEN**
 
-- Fellestjenester Bygg er integreringsplattform for byggesøknader
-- Krever formell tilkobling og avtale
-- Regelmotoren kan potensielt brukes for sjekk av byggeregler
-- **Kontakt:** post@dibk.no, byggsok@dibk.no
+#### SGregister API (åpent!)
+- **URL:** `https://sgregister.dibk.no/api/enterprises/`
+- **Auth:** Ingen
+- **Format:** JSON
+- **Docs:** `https://sgregister.dibk.no/apidocs/`
+- **Verifisert:** Ja
+
+**Data:** Oppslag på bedrifter med sentral godkjenning for byggearbeid:
+- `GET /api/enterprises/{orgnr}.json` – enkeltoppslag
+- `GET /api/enterprises.json` – bulk-nedlasting av alle godkjente foretak (~30 MB)
+- Bruk header `Accept: application/vnd.sgpub.v2` for versjon 2
+
+#### Fellestjenester Bygg (krever avtale)
+- API-er for validering, vedtak, kvittering, mangelbrev (`admbygg.dibk.no`)
+- Krever brukernavn/passord fra DiBK – kun for godkjente eByggesak-leverandører
+- **Kontakt:** fellestjenesterbygg@dibk.no
 
 ---
 
@@ -279,24 +291,33 @@ Alle krever formelle partneravtaler for API-tilgang.
 
 **Status: KAN INTEGRERES DIREKTE**
 
-#### Søke-API (åpent)
-- **URL:** `https://api.einnsyn.no/search`
-- **Auth:** Ingen
+#### Lese-API (åpent, ingen nøkkel)
+- **URL:** `https://api.einnsyn.no`
+- **Auth:** Ingen for lesing/søk
 - **Format:** JSON
 - **Verifisert:** Ja
+- **OpenAPI-spec:** [github.com/felleslosninger/einnsyn-api-spec](https://github.com/felleslosninger/einnsyn-api-spec)
 
-**Eksempel:**
+**Endepunkter:**
 ```
-GET https://api.einnsyn.no/search?q=byggesak&limit=5
+GET /search?q=byggesak&limit=5        – Fritekst-søk
+GET /journalpost                       – Liste over journalposter
+GET /saksmappe                         – Liste over saksmapper
 ```
+
+- Støtter `?expand=` for nestede objekter (f.eks. `?expand=journalpost.korrespondansepart`)
+- Objekt-ID-er bruker prefikser: `jp_` (journalpost), `sm_` (saksmappe), `kp_` (korrespondansepart)
 
 **Data som returneres:**
 - Saksmapper med saksnummer
 - Offentlig tittel
 - Publiseringsdato
 - Administrativ enhet
-- Arkivdel-referanser
+- Korrespondanseparter
+- Dokumentreferanser
 - Paginering med cursor
+
+> **Merk:** Publisering/skriving til eInnsyn krever API-nøkkel (`X-EIN-API-KEY`) fra Digdir.
 
 ---
 
