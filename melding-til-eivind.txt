@@ -1,0 +1,58 @@
+Emne: AiKokken - GitHub repo er klart
+
+Hei Eivind,
+
+AiKokken-repoet er nå satt opp på GitHub: https://github.com/MarkusFasting/aikokken
+
+---
+
+HVA SOM ER BYGGET:
+
+Backend (FastAPI + Python):
+- 4 AI-endepunkter som kobler til Google Gemini API
+- Bildeanalyse av kjøleskap/fryser/basisvarer
+- Oppskriftsgenerering, rettsjekk, og ingredienserstatninger
+- Dockerfile + docker-compose for deployment
+- Alle AI-prompts på norsk
+
+Mobilapp (Expo React Native):
+- 5 skjermer: Hjem, Resultater, Oppskriftsdetaljer, Innstillinger, Lagrede måltider
+- Kamera/galleri-integrasjon for å fotografere matvarene
+- API-klient som kobler til backend
+- Lokal lagring med AsyncStorage
+- Kompatibel med Expo Go for testing på telefon
+
+---
+
+HVA DU (EIVIND) MÅ GJØRE:
+
+1. Send meg GitHub-brukernavnet ditt så jeg kan gi deg full tilgang til repoet
+
+2. Når du har tilgang, klon repoet:
+   git clone https://github.com/MarkusFasting/aikokken.git
+
+3. For å kjøre backend lokalt:
+   cd aikokken/backend
+   export GEMINI_API_KEY="din-nøkkel"
+   pip install -r requirements.txt
+   uvicorn app.main:app --reload --host 0.0.0.0
+
+4. For å kjøre mobilappen:
+   cd aikokken/mobile
+   npm install
+   npx expo start
+
+5. Endre API_BASE_URL i mobile/src/api/client.ts til din maskins IP
+
+---
+
+HVA MARKUS MÅ GJØRE:
+
+1. Legge til Eivind som collaborator med admin-tilgang når brukernavnet er mottatt
+2. Sette opp GEMINI_API_KEY som environment variable
+3. Vurdere deployment av backend (Docker-oppsett er klart)
+
+---
+
+Mvh,
+Markus
