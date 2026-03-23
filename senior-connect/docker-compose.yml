@@ -1,0 +1,11 @@
+services:
+  senior-connect:
+    build: .
+    container_name: senior-connect
+    restart: unless-stopped
+    ports:
+      - "3100:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NEXT_PUBLIC_APP_URL=https://sc.ezfix.no
