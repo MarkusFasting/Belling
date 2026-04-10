@@ -51,32 +51,62 @@ CONTEXT.md inneholder:
 Bytte konto = disconnect + reconnect i Settings → Connectors → GitHub.
 Dette er en kjent begrensning — feature request er åpen hos Anthropic.
 
-## 4. Flere repos på mobil
+## 4. Flere repos på mobil — EZ-Fix workspace-løsning
 
-Per nå: kun ett repo per sesjon på mobil.
-Workaround: bruk workspace-patternet og CC Remote Control fra
-kit-data-api-01 der du har full CLI-tilgang.
-
-## 5. Git submodules (anbefalt for dine prosjekter)
-
-Hvis du vil at CC skal jobbe med f.eks. super-agent + crm + od1n samtidig:
+CC fra mobil (Remote Control) kan IKKE bytte repo — sesjonen er bundet til
+mappen den ble startet i. Løsning: **start CC fra ~/ez-fix/ workspace-roten**.
 
 ```bash
-mkdir ~/PROSJEKTER/workspace
-cd ~/PROSJEKTER/workspace
-git submodule add git@github.com:user/ezfix-super-agent.git
-git submodule add git@github.com:user/ezfix-crm.git
-git submodule add git@github.com:user/od1n.git
+# På kit-data-api-01:
+tmux new -s cc
+cd ~/ez-fix
+claude --remote-control
 ```
 
-Legg til en CLAUDE.md i workspace-roten som refererer til alle prosjekter.
+Da har CC tilgang til alle 42 repos og bytter med `cd`.
+Se `WORKSPACE_CLAUDE.md` for full repostruktur og hurtigkommandoer.
+
+### To CLAUDE.md-filer som utfyller hverandre
+
+| Fil                              | Plassering                    | Håndterer                          |
+|----------------------------------|-------------------------------|------------------------------------|
+| `CLAUDE_global_mobil_v2.md`      | `~/.claude/CLAUDE.md`         | CC-oppførsel, SSH, Remote Control  |
+| `WORKSPACE_CLAUDE.md`            | `~/ez-fix/CLAUDE.md`          | Navigasjon, repos, hurtigkommandoer|
+
+### Installasjon
+
+```bash
+scp CLAUDE_global_mobil_v2.md root@95.217.15.99:~/.claude/CLAUDE.md
+scp WORKSPACE_CLAUDE.md root@95.217.15.99:~/ez-fix/CLAUDE.md
+```
+
+## 5. Flere repos på web (claude.ai/code)
+
+Alternativ til Remote Control for multi-repo:
+- Gå til "+" knappen i chatten
+- Søk og velg repo, eller lim inn repo-URL
+- Du kan legge til FLERE repos i samme chat/prosjekt
+- Begrensning: Alt må passe i kontekstvinduet
+
+**Viktig:** Per nå støtter web kun ÉN GitHub-konto om gangen.
+Bytte konto = disconnect + reconnect i Settings → Connectors → GitHub.
+
+## 6. Git submodules (alternativ)
+
+Hvis du foretrekker submodules fremfor flat kloning:
+
+```bash
+cd ~/ez-fix
+git submodule add git@github.com:markusfasting/ezfix-super-agent.git ezfix/ezfix-super-agent
+# osv.
+```
 
 ## Oppsummering
 
-| Scenario                   | Løsning                                  |
-|----------------------------|------------------------------------------|
-| Flere GitHub-kontoer (CLI) | CLAUDE_CONFIG_DIR alias                  |
-| Flere repos (CLI)          | Workspace-mappe + CONTEXT.md             |
-| Flere repos (web)          | "+" knapp, legg til flere                |
-| Flere kontoer (web)        | Ikke støttet ennå — disconnect/reconnect |
-| Flere repos (mobil)        | CC Remote Control via CLI                |
+| Scenario                   | Løsning                                          |
+|----------------------------|--------------------------------------------------|
+| Flere GitHub-kontoer (CLI) | CLAUDE_CONFIG_DIR alias                          |
+| Flere repos (CLI)          | Workspace-mappe ~/ez-fix/ + CLAUDE.md            |
+| Flere repos (mobil)        | Remote Control fra ~/ez-fix/ workspace            |
+| Flere repos (web)          | "+" knapp, legg til flere                        |
+| Flere kontoer (web)        | Ikke støttet ennå — disconnect/reconnect         |
