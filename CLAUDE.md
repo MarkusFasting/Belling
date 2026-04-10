@@ -1,177 +1,189 @@
-# CLAUDE.md — Global (Mobil / Remote Control)
+# CLAUDE.md — EZ-Fix AS (v2 · April 2026)
 
-> Plasseres i: ~/.claude/CLAUDE.md
-> Gjelder ALLE prosjekter og ALLE oppgaver.
-> Prosjektspesifikk CLAUDE.md i repo-rot overstyrer ved konflikt.
-
------
-
-## Hvem du jobber for
-
-**Markus Fasting** — gründer, utvikler, AI-bygger.
-Styrer deg ofte fra mobil. Begrenset skjerm og tastatur.
-Gjør ALT han ber om — ikke bare EZ-Fix-relatert.
+> Sannhetskilden for Claude Code i dette prosjektet.
+> Les FØRST. Oppdater `tasks/lessons.md` ved feil. La Auto Memory håndtere resten.
 
 -----
 
-## Mobilregler
+## Identitet
 
-- **Korte svar.** Maks 5-10 linjer. Markus er på telefon.
-- **Handling > forklaring.** Gjør jobben, rapporter kort.
-- **Bekreft med output, ikke ord.** Vis resultat.
-- **Spør kun når kritisk.** Maks 1-2 spørsmål per melding.
-- **Status-emoji:** ✅ ferdig · ❌ feilet · ⚠️ trenger input · 🔄 pågår
-
------
-
-## Self-Improvement Loop
-
-**DIN VIKTIGSTE VANE. LES DETTE NØYE.**
-
-Du gjentar feil mellom sesjoner. Denne loopen fikser det permanent.
-
-### Flyten:
-
-```
-FEIL OPPSTÅR (Markus korrigerer, eller du oppdager selv)
-    ↓
-Åpne tasks/lessons.md i gjeldende prosjekt
-    ↓
-Logg:
-  - Dato
-  - Hva gikk galt
-  - Rotårsak
-  - Regel du lager for deg selv
-    ↓
-Neste sesjon: les lessons.md ved oppstart
-    ↓
-Feilraten synker over tid
-```
-
-### Når skal du LOGGE?
-
-- Markus korrigerer deg (sier "nei", "feil", retter deg) → LOGG
-- Du oppdager en feil selv → LOGG
-- Noe tok unødvendig lang tid pga feil approach → LOGG
-- Du måtte gjøre noe om igjen → LOGG
-
-### Når skal du LESE lessons.md?
-
-- **Sesjonstart** — alltid, for hvert prosjekt
-- Før du gjør noe som ligner en tidligere feil
-- Når du er usikker om en tilnærming
-
-### Format:
-
-```markdown
-### 2026-04-10 · [Kort beskrivelse]
-- **Feil:** Hva skjedde
-- **Rotårsak:** Hvorfor det skjedde
-- **Regel:** Hva du skal gjøre annerledes ALLTID
-```
-
-**Ikke vent til slutten av sesjonen. Logg umiddelbart.**
+- **Selskap:** EZ-Fix AS (ez-fix.no)
+- **Eier:** Markus Fasting
+- **Språk:** Norsk i all kommunikasjon, engelsk i kode og kommentarer
+- **Tidssone:** Europe/Oslo
+- **Kvalitet > Hastighet** — alltid
 
 -----
 
 ## Hukommelsessystemer
 
-Du har tre lag. Bruk riktig nivå — ikke dupliser.
+Claude Code har tre lag med hukommelse. Kjenn din rolle i hvert:
 
-|System              |Innhold                          |Hvem skriver|Lastes                 |
-|--------------------|---------------------------------|------------|-----------------------|
-|**CLAUDE.md**       |Regler, kontekst, prosjektinfo   |Markus      |Sesjonstart (alltid)   |
-|**Auto Memory**     |Patterns, build-cmds, preferanser|Du (auto)   |Sesjonstart (MEMORY.md)|
-|**tasks/lessons.md**|Feil som ALDRI skal gjentas      |Du (manuelt)|Sesjonstart (les selv) |
+### 1. CLAUDE.md (denne filen)
 
-Sjekk at Auto Memory er på: `/memory`
-Sjekk at Auto Dream er på: `/memory` → "Auto-dream: on"
+- **Du leser** denne ved sesjonstart
+- **Markus vedlikeholder** innholdet
+- Inneholder: regler, prinsipper, prosjektinfo, destruktive operasjoner
+- Hold under 200 linjer per fil. Splitt med `.claude/rules/*.md` ved behov
+
+### 2. Auto Memory (~/.claude/projects/<project>/memory/)
+
+- **Du skriver** automatisk mens du jobber
+- Lagrer: build-kommandoer, kode-patterns, debugging-innsikt, preferanser
+- MEMORY.md er indeksen — hold under 200 linjer
+- Topic-filer (debugging.md, api-conventions.md) lastes on-demand
+- Sjekk status: `/memory` i sesjon
+
+### 3. Auto Dream (konsolidering mellom sesjoner)
+
+- Kjører automatisk mellom sesjoner
+- Konverterer relative datoer → absolutte
+- Sletter motsigende fakta
+- Fjerner utdaterte minner
+- Merger overlappende entries
+- Sjekk status: `/memory` → se "Auto-dream: on"
+
+**Regel:** Ikke dupliser mellom lagene. CLAUDE.md = regler og kontekst. Auto Memory = lærte patterns. tasks/lessons.md = eksplisitte feil som ALDRI skal gjentas.
 
 -----
 
-## Destruktive Operasjoner — STOPP
+## Self-Improvement Loop
 
-Fra mobil er risikoen HØYERE. Markus ser ikke full kontekst.
+Dette er kjernen i hvordan du blir bedre over tid:
 
-**ALDRI uten eksplisitt "ja":**
+```
+FEIL OPPSTÅR
+    ↓
+Markus korrigerer deg
+    ↓
+Du logger i tasks/lessons.md:
+  - Dato
+  - Hva gikk galt
+  - Rotårsak
+  - Regel for å unngå gjentakelse
+    ↓
+Ved neste sesjonstart: les tasks/lessons.md
+    ↓
+Feilraten synker over tid
+```
 
-- Slett filer, databaser, data
-- Endre produksjon
-- Git force push / rebase
-- Endre DNS/SSL/domener
-- Endre serverinfrastruktur
-- Slett/overskriv modellvekter eller checkpoints
-- Endre .env eller secrets
+### Format for lessons.md
 
-**Alltid backup før destruktive endringer.**
+```markdown
+## Lessons Learned
+
+### 2026-04-10 · SSH-escaping i Docker
+- **Feil:** Brukte enkle anførselstegn inne i enkle anførselstegn
+- **Rotårsak:** Manglet escape av nested quotes
+- **Regel:** Bruk heredoc eller doble anførselstegn ytterst ved nested SSH
+```
+
+### Triggere
+
+- Etter ENHVER korreksjon fra Markus → oppdater lessons.md
+- Etter uventet feil du oppdager selv → oppdater lessons.md
+- Etter refaktorering som avdekker dårlig pattern → oppdater lessons.md
+- **Ikke vent til slutten av sesjonen** — logg umiddelbart
 
 -----
 
-## Workflow
+## Workflow Orchestration
 
-### Plan Mode
+### Plan Mode Default
 
-- Ikke-trivielle oppgaver (3+ steg) → plan først i tasks/todo.md
-- Feil spor? STOPP og re-planlegg.
+- Enter plan mode for ENHVER ikke-triviell oppgave (3+ steg)
+- Skriv plan til `tasks/todo.md` med checkbare items FØR implementering
+- Hvis noe går galt: STOPP og re-planlegg — ikke push videre på feil spor
 
-### Subagenter
+### Subagent Strategy
 
-- Bruk for research og parallelle oppgaver
-- Hold hovedkonteksten ren
+- Bruk subagenter for research, utforsking og parallell analyse
+- Hold hovedkontekstvinduet rent
+- Én oppgave per subagent
 
 ### Verification Before Done
 
-- Bevis at det fungerer. Kjør tester, sjekk output.
-- "Ville en senior utvikler godkjent dette?"
+- Aldri marker oppgave som ferdig uten å bevise at den fungerer
+- Kjør tester, sjekk logger, demonstrer korrekthet
+- Spør: "Ville en senior utvikler godkjent dette?"
 
-### Bugs
+### Demand Elegance (Balanced)
 
-- Åpenbare bugs? Bare fiks. Ikke spør om lov.
+- For ikke-trivielle endringer: "finnes det en mer elegant løsning?"
+- Skip for enkle, åpenbare fixes
 
------
+### Autonomous Bug Fixing
 
-## Vanlige mobilkommandoer
-
-- "sjekk serverne" → health checks alle servere
-- "status [prosjekt]" → les todo.md, sjekk prosesser
-- "deploy X" → bygg, deploy, rapporter
-- "fiks Y" → finn feil, fiks, bekreft
-- "hva skjedde sist" → les tasks/todo.md og changelog.md
-- "fortsett" → les tasks/todo.md, ta neste item
+- Bugreport? Bare fiks den. Ikke spør om lov for åpenbare bugs.
 
 -----
 
-## Serverinfrastruktur
+## Destruktive Operasjoner — KREVER GODKJENNING
 
-|Server         |IP           |GPU              |Rolle            |
-|---------------|-------------|-----------------|-----------------|
-|KIT-Omnissiah  |65.21.63.58  |—                |Hovedserver      |
-|kit-data-api-01|95.217.15.99 |—                |CC Remote Control|
-|EZ-Fix-Security|78.47.170.9  |—                |Sikkerhet        |
-|GEX130         |37.27.116.240|RTX 6000 Ada 48GB|Od1n trening     |
-|GPU Utility    |136.243.6.74 |RTX 4000 SFF 20GB|Utility          |
-|Fasting Lab    |77.42.3.94   |—                |Shared infra     |
+Følgende krever eksplisitt OK fra Markus:
+
+- Sletting av filer, databaser, eller data
+- Endringer i produksjonsmiljø
+- Git force push eller rebase av delt branch
+- Endring av DNS, domener, eller SSL
+- Endring av serverinfrastruktur eller nettverk
+- Sletting eller overskriving av modellvekter/checkpoints
+- Endring av treningsparametre på aktiv trening
+- Endring av .env-filer eller secrets
+
+**ALLTID** lag backup før destruktive endringer.
+**ALDRI** commit secrets til git.
 
 -----
 
 ## Core Principles
 
-1. Kvalitet > Hastighet
-1. Verifiser før konklusjon
-1. Aldri gjett — si det eksplisitt
-1. Manifest > alt annet
-1. Minimal impact
-1. Eie feil → fiks → dokumenter → lær
+- **Simplicity First:** Minimal kode-impact per endring
+- **No Laziness:** Finn rotårsaker. Senior utvikler-standard.
+- **Minimal Impact:** Kun berør det nødvendige
+- **Aldri gjett:** Usikker? Si det eksplisitt.
+- **Verifiser før konklusjon:** Bevis at det fungerer
+- **Manifest > alt annet:** Dokumentasjon først
 
 -----
 
 ## Kommunikasjon
 
-- Norsk. Alltid.
-- Direkte. Ingen filler.
-- Kort fra mobil, grundig fra desktop.
-- Ved feil: ❌ + hva gikk galt + hva du gjør med det
+- Norsk til Markus, alltid
+- Direkte — ikke byråkratisk
+- Ved feil: eie den, fiks den, dokumenter den
+- Trenger mer info? Spør én gang, presist.
 
 -----
 
-*Versjon 1.1 · April 2026 · ~/.claude/CLAUDE.md*
+## Filstruktur
+
+```
+prosjekt/
+├── CLAUDE.md              ← Denne filen
+├── .claude/
+│   └── rules/             ← Prosjektspesifikke regler (valgfritt)
+├── tasks/
+│   ├── todo.md            ← Aktiv oppgaveliste
+│   ├── lessons.md         ← Self-improvement loop (KRITISK)
+│   ├── architecture.md    ← Arkitekturbeslutninger
+│   └── changelog.md       ← Hva, når, hvorfor
+└── ...
+```
+
+-----
+
+## Prosjektspesifikk Konfigurasjon
+
+> Fyll ut denne seksjonen per prosjekt.
+
+- **Prosjektnavn:**
+- **Tech Stack:**
+- **Repo:**
+- **Servere:**
+- **Viktige paths:**
+- **Kjente gotchas:**
+
+-----
+
+*Versjon 2.0 · April 2026 · Vedlikeholdes av Markus Fasting*
