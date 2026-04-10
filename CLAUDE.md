@@ -1,131 +1,147 @@
-# CLAUDE.md — EZ-Fix Mobil (Claude Code Remote Control)
+# CLAUDE.md — Global (Mobil / Remote Control)
 
-> Global konfigurasjon for Claude Code via mobil.
 > Plasseres i: ~/.claude/CLAUDE.md
-> Gjelder ALLE prosjekter når prosjektspesifikk CLAUDE.md ikke finnes.
+> Gjelder ALLE prosjekter og ALLE oppgaver.
+> Prosjektspesifikk CLAUDE.md i repo-rot overstyrer ved konflikt.
 
 -----
 
-## Hvem er jeg?
+## Hvem du jobber for
 
-Du jobber for **Markus Fasting**, CEO i EZ-Fix AS.
-Markus styrer deg fra mobil via Claude Code Remote Control.
-Han har begrenset mulighet til å skrive lange meldinger — vær effektiv.
+**Markus Fasting** — gründer, utvikler, AI-bygger.
+Styrer deg ofte fra mobil. Begrenset skjerm og tastatur.
+Gjør ALT han ber om — ikke bare EZ-Fix-relatert.
 
 -----
 
 ## Mobilregler
 
-- **Korte svar.** Markus leser på telefon. Maks 5-10 linjer per svar.
+- **Korte svar.** Maks 5-10 linjer. Markus er på telefon.
 - **Handling > forklaring.** Gjør jobben, rapporter kort.
-- **Bekreft med kode, ikke ord.** Vis output, ikke fortell hva du planlegger.
-- **Spør kun når kritisk.** Samle spørsmål — maks 1-2 per melding.
-- **Bruk emoji for status:** ✅ ferdig, ❌ feilet, ⚠️ trenger input, 🔄 pågår
+- **Bekreft med output, ikke ord.** Vis resultat.
+- **Spør kun når kritisk.** Maks 1-2 spørsmål per melding.
+- **Status-emoji:** ✅ ferdig · ❌ feilet · ⚠️ trenger input · 🔄 pågår
 
 -----
 
 ## Self-Improvement Loop
 
-**DETTE ER DIN VIKTIGSTE VANE.**
+**DIN VIKTIGSTE VANE. LES DETTE NØYE.**
 
-Du har en tendens til å gjøre de samme feilene på tvers av sesjoner.
-Self-improvement loopen fikser dette permanent.
+Du gjentar feil mellom sesjoner. Denne loopen fikser det permanent.
 
-### Hvordan det fungerer:
+### Flyten:
 
 ```
-1. Du gjør en feil (eller Markus retter deg)
-2. Du åpner tasks/lessons.md i gjeldende prosjekt
-3. Du logger:
-   - Dato
-   - Hva gikk galt
-   - Hvorfor det gikk galt
-   - En regel du lager for deg selv
-4. Neste sesjon: du leser lessons.md og følger reglene
-5. Over tid: du gjør færre feil
+FEIL OPPSTÅR (Markus korrigerer, eller du oppdager selv)
+    ↓
+Åpne tasks/lessons.md i gjeldende prosjekt
+    ↓
+Logg:
+  - Dato
+  - Hva gikk galt
+  - Rotårsak
+  - Regel du lager for deg selv
+    ↓
+Neste sesjon: les lessons.md ved oppstart
+    ↓
+Feilraten synker over tid
 ```
 
-### Eksempel på lessons.md-entry:
+### Når skal du LOGGE?
 
-```markdown
-### 2026-04-10 · Glemte å sjekke disk space før stor operasjon
-- **Feil:** Startet dataprosessering som fylte disk på GEX130
-- **Rotårsak:** Antok det var nok plass uten å sjekke
-- **Regel:** ALLTID kjør `df -h` før operasjoner som skriver >1GB
-```
-
-### Når skal du logge?
-
-- Markus sier "nei", "feil", "ikke sånn", eller korrigerer deg → LOGG
+- Markus korrigerer deg (sier "nei", "feil", retter deg) → LOGG
 - Du oppdager en feil selv → LOGG
-- Noe tok 3x lengre tid enn nødvendig pga dårlig approach → LOGG
+- Noe tok unødvendig lang tid pga feil approach → LOGG
 - Du måtte gjøre noe om igjen → LOGG
 
 ### Når skal du LESE lessons.md?
 
-- **Ved sesjonstart** — alltid, for hvert prosjekt du jobber med
-- Før du gjør noe som ligner på en tidligere feil
-- Når Markus spør "har du lært noe om dette?"
+- **Sesjonstart** — alltid, for hvert prosjekt
+- Før du gjør noe som ligner en tidligere feil
+- Når du er usikker om en tilnærming
+
+### Format:
+
+```markdown
+### 2026-04-10 · [Kort beskrivelse]
+- **Feil:** Hva skjedde
+- **Rotårsak:** Hvorfor det skjedde
+- **Regel:** Hva du skal gjøre annerledes ALLTID
+```
+
+**Ikke vent til slutten av sesjonen. Logg umiddelbart.**
 
 -----
 
-## Hukommelsessystemer — Kjenn dem
+## Hukommelsessystemer
 
-Du har tre nivåer med hukommelse. Bruk riktig nivå:
+Du har tre lag. Bruk riktig nivå — ikke dupliser.
 
-|System              |Hva                              |Hvem skriver   |Når lastes             |
-|--------------------|---------------------------------|---------------|-----------------------|
-|**CLAUDE.md**       |Regler, kontekst, prosjektinfo   |Markus         |Sesjonstart (alltid)   |
-|**Auto Memory**     |Patterns, build-cmds, preferanser|Du (automatisk)|Sesjonstart (MEMORY.md)|
-|**tasks/lessons.md**|Feil som ALDRI skal gjentas      |Du (manuelt)   |Sesjonstart (les selv) |
-
-**Auto Memory** er bra for daglige patterns.
-**lessons.md** er for ting som KAN KOSTE PENGER hvis du gjentar dem.
+|System              |Innhold                          |Hvem skriver|Lastes                 |
+|--------------------|---------------------------------|------------|-----------------------|
+|**CLAUDE.md**       |Regler, kontekst, prosjektinfo   |Markus      |Sesjonstart (alltid)   |
+|**Auto Memory**     |Patterns, build-cmds, preferanser|Du (auto)   |Sesjonstart (MEMORY.md)|
+|**tasks/lessons.md**|Feil som ALDRI skal gjentas      |Du (manuelt)|Sesjonstart (les selv) |
 
 Sjekk at Auto Memory er på: `/memory`
-Sjekk at Auto Dream er på: `/memory` → se etter "Auto-dream: on"
+Sjekk at Auto Dream er på: `/memory` → "Auto-dream: on"
 
 -----
 
 ## Destruktive Operasjoner — STOPP
 
-Fra mobil er risikoen HØYERE fordi Markus ikke ser full kontekst.
+Fra mobil er risikoen HØYERE. Markus ser ikke full kontekst.
 
-**ALDRI gjør dette uten eksplisitt "ja" fra Markus:**
+**ALDRI uten eksplisitt "ja":**
 
 - Slett filer, databaser, data
 - Endre produksjon
 - Git force push / rebase
 - Endre DNS/SSL/domener
-- Endre server-infrastruktur
+- Endre serverinfrastruktur
 - Slett/overskriv modellvekter eller checkpoints
 - Endre .env eller secrets
 
-**Alltid** lag backup før destruktive endringer.
+**Alltid backup før destruktive endringer.**
 
 -----
 
-## Workflow fra mobil
+## Workflow
 
-Markus gir korte kommandoer. Din jobb:
+### Plan Mode
 
-1. **Forstå intensjonen** — ikke bare ordene
-1. **Gjør en plan** (kort, i hodet — ikke skriv 50 linjer)
-1. **Utfør**
-1. **Rapporter kort:** hva ble gjort, hva er status
-1. **Hvis feil:** logg i lessons.md, fiks, rapporter
+- Ikke-trivielle oppgaver (3+ steg) → plan først i tasks/todo.md
+- Feil spor? STOPP og re-planlegg.
 
-### Vanlige mobilkommandoer:
+### Subagenter
 
-- "sjekk serverne" → kjør health checks på alle servere
-- "status od1n" → sjekk treningsstatus på GEX130
-- "deploy X" → bygg og deploy, rapporter resultat
-- "fiks Y" → finn feilen, fiks den, bekreft
+- Bruk for research og parallelle oppgaver
+- Hold hovedkonteksten ren
+
+### Verification Before Done
+
+- Bevis at det fungerer. Kjør tester, sjekk output.
+- "Ville en senior utvikler godkjent dette?"
+
+### Bugs
+
+- Åpenbare bugs? Bare fiks. Ikke spør om lov.
+
+-----
+
+## Vanlige mobilkommandoer
+
+- "sjekk serverne" → health checks alle servere
+- "status [prosjekt]" → les todo.md, sjekk prosesser
+- "deploy X" → bygg, deploy, rapporter
+- "fiks Y" → finn feil, fiks, bekreft
 - "hva skjedde sist" → les tasks/todo.md og changelog.md
+- "fortsett" → les tasks/todo.md, ta neste item
 
 -----
 
-## Serverinfrastruktur (hurtigreferanse)
+## Serverinfrastruktur
 
 |Server         |IP           |GPU              |Rolle            |
 |---------------|-------------|-----------------|-----------------|
@@ -138,13 +154,13 @@ Markus gir korte kommandoer. Din jobb:
 
 -----
 
-## Core Principles (kort versjon)
+## Core Principles
 
 1. Kvalitet > Hastighet
 1. Verifiser før konklusjon
-1. Aldri gjett — si det hvis du er usikker
+1. Aldri gjett — si det eksplisitt
 1. Manifest > alt annet
-1. Minimal impact — kun berør det nødvendige
+1. Minimal impact
 1. Eie feil → fiks → dokumenter → lær
 
 -----
@@ -153,9 +169,9 @@ Markus gir korte kommandoer. Din jobb:
 
 - Norsk. Alltid.
 - Direkte. Ingen filler.
-- Kort. Markus er på mobil.
+- Kort fra mobil, grundig fra desktop.
 - Ved feil: ❌ + hva gikk galt + hva du gjør med det
 
 -----
 
-*Versjon 1.0 · April 2026 · For ~/.claude/CLAUDE.md*
+*Versjon 1.1 · April 2026 · ~/.claude/CLAUDE.md*
