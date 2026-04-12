@@ -1,7 +1,7 @@
-# CLAUDE.md — EZ-Fix AS (v2 · April 2026)
+# CLAUDE.md — Belling / DJ Belling (v3 · April 2026)
 
 > Sannhetskilden for Claude Code i dette prosjektet.
-> Les FØRST. Oppdater `tasks/lessons.md` ved feil. La Auto Memory håndtere resten.
+> Les FØRST. Oppdater `tasks/lessons.md` ved feil.
 
 -----
 
@@ -15,120 +15,83 @@
 
 -----
 
-## Hukommelsessystemer
+## Prosjekt
 
-Claude Code har tre lag med hukommelse. Kjenn din rolle i hvert:
+**DJ Belling** — AI-DJ-system som automatiserer DJ-miksing: beatmatching,
+harmonisk mixing, effekthåndtering og intelligent låtvalg via Mixxx.
 
-### 1. CLAUDE.md (denne filen)
-
-- **Du leser** denne ved sesjonstart
-- **Markus vedlikeholder** innholdet
-- Inneholder: regler, prinsipper, prosjektinfo, destruktive operasjoner
-- Hold under 200 linjer per fil. Splitt med `.claude/rules/*.md` ved behov
-
-### 2. Auto Memory (~/.claude/projects/<project>/memory/)
-
-- **Du skriver** automatisk mens du jobber
-- Lagrer: build-kommandoer, kode-patterns, debugging-innsikt, preferanser
-- MEMORY.md er indeksen — hold under 200 linjer
-- Topic-filer (debugging.md, api-conventions.md) lastes on-demand
-- Sjekk status: `/memory` i sesjon
-
-### 3. Auto Dream (konsolidering mellom sesjoner)
-
-- Kjører automatisk mellom sesjoner
-- Konverterer relative datoer → absolutte
-- Sletter motsigende fakta
-- Fjerner utdaterte minner
-- Merger overlappende entries
-- Sjekk status: `/memory` → se "Auto-dream: on"
-
-**Regel:** Ikke dupliser mellom lagene. CLAUDE.md = regler og kontekst. Auto Memory = lærte patterns. tasks/lessons.md = eksplisitte feil som ALDRI skal gjentas.
+- **Tech Stack:** Python (librosa, Essentia), Mixxx (MIDI/OSC), Google Colab
+- **Repo:** markusfasting/belling
+- **Viktige paths:**
+  - `Belling_Codebase/` — Python-scripts (analyse, trening, eksport)
+  - `Belling_Music_Dataset/` — Musikk for trening
+  - `Belling_Training_Data/` — DJ-teknikker og guider
+  - `Colab_Notebooks/` — Jupyter notebooks
+  - `Belling_Roadmap_And_Instructions/` — Prosjektdokumentasjon
+- **Kjente gotchas:**
+  - `train_dj_ai.py` bruker utdatert OpenAI API (text-davinci-003) — må oppdateres
+  - Musikk-datasett-mappen er tom — trenger data før trening
 
 -----
 
-## Self-Improvement Loop
+## Arbeidsmetode — Plan → Critic → Bygg → Test
 
-Dette er kjernen i hvordan du blir bedre over tid:
+### Når brukes hva?
+
+| Oppgave | Plan Mode | Critic |
+|---|---|---|
+| Ny feature >30 min | Alltid | Alltid |
+| Refaktorering | Alltid | Alltid |
+| AI-pipeline / modellendring | Alltid | Alltid |
+| Mixxx-integrasjon | Alltid | Valgfritt |
+| Nytt API-endepunkt | Ja | Valgfritt |
+| Bugfix <15 min | Nei | Nei |
+| Docs / README | Nei | Nei |
+
+### Flyten
+
+1. **Plan Mode** — Skrivebeskyttet analyse. Skriv plan til `tasks/todo.md`
+2. **Critic** (subagent) — Utfordrer planen før bygging starter
+3. **Implementer** — Bygg etter godkjent plan. Avvik = oppdater planen først
+4. **Test** — Hooks kjører automatisk. Verifiser manuelt i tillegg
+
+### Critic-prompt
 
 ```
-FEIL OPPSTÅR
-    ↓
-Markus korrigerer deg
-    ↓
-Du logger i tasks/lessons.md:
-  - Dato
-  - Hva gikk galt
-  - Rotårsak
-  - Regel for å unngå gjentakelse
-    ↓
-Ved neste sesjonstart: les tasks/lessons.md
-    ↓
-Feilraten synker over tid
+Du er senior teknisk reviewer. Din eneste jobb er å finne problemer.
+For hvert punkt i planen:
+1. EDGE CASES — Tom input? Null? Timeout? Store datamengder?
+2. MANGLER — Feilhåndtering? Validering? Logging?
+3. SIKKERHET — Injection? Hardkodede secrets? Sensitive data i logger?
+4. YTELSE — N+1 queries? Blokkerende operasjoner i hot path?
+5. ENKLERE LØSNING — Færre bevegelige deler? Eksisterende bibliotek?
+Vær brutalt ærlig. Marker som KRITISK, VIKTIG, eller FORSLAG.
 ```
 
-### Format for lessons.md
+### Regler
 
-```markdown
-## Lessons Learned
-
-### 2026-04-10 · SSH-escaping i Docker
-- **Feil:** Brukte enkle anførselstegn inne i enkle anførselstegn
-- **Rotårsak:** Manglet escape av nested quotes
-- **Regel:** Bruk heredoc eller doble anførselstegn ytterst ved nested SSH
-```
-
-### Triggere
-
-- Etter ENHVER korreksjon fra Markus → oppdater lessons.md
-- Etter uventet feil du oppdager selv → oppdater lessons.md
-- Etter refaktorering som avdekker dårlig pattern → oppdater lessons.md
-- **Ikke vent til slutten av sesjonen** — logg umiddelbart
-
------
-
-## Workflow Orchestration
-
-### Plan Mode Default
-
-- Enter plan mode for ENHVER ikke-triviell oppgave (3+ steg)
-- Skriv plan til `tasks/todo.md` med checkbare items FØR implementering
 - Hvis noe går galt: STOPP og re-planlegg — ikke push videre på feil spor
-
-### Subagent Strategy
-
-- Bruk subagenter for research, utforsking og parallell analyse
-- Hold hovedkontekstvinduet rent
-- Én oppgave per subagent
-
-### Verification Before Done
-
 - Aldri marker oppgave som ferdig uten å bevise at den fungerer
-- Kjør tester, sjekk logger, demonstrer korrekthet
-- Spør: "Ville en senior utvikler godkjent dette?"
-
-### Demand Elegance (Balanced)
-
 - For ikke-trivielle endringer: "finnes det en mer elegant løsning?"
-- Skip for enkle, åpenbare fixes
+- Bugreport? Bare fiks den. Ikke spør om lov for åpenbare bugs
 
-### Autonomous Bug Fixing
+-----
 
-- Bugreport? Bare fiks den. Ikke spør om lov for åpenbare bugs.
+## Forbud
+
+- Ingen nye Python-pakker uten godkjenning
+- Ingen endringer i treningsparametre uten bekreftelse
+- Ingen env-var eller API-nøkkel-endringer uten bekreftelse
+- Ingen destruktive operasjoner på musikkdata uten backup
 
 -----
 
 ## Destruktive Operasjoner — KREVER GODKJENNING
 
-Følgende krever eksplisitt OK fra Markus:
-
 - Sletting av filer, databaser, eller data
-- Endringer i produksjonsmiljø
-- Git force push eller rebase av delt branch
-- Endring av DNS, domener, eller SSL
-- Endring av serverinfrastruktur eller nettverk
 - Sletting eller overskriving av modellvekter/checkpoints
 - Endring av treningsparametre på aktiv trening
+- Git force push eller rebase av delt branch
 - Endring av .env-filer eller secrets
 
 **ALLTID** lag backup før destruktive endringer.
@@ -136,14 +99,26 @@ Følgende krever eksplisitt OK fra Markus:
 
 -----
 
+## Self-Improvement Loop
+
+Etter ENHVER korreksjon eller uventet feil → oppdater `tasks/lessons.md` umiddelbart:
+
+```markdown
+### DATO · Kort tittel
+- **Feil:** Hva gikk galt
+- **Rotårsak:** Hvorfor
+- **Regel:** Hvordan unngå gjentakelse
+```
+
+-----
+
 ## Core Principles
 
 - **Simplicity First:** Minimal kode-impact per endring
-- **No Laziness:** Finn rotårsaker. Senior utvikler-standard.
+- **No Laziness:** Finn rotårsaker. Senior utvikler-standard
 - **Minimal Impact:** Kun berør det nødvendige
-- **Aldri gjett:** Usikker? Si det eksplisitt.
+- **Aldri gjett:** Usikker? Si det eksplisitt
 - **Verifiser før konklusjon:** Bevis at det fungerer
-- **Manifest > alt annet:** Dokumentasjon først
 
 -----
 
@@ -152,38 +127,15 @@ Følgende krever eksplisitt OK fra Markus:
 - Norsk til Markus, alltid
 - Direkte — ikke byråkratisk
 - Ved feil: eie den, fiks den, dokumenter den
-- Trenger mer info? Spør én gang, presist.
 
 -----
 
-## Filstruktur
+## Kontekst
 
-```
-prosjekt/
-├── CLAUDE.md              ← Denne filen
-├── .claude/
-│   └── rules/             ← Prosjektspesifikke regler (valgfritt)
-├── tasks/
-│   ├── todo.md            ← Aktiv oppgaveliste
-│   ├── lessons.md         ← Self-improvement loop (KRITISK)
-│   ├── architecture.md    ← Arkitekturbeslutninger
-│   └── changelog.md       ← Hva, når, hvorfor
-└── ...
-```
+- Se `Belling_Roadmap_And_Instructions/` for prosjektdokumentasjon
+- Se `tasks/lessons.md` for tidligere lærdommer
+- Se `Belling_Codebase/` for eksisterende scripts
 
 -----
 
-## Prosjektspesifikk Konfigurasjon
-
-> Fyll ut denne seksjonen per prosjekt.
-
-- **Prosjektnavn:**
-- **Tech Stack:**
-- **Repo:**
-- **Servere:**
-- **Viktige paths:**
-- **Kjente gotchas:**
-
------
-
-*Versjon 2.0 · April 2026 · Vedlikeholdes av Markus Fasting*
+*Versjon 3.0 · April 2026 · Vedlikeholdes av Markus Fasting*
