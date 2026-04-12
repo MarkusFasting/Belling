@@ -63,7 +63,7 @@ cd ~/ez-fix
 claude --remote-control
 ```
 
-Da har CC tilgang til alle 42 repos og bytter med `cd`.
+Da har CC tilgang til alle 43 repos og bytter med `cd`.
 Se `WORKSPACE_CLAUDE.md` for full repostruktur og hurtigkommandoer.
 
 ### To CLAUDE.md-filer som utfyller hverandre
@@ -80,18 +80,7 @@ scp CLAUDE_global_mobil_v2.md root@95.217.15.99:~/.claude/CLAUDE.md
 scp WORKSPACE_CLAUDE.md root@95.217.15.99:~/ez-fix/CLAUDE.md
 ```
 
-## 5. Flere repos på web (claude.ai/code)
-
-Alternativ til Remote Control for multi-repo:
-- Gå til "+" knappen i chatten
-- Søk og velg repo, eller lim inn repo-URL
-- Du kan legge til FLERE repos i samme chat/prosjekt
-- Begrensning: Alt må passe i kontekstvinduet
-
-**Viktig:** Per nå støtter web kun ÉN GitHub-konto om gangen.
-Bytte konto = disconnect + reconnect i Settings → Connectors → GitHub.
-
-## 6. Git submodules (alternativ)
+## 5. Git submodules (alternativ)
 
 Hvis du foretrekker submodules fremfor flat kloning:
 

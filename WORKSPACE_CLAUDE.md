@@ -35,7 +35,7 @@ cd ~/ez-fix
 
 -----
 
-## Repostruktur — 42 repos
+## Repostruktur — 43 repos
 
 ### ezfix/ — Interne verktøy og produkter
 

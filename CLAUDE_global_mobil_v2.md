@@ -56,6 +56,7 @@ ssh root@37.27.116.240 "df -h"
 for server in 95.217.15.99 37.27.116.240 65.21.63.58 78.47.170.9 136.243.6.74 77.42.3.94; do
   echo "=== $server ==="
   ssh -o ConnectTimeout=5 root@$server "df -h / | tail -1" 2>&1
+  echo ""
 done
 ```
 
@@ -69,6 +70,7 @@ ssh root@65.21.63.58 "docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Port
 for server in 95.217.15.99 37.27.116.240 65.21.63.58 78.47.170.9 136.243.6.74 77.42.3.94; do
   echo "=== $server ==="
   ssh -o ConnectTimeout=5 root@$server "docker ps --format 'table {{.Names}}\t{{.Status}}'" 2>&1
+  echo ""
 done
 ```
 
@@ -111,11 +113,11 @@ Vanlige ting Markus sier fra mobil og hva du skal gjøre:
 # Sjekk om tmux-sesjonen lever
 ssh root@95.217.15.99 "tmux ls"
 
-# Koble til eksisterende sesjon
-ssh root@95.217.15.99 "tmux attach -t cc"
+# Koble til eksisterende sesjon (krever -t for PTY)
+ssh -t root@95.217.15.99 "tmux attach -t cc"
 
 # Hvis sesjonen er borte — start på nytt
-ssh root@95.217.15.99 "tmux new -s cc 'cd ~/ez-fix && claude --remote-control'"
+ssh -t root@95.217.15.99 "tmux new -s cc 'cd ~/ez-fix && claude --remote-control'"
 ```
 
 ### CC henger / responderer ikke
