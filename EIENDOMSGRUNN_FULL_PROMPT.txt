@@ -1,0 +1,5335 @@
+Opprett Eiendomsgrunn.no-prosjektet fra scratch. Lag ALLE filene nedenfor nøyaktig som vist. Dette er en Next.js 14 app med TypeScript, Tailwind CSS og Leaflet som henter norsk eiendomsdata fra åpne offentlige API-er.
+
+## Steg 1: Initialiser
+
+mkdir eiendomsgrunn && cd eiendomsgrunn
+npm init -y
+npm install next@^14.2.0 react@^18.3.0 react-dom@^18.3.0 leaflet@^1.9.4
+npm install -D typescript@^5.3.3 @types/node@^20.11.0 @types/react@^18.2.0 @types/react-dom@^18.2.0 @types/leaflet@^1.9.8 tailwindcss@^3.4.1 postcss@^8.4.33 autoprefixer@^10.4.17
+
+## Steg 2: Opprett ALLE filer under med nøyaktig innhold
+
+
+---
+
+### FILE: package.json
+```
+{
+  "name": "eiendomsgrunn",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.8",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}
+```
+
+### FILE: tsconfig.json
+```
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+### FILE: next.config.mjs
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+};
+
+export default nextConfig;
+```
+
+### FILE: postcss.config.js
+```
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+### FILE: tailwind.config.ts
+```
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  theme: {
+    extend: {
+      colors: {
+        ink: {
+          DEFAULT: "#1C1C1E",
+          50: "#F7F6F3",
+          100: "#EDECE8",
+          200: "#E0DED8",
+          300: "#C7C4BC",
+          400: "#A8A49B",
+          500: "#8A857B",
+          600: "#6E6A62",
+          700: "#53504A",
+          800: "#3A3835",
+          900: "#1C1C1E",
+        },
+        stone: {
+          warm: "#F7F6F3",
+          light: "#EDECE8",
+          mid: "#E0DED8",
+          border: "#D4D1CB",
+        },
+        mineral: {
+          DEFAULT: "#8B7355",
+          light: "#A8916F",
+          dark: "#6F5B42",
+          muted: "#B5A48C",
+          wash: "#F5F0E8",
+        },
+        confidence: {
+          dokumentert: "#4A7C59",
+          opplyst: "#5B7FA5",
+          utledet: "#B8915A",
+          uavklart: "#9B9590",
+        },
+        avvik: "#C45D4A",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+        display: ["Inter", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "display-lg": [
+          "3.25rem",
+          {
+            lineHeight: "1.05",
+            letterSpacing: "-0.03em",
+            fontWeight: "700",
+          },
+        ],
+        display: [
+          "2.5rem",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.025em",
+            fontWeight: "700",
+          },
+        ],
+        "display-sm": [
+          "2rem",
+          {
+            lineHeight: "1.15",
+            letterSpacing: "-0.02em",
+            fontWeight: "700",
+          },
+        ],
+        heading: [
+          "1.375rem",
+          {
+            lineHeight: "1.3",
+            letterSpacing: "-0.015em",
+            fontWeight: "600",
+          },
+        ],
+        "heading-sm": [
+          "1.125rem",
+          {
+            lineHeight: "1.35",
+            letterSpacing: "-0.01em",
+            fontWeight: "600",
+          },
+        ],
+        "body-lg": ["1.0625rem", { lineHeight: "1.6", fontWeight: "400" }],
+        body: ["0.9375rem", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-sm": ["0.8125rem", { lineHeight: "1.5", fontWeight: "400" }],
+        caption: ["0.75rem", { lineHeight: "1.4", fontWeight: "500" }],
+        micro: [
+          "0.6875rem",
+          {
+            lineHeight: "1.3",
+            fontWeight: "500",
+            letterSpacing: "0.02em",
+          },
+        ],
+      },
+      borderRadius: {
+        card: "10px",
+        button: "8px",
+        badge: "5px",
+        input: "8px",
+      },
+      boxShadow: {
+        card: "0 1px 2px rgba(28,28,30,0.04), 0 2px 8px rgba(28,28,30,0.03)",
+        "card-hover":
+          "0 2px 4px rgba(28,28,30,0.06), 0 4px 16px rgba(28,28,30,0.04)",
+        elevated:
+          "0 4px 12px rgba(28,28,30,0.08), 0 1px 3px rgba(28,28,30,0.04)",
+        "input-focus": "0 0 0 3px rgba(139,115,85,0.12)",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+```
+
+### FILE: src/app/api/eiendom/grenser/route.ts
+```
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(request: NextRequest) {
+  const kommune = request.nextUrl.searchParams.get("kommune");
+  const gnrStr = request.nextUrl.searchParams.get("gnr");
+  const bnrStr = request.nextUrl.searchParams.get("bnr");
+
+  if (!kommune || !gnrStr || !bnrStr) {
+    return NextResponse.json({ error: "Mangler parametere" }, { status: 400 });
+  }
+
+  const gnr = parseInt(gnrStr, 10);
+  const bnr = parseInt(bnrStr, 10);
+
+  try {
+    const wfsUrl = new URL("https://wfs.geonorge.no/skwms1/wfs.matrikkelen-eiendomskart-teig");
+    wfsUrl.searchParams.set("service", "WFS");
+    wfsUrl.searchParams.set("version", "2.0.0");
+    wfsUrl.searchParams.set("request", "GetFeature");
+    wfsUrl.searchParams.set("typeNames", "matrikkelen_teig");
+    wfsUrl.searchParams.set("outputFormat", "application/json");
+    wfsUrl.searchParams.set("CQL_FILTER", `kommunenummer='${kommune}' AND gardsnummer=${gnr} AND bruksnummer=${bnr}`);
+    wfsUrl.searchParams.set("count", "10");
+
+    const res = await fetch(wfsUrl.toString(), {
+      headers: { Accept: "application/json" },
+    });
+
+    if (!res.ok) {
+      return NextResponse.json({ type: "FeatureCollection", features: [] });
+    }
+
+    const data = await res.json();
+    return NextResponse.json(data);
+  } catch {
+    return NextResponse.json({ type: "FeatureCollection", features: [] });
+  }
+}
+```
+
+### FILE: src/app/api/eiendom/route.ts
+```
+import { NextRequest, NextResponse } from "next/server";
+import { buildPropertyReport } from "@/lib/buildPropertyReport";
+
+export async function GET(request: NextRequest) {
+  const kommune = request.nextUrl.searchParams.get("kommune");
+  const gnrStr = request.nextUrl.searchParams.get("gnr");
+  const bnrStr = request.nextUrl.searchParams.get("bnr");
+
+  if (!kommune || !gnrStr || !bnrStr) {
+    return NextResponse.json({ error: "Mangler påkrevde parametere: kommune, gnr, bnr" }, { status: 400 });
+  }
+
+  const gnr = parseInt(gnrStr, 10);
+  const bnr = parseInt(bnrStr, 10);
+
+  if (isNaN(gnr) || isNaN(bnr)) {
+    return NextResponse.json({ error: "gnr og bnr må være tall" }, { status: 400 });
+  }
+
+  try {
+    const report = await buildPropertyReport(kommune, gnr, bnr);
+    return NextResponse.json(report);
+  } catch {
+    return NextResponse.json({ error: "Kunne ikke hente eiendomsdata" }, { status: 500 });
+  }
+}
+```
+
+### FILE: src/app/api/einnsyn/route.ts
+```
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(request: NextRequest) {
+  const q = request.nextUrl.searchParams.get("q");
+  if (!q) {
+    return NextResponse.json({ results: [] });
+  }
+
+  try {
+    const res = await fetch(
+      `https://api.einnsyn.no/api/search?q=${encodeURIComponent(q)}&limit=10`,
+      { headers: { Accept: "application/json" } }
+    );
+
+    if (!res.ok) {
+      return NextResponse.json({ results: [] });
+    }
+
+    const data = await res.json();
+
+    interface EinnsynHit {
+      title?: string;
+      description?: string;
+      publisher?: { name?: string };
+      date?: string;
+      url?: string;
+    }
+
+    const results = (data.hits as EinnsynHit[] || []).map((hit) => ({
+      title: hit.title || "Uten tittel",
+      description: hit.description || undefined,
+      publisher: hit.publisher?.name || undefined,
+      date: hit.date || undefined,
+      url: hit.url || undefined,
+    }));
+
+    return NextResponse.json({ results });
+  } catch {
+    return NextResponse.json({ results: [] });
+  }
+}
+```
+
+### FILE: src/app/api/search/route.ts
+```
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(request: NextRequest) {
+  const q = request.nextUrl.searchParams.get("q");
+  if (!q || q.length < 2) {
+    return NextResponse.json({ results: [] });
+  }
+
+  try {
+    const res = await fetch(
+      `https://ws.geonorge.no/adresser/v1/sok?sok=${encodeURIComponent(q)}&treffPerSide=10`,
+      { next: { revalidate: 60 } }
+    );
+
+    if (!res.ok) {
+      return NextResponse.json({ results: [], error: "Kartverket API feilet" }, { status: 502 });
+    }
+
+    const data = await res.json();
+
+    interface KartverketAdresse {
+      adressetekst: string;
+      postnummer: string;
+      poststed: string;
+      kommunenavn: string;
+      kommunenummer: string;
+      gardsnummer: number;
+      bruksnummer: number;
+      representasjonspunkt?: { lat: number; lon: number };
+    }
+
+    const results = (data.adresser as KartverketAdresse[] || []).map((a) => ({
+      address: `${a.adressetekst}, ${a.postnummer} ${a.poststed}`,
+      municipality: a.kommunenavn,
+      municipalityNumber: a.kommunenummer,
+      gnr: a.gardsnummer,
+      bnr: a.bruksnummer,
+      coordinates: {
+        lat: a.representasjonspunkt?.lat ?? 0,
+        lng: a.representasjonspunkt?.lon ?? 0,
+      },
+      slug: `${a.kommunenummer}-${a.gardsnummer}-${a.bruksnummer}`,
+    }));
+
+    return NextResponse.json({ results });
+  } catch {
+    return NextResponse.json({ results: [], error: "Nettverksfeil" }, { status: 500 });
+  }
+}
+```
+
+### FILE: src/app/eiendom/[slug]/page.tsx
+```
+"use client";
+
+import { useParams } from "next/navigation";
+import { useState, useMemo } from "react";
+import { usePropertyData } from "@/hooks/usePropertyData";
+import PropertySummary from "@/components/property/PropertySummary";
+import IdentitySection from "@/components/property/IdentitySection";
+import MapSection from "@/components/property/MapSection";
+import ZoningSection from "@/components/property/ZoningSection";
+import FieldValidationSection from "@/components/property/FieldValidationSection";
+import DocumentAnalysisSection from "@/components/property/DocumentAnalysisSection";
+import DiscrepancySection from "@/components/property/DiscrepancySection";
+import SourceRegistrySection from "@/components/property/SourceRegistrySection";
+import ActionsSection from "@/components/property/ActionsSection";
+import ChatPanel from "@/components/chat/ChatPanel";
+import DocumentUpload from "@/components/document/DocumentUpload";
+import Skeleton from "@/components/ui/Skeleton";
+
+const navSections = [
+  { id: "sammendrag", label: "Sammendrag" },
+  { id: "identitet", label: "Identitet" },
+  { id: "kart", label: "Kart" },
+  { id: "plandata", label: "Plandata" },
+  { id: "validering", label: "Feltvalidering" },
+  { id: "dokumenter", label: "Dokumenter" },
+  { id: "avvik", label: "Avvik" },
+  { id: "kilder", label: "Kilder" },
+  { id: "handlinger", label: "Handlinger" },
+];
+
+function parseSlug(slug: string) {
+  const parts = slug.split("-");
+  if (parts.length < 3) return null;
+  const kommune = parts[0];
+  const gnr = parseInt(parts[1], 10);
+  const bnr = parseInt(parts[2], 10);
+  if (isNaN(gnr) || isNaN(bnr)) return null;
+  return { kommune, gnr, bnr };
+}
+
+export default function PropertyPage() {
+  const params = useParams();
+  const slug = typeof params.slug === "string" ? params.slug : "";
+  const parsed = useMemo(() => parseSlug(slug), [slug]);
+
+  const { report, loading, error } = usePropertyData(
+    parsed?.kommune ?? "",
+    parsed?.gnr ?? 0,
+    parsed?.bnr ?? 0
+  );
+
+  const [chatOpen, setChatOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("sammendrag");
+
+  if (!parsed) {
+    return (
+      <div className="section-spacing">
+        <div className="container-narrow text-center">
+          <h1 className="text-display-sm mb-4">Ugyldig eiendomsreferanse</h1>
+          <p className="text-body text-ink-500">
+            URL-formatet skal være /eiendom/kommunenr-gnr-bnr, f.eks.
+            /eiendom/0301-123-45
+          </p>
+          <a href="/sok" className="btn-primary mt-6 inline-block">
+            Gå til søk
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="section-spacing">
+        <div className="container-narrow text-center">
+          <h1 className="text-display-sm mb-4 text-avvik">
+            Kunne ikke hente eiendomsdata
+          </h1>
+          <p className="text-body text-ink-500 mb-6">{error}</p>
+          <a href="/sok" className="btn-primary">
+            Prøv et nytt søk
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-stone-warm">
+      {/* Mobile chat FAB */}
+      <button
+        onClick={() => setChatOpen(true)}
+        className="lg:hidden fixed bottom-6 right-6 z-50 w-14 h-14 bg-mineral text-white rounded-full shadow-elevated flex items-center justify-center hover:bg-mineral-dark transition-colors"
+        aria-label="Åpne chat"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          />
+        </svg>
+      </button>
+
+      {/* Mobile chat overlay */}
+      {chatOpen && (
+        <div className="lg:hidden fixed inset-0 z-50 bg-white">
+          <div className="flex items-center justify-between p-4 border-b border-stone-border">
+            <h2 className="text-heading-sm">Spør om eiendommen</h2>
+            <button
+              onClick={() => setChatOpen(false)}
+              className="p-2 text-ink-400 hover:text-ink"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="h-[calc(100vh-64px)]">
+            <ChatPanel
+              kommune={parsed.kommune}
+              gnr={parsed.gnr}
+              bnr={parsed.bnr}
+            />
+          </div>
+        </div>
+      )}
+
+      <div className="container-page py-8">
+        <div className="flex gap-8">
+          {/* Left sidebar nav — desktop only */}
+          <aside className="hidden lg:block w-48 shrink-0">
+            <nav className="sticky top-24 space-y-1">
+              {navSections.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  onClick={() => setActiveSection(section.id)}
+                  className={`block px-3 py-2 rounded-button text-body-sm transition-colors ${
+                    activeSection === section.id
+                      ? "bg-mineral-wash text-mineral font-medium"
+                      : "text-ink-500 hover:text-ink hover:bg-stone-light"
+                  }`}
+                >
+                  {section.label}
+                </a>
+              ))}
+            </nav>
+          </aside>
+
+          {/* Main content */}
+          <main className="flex-1 min-w-0 space-y-8">
+            {loading || !report ? (
+              <div className="space-y-6">
+                <Skeleton className="h-40 w-full" />
+                <Skeleton className="h-60 w-full" />
+                <Skeleton className="h-96 w-full" />
+                <Skeleton className="h-40 w-full" />
+              </div>
+            ) : (
+              <>
+                <div id="sammendrag">
+                  <PropertySummary report={report} />
+                </div>
+
+                <div id="identitet">
+                  <IdentitySection identity={report.identity} />
+                </div>
+
+                <div id="kart">
+                  <MapSection
+                    coordinates={report.identity.koordinater.value}
+                    address={report.identity.adresse.value}
+                    kommune={parsed.kommune}
+                    gnr={parsed.gnr}
+                    bnr={parsed.bnr}
+                  />
+                </div>
+
+                <div id="plandata">
+                  <ZoningSection zoning={report.zoning} />
+                </div>
+
+                <div id="validering">
+                  <FieldValidationSection report={report} />
+                </div>
+
+                <div id="dokumenter">
+                  <DocumentUpload />
+                  <div className="mt-6">
+                    <DocumentAnalysisSection documents={report.documents} />
+                  </div>
+                </div>
+
+                <div id="avvik">
+                  <DiscrepancySection discrepancies={report.discrepancies} />
+                </div>
+
+                <div id="kilder">
+                  <SourceRegistrySection sources={report.sources} />
+                </div>
+
+                <div id="handlinger">
+                  <ActionsSection
+                    kommune={parsed.kommune}
+                    gnr={parsed.gnr}
+                    bnr={parsed.bnr}
+                  />
+                </div>
+              </>
+            )}
+          </main>
+
+          {/* Right sidebar — chat — desktop only */}
+          <aside className="hidden lg:block w-[380px] shrink-0">
+            <div className="sticky top-24 h-[calc(100vh-8rem)]">
+              <ChatPanel
+                kommune={parsed.kommune}
+                gnr={parsed.gnr}
+                bnr={parsed.bnr}
+              />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### FILE: src/app/globals.css
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-stone-warm text-ink font-sans;
+  }
+
+  ::selection {
+    @apply bg-mineral/20 text-ink;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6;
+  }
+
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-base {
+    @apply bg-white rounded-card shadow-card border border-stone-border/50;
+  }
+
+  .card-interactive {
+    @apply card-base transition-shadow duration-200 hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-ink text-white rounded-button text-body font-medium transition-all duration-200 hover:bg-ink-800 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-white text-ink border border-stone-border rounded-button text-body font-medium transition-all duration-200 hover:bg-stone-light active:scale-[0.98];
+  }
+
+  .btn-mineral {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-mineral text-white rounded-button text-body font-medium transition-all duration-200 hover:bg-mineral-dark active:scale-[0.98];
+  }
+
+  .input-base {
+    @apply w-full px-4 py-3 bg-white border border-stone-border rounded-input text-body text-ink placeholder:text-ink-400 transition-all duration-200 focus:outline-none focus:border-mineral focus:shadow-input-focus;
+  }
+
+  .label-base {
+    @apply block text-caption text-ink-600 font-medium mb-1.5;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+```
+
+### FILE: src/app/layout.tsx
+```
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+export const metadata: Metadata = {
+  title: "Eiendomsgrunn — Norges eiendomsintelligens",
+  description:
+    "Vi sjekker eiendommen mot offentlige registre og forteller deg hva som stemmer, hva som avviker, og hva som mangler.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="nb">
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+```
+
+### FILE: src/app/om/page.tsx
+```
+import Link from "next/link";
+
+const dataSources = [
+  {
+    name: "Kartverket Adresse-API",
+    description: "Adressesøk, postnummer, koordinater",
+    url: "https://ws.geonorge.no/adresser/v1/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "Kartverket Eiendom-API",
+    description: "Matrikkeldata, eiendomsidentifikasjon",
+    url: "https://ws.geonorge.no/eiendom/v1/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "Geonorge WFS Eiendomskart",
+    description: "Eiendomsgrenser og teigdata",
+    url: "https://wfs.geonorge.no/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "Kartverket WMTS",
+    description: "Topografiske kartfliser for kartvisning",
+    url: "https://cache.kartverket.no/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "Kartverket Kommuneinfo",
+    description: "Kommunenavn, fylke, metadata",
+    url: "https://ws.geonorge.no/kommuneinfo/v1/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "Kartverket Høydedata",
+    description: "Terrenghøyde for gitt punkt",
+    url: "https://ws.geonorge.no/hoydedata/v1/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "SSB Statistikkbanken",
+    description: "Boligprisstatistikk per region",
+    url: "https://data.ssb.no/api/v0/",
+    status: "Åpent, ingen nøkkel",
+  },
+  {
+    name: "eInnsyn",
+    description: "Offentlige byggesaksdokumenter",
+    url: "https://einnsyn.no/",
+    status: "Åpent, ingen nøkkel",
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <div className="section-spacing">
+      <div className="container-narrow">
+        {/* Intro */}
+        <div className="mb-16">
+          <h1 className="text-display mb-6">Om Eiendomsgrunn</h1>
+          <p className="text-body-lg text-ink-500 mb-6">
+            Eiendomsgrunn er Norges første eiendomsintelligens-plattform med
+            kildesporet tillitsnivå på hvert datapunkt. Vi sjekker eiendommen
+            mot offentlige registre og forteller deg hva som stemmer, hva som
+            avviker, og hva som mangler.
+          </p>
+          <p className="text-body text-ink-500">
+            Plattformen er bygget av Eivind Fasting (arkitekt MNAL) og Markus
+            Fasting (tech/AI), med mål om å gjøre eiendomsinformasjon mer
+            tilgjengelig, transparent og pålitelig for alle.
+          </p>
+        </div>
+
+        {/* Principles */}
+        <div className="mb-16">
+          <h2 className="text-display-sm mb-8">Våre prinsipper</h2>
+          <div className="space-y-6">
+            <div className="card-base p-6 border-l-4 border-l-confidence-dokumentert">
+              <h3 className="text-heading-sm mb-2">Kildesporbarhet</h3>
+              <p className="text-body text-ink-500">
+                Hvert datapunkt har en kilde, et hentetidspunkt og et
+                tillitsnivå. Du skal alltid kunne spore tilbake til
+                opprinnelsen.
+              </p>
+            </div>
+            <div className="card-base p-6 border-l-4 border-l-confidence-opplyst">
+              <h3 className="text-heading-sm mb-2">Nøkternt språk</h3>
+              <p className="text-body text-ink-500">
+                Vi sier aldri &laquo;dette er ulovlig&raquo;. Vi sier
+                &laquo;ingen synlig godkjenning funnet i offentlige
+                registre&raquo;. Faglig respektfullt, uten bastante
+                konklusjoner.
+              </p>
+            </div>
+            <div className="card-base p-6 border-l-4 border-l-confidence-utledet">
+              <h3 className="text-heading-sm mb-2">Åpenhet om begrensninger</h3>
+              <p className="text-body text-ink-500">
+                Vi er tydelige på hva vi ikke vet, og peker deg til rett instans
+                for videre avklaring. Ærlighet er en del av produktet.
+              </p>
+            </div>
+            <div className="card-base p-6 border-l-4 border-l-mineral">
+              <h3 className="text-heading-sm mb-2">Offentlige data først</h3>
+              <p className="text-body text-ink-500">
+                Vi henter direkte fra Kartverket, Geonorge og andre offentlige
+                API-er. Ingen mellommenn, ingen utdaterte kopier.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Data Sources */}
+        <div className="mb-16">
+          <h2 className="text-display-sm mb-8">Datakilder</h2>
+          <p className="text-body text-ink-500 mb-6">
+            All eiendomsdata hentes fra åpne, offentlige API-er. Her er
+            kildene vi bruker:
+          </p>
+          <div className="space-y-3">
+            {dataSources.map((source) => (
+              <div
+                key={source.name}
+                className="card-base p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+              >
+                <div className="flex-1">
+                  <h3 className="text-body font-medium">{source.name}</h3>
+                  <p className="text-body-sm text-ink-500">
+                    {source.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-micro text-confidence-dokumentert bg-confidence-dokumentert/10 px-2 py-1 rounded-badge">
+                    {source.status}
+                  </span>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-caption text-mineral hover:text-mineral-dark transition-colors"
+                  >
+                    API →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Team */}
+        <div className="mb-16">
+          <h2 className="text-display-sm mb-8">Teamet</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="card-base p-6">
+              <h3 className="text-heading-sm mb-1">Eivind Fasting</h3>
+              <p className="text-caption text-mineral mb-3">
+                Arkitekt MNAL — Domeneekspert
+              </p>
+              <p className="text-body-sm text-ink-500">
+                Erfaren arkitekt med dyp forståelse for plan- og
+                bygningslovgivning, eiendomsdata og reguleringsplaner.
+              </p>
+            </div>
+            <div className="card-base p-6">
+              <h3 className="text-heading-sm mb-1">Markus Fasting</h3>
+              <p className="text-caption text-mineral mb-3">Tech / AI</p>
+              <p className="text-body-sm text-ink-500">
+                Teknologiutvikling og AI-integrasjon. Ansvarlig for plattformens
+                arkitektur og API-integrasjoner.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center p-10 bg-mineral-wash rounded-card">
+          <h2 className="text-heading mb-4">Prøv det selv</h2>
+          <p className="text-body text-ink-500 mb-6">
+            Søk etter en eiendom og se hva offentlige registre sier.
+          </p>
+          <Link href="/sok" className="btn-primary">
+            Start søk
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### FILE: src/app/page.tsx
+```
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useSearch } from "@/hooks/useSearch";
+import SearchInput from "@/components/ui/SearchInput";
+import type { SearchResult } from "@/types";
+
+const trustLevels = [
+  {
+    level: "Dokumentert",
+    color: "bg-confidence-dokumentert",
+    textColor: "text-confidence-dokumentert",
+    description: "Bekreftet av offentlig register",
+  },
+  {
+    level: "Opplyst",
+    color: "bg-confidence-opplyst",
+    textColor: "text-confidence-opplyst",
+    description: "Oppgitt i opplastet dokument",
+  },
+  {
+    level: "Utledet",
+    color: "bg-confidence-utledet",
+    textColor: "text-confidence-utledet",
+    description: "Beregnet eller tolket fra data",
+  },
+  {
+    level: "Uavklart",
+    color: "bg-confidence-uavklart",
+    textColor: "text-confidence-uavklart",
+    description: "Mangler eller ikke verifisert",
+  },
+];
+
+const benefits = [
+  {
+    title: "Kildesporet data",
+    description:
+      "Hvert datapunkt har kilde, hentetidspunkt og tillitsnivå. Du ser alltid hvor informasjonen kommer fra.",
+  },
+  {
+    title: "Ekte offentlige registre",
+    description:
+      "Vi henter direkte fra Kartverket, Geonorge og andre offentlige API-er — ingen mellommenn.",
+  },
+  {
+    title: "Avviksdeteksjon",
+    description:
+      "Last opp salgsoppgave eller takstrapport, og vi sammenligner mot offentlige data automatisk.",
+  },
+  {
+    title: "Interaktivt kart",
+    description:
+      "Se eiendommen på Kartverkets topografiske kart med offisielle eiendomsgrenser.",
+  },
+  {
+    title: "Nøktern vurdering",
+    description:
+      "Vi sier aldri «dette er ulovlig». Vi sier «ingen synlig godkjenning funnet i offentlige registre».",
+  },
+  {
+    title: "Åpen om begrensninger",
+    description:
+      "Vi er tydelige på hva vi ikke kan svare på — og peker deg til rett instans for videre avklaring.",
+  },
+];
+
+const audiences = [
+  {
+    title: "Boligkjøpere",
+    description:
+      "Sjekk eiendommen før visning. Se om det som står i salgsoppgaven stemmer med offentlige registre.",
+  },
+  {
+    title: "Eiendomsmeglere",
+    description:
+      "Kvalitetssikre opplysninger i salgsoppgaver mot offisielle kilder. Spar tid på due diligence.",
+  },
+  {
+    title: "Arkitekter og rådgivere",
+    description:
+      "Rask tilgang til reguleringsdata, eiendomsgrenser og matrikkelinformasjon samlet på ett sted.",
+  },
+];
+
+const limitations = [
+  "Vi har ikke tilgang til grunnboken (heftelser, eierforhold). Bruk Kartverkets Infoland-tjeneste.",
+  "Detaljerte planbestemmelser (BYA, gesimshøyde etc.) krever ofte manuell sjekk hos kommunen.",
+  "Byggesakshistorikk er ikke tilgjengelig via åpne API-er — kontakt kommunen direkte.",
+  "Dokumentanalyse med AI er under utvikling og gir foreløpig ikke fullstendige resultater.",
+];
+
+export default function LandingPage() {
+  const router = useRouter();
+  const { query, setQuery, results, loading } = useSearch();
+
+  function handleSelect(result: SearchResult) {
+    router.push(`/eiendom/${result.slug}`);
+  }
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="section-spacing bg-gradient-to-b from-mineral-wash to-stone-warm">
+        <div className="container-narrow text-center">
+          <h1 className="text-display-lg text-balance mb-6">
+            Sjekk eiendommen mot
+            <br />
+            <span className="text-mineral">offentlige registre</span>
+          </h1>
+          <p className="text-body-lg text-ink-500 max-w-xl mx-auto mb-10 text-balance">
+            Vi henter data fra Kartverket og andre offentlige kilder, og
+            forteller deg hva som stemmer, hva som avviker, og hva som mangler.
+          </p>
+          <div className="max-w-2xl mx-auto">
+            <SearchInput
+              value={query}
+              onChange={setQuery}
+              results={results}
+              loading={loading}
+              onSelect={handleSelect}
+              placeholder="Søk etter adresse, f.eks. Karl Johans gate 1..."
+              size="large"
+            />
+          </div>
+          <p className="text-caption text-ink-400 mt-4">
+            Søker direkte i Kartverkets adresseregister
+          </p>
+        </div>
+      </section>
+
+      {/* Document Upload */}
+      <section className="section-spacing">
+        <div className="container-narrow text-center">
+          <h2 className="text-display-sm mb-4">Har du en salgsoppgave?</h2>
+          <p className="text-body-lg text-ink-500 mb-8">
+            Last opp salgsoppgave eller takstrapport, så sammenligner vi
+            opplysningene mot offentlige registre.
+          </p>
+          <div className="max-w-lg mx-auto border-2 border-dashed border-stone-border rounded-card p-10 hover:border-mineral transition-colors cursor-pointer">
+            <div className="text-ink-400 mb-3">
+              <svg
+                className="w-10 h-10 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            </div>
+            <p className="text-body font-medium text-ink-600">
+              Dra og slipp fil her
+            </p>
+            <p className="text-body-sm text-ink-400 mt-1">
+              PDF, JPG eller PNG — maks 20 MB
+            </p>
+          </div>
+          <p className="text-caption text-ink-400 mt-4">
+            Dokumentanalyse med AI er under utvikling
+          </p>
+        </div>
+      </section>
+
+      {/* Trust System */}
+      <section className="section-spacing bg-white">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <h2 className="text-display-sm mb-4">
+              Hvert datapunkt har et tillitsnivå
+            </h2>
+            <p className="text-body-lg text-ink-500 max-w-2xl mx-auto">
+              Vi er alltid ærlige om hvor dataene kommer fra og hvor sikre vi er
+              på at de stemmer.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {trustLevels.map((item) => (
+              <div key={item.level} className="text-center">
+                <div
+                  className={`w-3 h-3 rounded-full ${item.color} mx-auto mb-3`}
+                />
+                <h3 className={`text-heading-sm ${item.textColor} mb-1`}>
+                  {item.level}
+                </h3>
+                <p className="text-body-sm text-ink-500">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="section-spacing">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <h2 className="text-display-sm mb-4">
+              Eiendomsintelligens du kan stole på
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="card-base p-6">
+                <h3 className="text-heading-sm mb-2">{benefit.title}</h3>
+                <p className="text-body-sm text-ink-500">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Audiences */}
+      <section className="section-spacing bg-white">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <h2 className="text-display-sm mb-4">Hvem er dette for?</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {audiences.map((audience) => (
+              <div key={audience.title} className="text-center">
+                <h3 className="text-heading-sm mb-2">{audience.title}</h3>
+                <p className="text-body-sm text-ink-500">
+                  {audience.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Limitations */}
+      <section className="section-spacing">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <h2 className="text-display-sm mb-4">
+              Hva vi <span className="text-ink-400">ikke</span> dekker
+            </h2>
+            <p className="text-body-lg text-ink-500">
+              Ærlighet er en del av produktet. Her er begrensningene.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {limitations.map((limitation, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 p-4 bg-white rounded-card border border-stone-border/50"
+              >
+                <span className="text-ink-400 mt-0.5 shrink-0">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+                <p className="text-body-sm text-ink-600">{limitation}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-spacing bg-ink-900 text-white">
+        <div className="container-narrow text-center">
+          <h2 className="text-display-sm text-white mb-4">
+            Klar til å sjekke en eiendom?
+          </h2>
+          <p className="text-body-lg text-ink-300 mb-8">
+            Søk etter en adresse og få en komplett rapport med kildesporet data
+            fra offentlige registre.
+          </p>
+          <a href="/sok" className="btn-mineral text-body-lg px-8 py-3">
+            Start søk
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}
+```
+
+### FILE: src/app/pris/page.tsx
+```
+import Link from "next/link";
+
+const plans = [
+  {
+    name: "Gratis",
+    price: "0 kr",
+    period: "",
+    description: "Utforsk plattformen og se hva som er mulig",
+    features: [
+      "Adressesøk med autokomplettering",
+      "Grunnleggende eiendomsinfo (gnr/bnr, adresse)",
+      "Kartvisning med Kartverket-fliser",
+      "Inntil 3 oppslag per dag",
+    ],
+    cta: "Kom i gang gratis",
+    href: "/sok",
+    highlighted: false,
+  },
+  {
+    name: "Enkeltrapport",
+    price: "79 kr",
+    period: "per rapport",
+    description: "Full rapport for én eiendom med alle tilgjengelige data",
+    features: [
+      "Alt i Gratis",
+      "Komplett eiendomsrapport",
+      "Eiendomsgrenser på kart",
+      "Plandata og reguleringsinfo",
+      "Feltvalidering med tillitsnivåer",
+      "Kilderegister med alle datakilder",
+      "PDF-eksport av rapport",
+    ],
+    cta: "Kjøp enkeltrapport",
+    href: "/sok",
+    highlighted: false,
+  },
+  {
+    name: "Pro",
+    price: "399 kr",
+    period: "per måned",
+    description:
+      "For profesjonelle som trenger regelmessig tilgang til eiendomsdata",
+    features: [
+      "Alt i Enkeltrapport",
+      "Ubegrenset antall rapporter",
+      "Dokumentopplasting og analyse",
+      "Avviksdeteksjon mot offentlige data",
+      "AI-assistert eiendomsrådgivning",
+      "Prioritert support",
+    ],
+    cta: "Start Pro",
+    href: "/sok",
+    highlighted: true,
+  },
+  {
+    name: "Team",
+    price: "999 kr",
+    period: "per måned",
+    description:
+      "For meglerkontor, arkitektfirmaer og rådgivningsselskaper",
+    features: [
+      "Alt i Pro",
+      "Inntil 5 brukere",
+      "Delt rapportbibliotek",
+      "API-tilgang for integrasjon",
+      "Tilpasset onboarding",
+      "Dedikert kontaktperson",
+    ],
+    cta: "Kontakt oss",
+    href: "mailto:info@eiendomsgrunn.no",
+    highlighted: false,
+  },
+];
+
+export default function PricingPage() {
+  return (
+    <div className="section-spacing">
+      <div className="container-page">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-display mb-4">Enkel, ærlig prising</h1>
+          <p className="text-body-lg text-ink-500 max-w-2xl mx-auto">
+            Start gratis og oppgrader når du trenger mer. Ingen skjulte
+            kostnader, ingen bindingstid.
+          </p>
+        </div>
+
+        {/* Plans */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`rounded-card p-6 flex flex-col ${
+                plan.highlighted
+                  ? "bg-ink-900 text-white ring-2 ring-mineral shadow-elevated"
+                  : "card-base"
+              }`}
+            >
+              <div className="mb-6">
+                <h2
+                  className={`text-heading-sm mb-2 ${
+                    plan.highlighted ? "text-white" : ""
+                  }`}
+                >
+                  {plan.name}
+                </h2>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span
+                    className={`text-display-sm ${
+                      plan.highlighted ? "text-white" : ""
+                    }`}
+                  >
+                    {plan.price}
+                  </span>
+                  {plan.period && (
+                    <span
+                      className={`text-body-sm ${
+                        plan.highlighted ? "text-ink-300" : "text-ink-400"
+                      }`}
+                    >
+                      {plan.period}
+                    </span>
+                  )}
+                </div>
+                <p
+                  className={`text-body-sm ${
+                    plan.highlighted ? "text-ink-300" : "text-ink-500"
+                  }`}
+                >
+                  {plan.description}
+                </p>
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
+                    <svg
+                      className={`w-4 h-4 mt-0.5 shrink-0 ${
+                        plan.highlighted ? "text-mineral-light" : "text-confidence-dokumentert"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span
+                      className={`text-body-sm ${
+                        plan.highlighted ? "text-ink-200" : "text-ink-600"
+                      }`}
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href={plan.href}
+                className={`w-full text-center py-2.5 rounded-button text-body font-medium transition-all duration-200 ${
+                  plan.highlighted
+                    ? "bg-mineral text-white hover:bg-mineral-light"
+                    : "bg-stone-light text-ink hover:bg-stone-mid"
+                }`}
+              >
+                {plan.cta}
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-20 max-w-2xl mx-auto">
+          <h2 className="text-display-sm text-center mb-10">
+            Vanlige spørsmål
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-heading-sm mb-2">
+                Hvilke data er gratis tilgjengelig?
+              </h3>
+              <p className="text-body text-ink-500">
+                Adressesøk, grunnleggende eiendomsinformasjon (gnr/bnr) og
+                kartvisning er gratis. Detaljert rapport med plandata,
+                feltvalidering og kilderegister krever betalt plan.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-heading-sm mb-2">
+                Hvor kommer dataene fra?
+              </h3>
+              <p className="text-body text-ink-500">
+                All data hentes direkte fra åpne offentlige API-er: Kartverket,
+                Geonorge, SSB og eInnsyn. Vi viser alltid kilden for hvert
+                datapunkt.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-heading-sm mb-2">
+                Kan jeg avbryte abonnementet?
+              </h3>
+              <p className="text-body text-ink-500">
+                Ja, du kan avbryte når som helst. Ingen bindingstid. Du beholder
+                tilgang ut inneværende periode.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-heading-sm mb-2">
+                Er dokumentanalysen klar?
+              </h3>
+              <p className="text-body text-ink-500">
+                AI-basert dokumentanalyse er under utvikling. Du kan allerede
+                laste opp dokumenter, men fullstendig analyse kommer i en
+                fremtidig oppdatering.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### FILE: src/app/sok/page.tsx
+```
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useSearch } from "@/hooks/useSearch";
+import SearchInput from "@/components/ui/SearchInput";
+import type { SearchResult } from "@/types";
+
+export default function SearchPage() {
+  const router = useRouter();
+  const { query, setQuery, results, loading, error } = useSearch();
+
+  function handleSelect(result: SearchResult) {
+    router.push(`/eiendom/${result.slug}`);
+  }
+
+  return (
+    <div className="section-spacing">
+      <div className="container-narrow">
+        <div className="mb-10">
+          <h1 className="text-display-sm mb-3">Søk etter eiendom</h1>
+          <p className="text-body-lg text-ink-500">
+            Skriv inn en adresse for å finne eiendomsinformasjon fra offentlige
+            registre.
+          </p>
+        </div>
+
+        <SearchInput
+          value={query}
+          onChange={setQuery}
+          results={results}
+          loading={loading}
+          onSelect={handleSelect}
+          placeholder="Adresse, f.eks. Storgata 1, Oslo..."
+        />
+
+        {error && (
+          <div className="mt-4 p-4 bg-avvik/10 border border-avvik/20 rounded-card">
+            <p className="text-body-sm text-avvik">{error}</p>
+          </div>
+        )}
+
+        {query.length >= 2 && !loading && results.length === 0 && !error && (
+          <div className="mt-8 text-center py-12">
+            <p className="text-body text-ink-400">
+              Ingen resultater for &laquo;{query}&raquo;
+            </p>
+            <p className="text-body-sm text-ink-400 mt-1">
+              Prøv en annen adresse eller bruk færre søkeord
+            </p>
+          </div>
+        )}
+
+        {query.length < 2 && (
+          <div className="mt-12">
+            <h2 className="text-heading-sm text-ink-600 mb-6">
+              Slik fungerer det
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="card-base p-5">
+                <div className="w-8 h-8 rounded-full bg-mineral-wash text-mineral flex items-center justify-center text-body font-semibold mb-3">
+                  1
+                </div>
+                <h3 className="text-heading-sm mb-1">Søk</h3>
+                <p className="text-body-sm text-ink-500">
+                  Skriv inn adressen og velg fra listen med resultater fra
+                  Kartverket.
+                </p>
+              </div>
+              <div className="card-base p-5">
+                <div className="w-8 h-8 rounded-full bg-mineral-wash text-mineral flex items-center justify-center text-body font-semibold mb-3">
+                  2
+                </div>
+                <h3 className="text-heading-sm mb-1">Analyser</h3>
+                <p className="text-body-sm text-ink-500">
+                  Vi henter data fra offentlige registre og sammenstiller en
+                  komplett rapport.
+                </p>
+              </div>
+              <div className="card-base p-5">
+                <div className="w-8 h-8 rounded-full bg-mineral-wash text-mineral flex items-center justify-center text-body font-semibold mb-3">
+                  3
+                </div>
+                <h3 className="text-heading-sm mb-1">Verifiser</h3>
+                <p className="text-body-sm text-ink-500">
+                  Last opp salgsoppgave eller takst for å sammenligne mot
+                  offisielle data.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-12 p-4 bg-stone-light rounded-card">
+          <p className="text-caption text-ink-400 text-center">
+            Data hentes direkte fra Kartverkets adresseregister (Geonorge) —
+            oppdatert i sanntid
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### FILE: src/components/chat/ChatPanel.tsx
+```
+"use client";
+
+import { useState, useRef, useEffect, useCallback } from "react";
+import type { ChatMessage } from "@/types";
+
+interface ChatPanelProps {
+  kommune: string;
+  gnr: number;
+  bnr: number;
+}
+
+const PREDEFINED_QUESTIONS = [
+  "Hva er arealformålet?",
+  "Er det avvik i dataene?",
+  "Hvilke begrensninger gjelder?",
+  "Hvem eier eiendommen?",
+] as const;
+
+function generateMockResponse(): ChatMessage {
+  return {
+    id: crypto.randomUUID(),
+    role: "assistant",
+    content: "Denne funksjonen er under utvikling.",
+    timestamp: new Date().toISOString(),
+    sections: {
+      fakta: "Denne funksjonen er under utvikling.",
+      kilde: "Ingen kilde tilgjengelig ennå",
+      tolkning: "AI-basert eiendomsrådgivning kommer snart.",
+      uavklart: "Fullstendig AI-analyse krever backend-integrasjon.",
+    },
+  };
+}
+
+function MessageBubble({ message }: { message: ChatMessage }) {
+  const isUser = message.role === "user";
+
+  if (isUser) {
+    return (
+      <div className="flex justify-end">
+        <div className="max-w-[80%] rounded-card bg-mineral text-white px-4 py-3 text-body-sm">
+          {message.content}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-start">
+      <div className="max-w-[80%] rounded-card bg-white border border-stone-border/50 px-4 py-3 text-body-sm text-ink">
+        {message.sections ? (
+          <div className="space-y-3">
+            {message.sections.fakta && (
+              <div>
+                <p className="text-micro font-semibold uppercase tracking-wider text-ink-400 mb-1">
+                  Fakta
+                </p>
+                <p className="text-ink-600">{message.sections.fakta}</p>
+              </div>
+            )}
+            {message.sections.kilde && (
+              <div>
+                <p className="text-micro font-semibold uppercase tracking-wider text-ink-400 mb-1">
+                  Kilde
+                </p>
+                <p className="text-ink-600">{message.sections.kilde}</p>
+              </div>
+            )}
+            {message.sections.tolkning && (
+              <div>
+                <p className="text-micro font-semibold uppercase tracking-wider text-ink-400 mb-1">
+                  Tolkning
+                </p>
+                <p className="text-ink-600">{message.sections.tolkning}</p>
+              </div>
+            )}
+            {message.sections.uavklart && (
+              <div>
+                <p className="text-micro font-semibold uppercase tracking-wider text-ink-400 mb-1">
+                  Uavklart
+                </p>
+                <p className="text-ink-600">{message.sections.uavklart}</p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-ink-600">{message.content}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function ChatPanel({ kommune, gnr, bnr }: ChatPanelProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const sendMessage = useCallback(
+    (text: string) => {
+      if (!text.trim()) return;
+
+      const userMessage: ChatMessage = {
+        id: crypto.randomUUID(),
+        role: "user",
+        content: text.trim(),
+        timestamp: new Date().toISOString(),
+      };
+
+      setMessages((prev) => [...prev, userMessage]);
+      setInput("");
+
+      // Simulate assistant response delay
+      setTimeout(() => {
+        const assistantMessage = generateMockResponse();
+        setMessages((prev) => [...prev, assistantMessage]);
+      }, 600);
+    },
+    []
+  );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMessage(input);
+  };
+
+  if (!isOpen) {
+    return (
+      <button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-ink text-white px-5 py-3 rounded-button text-body font-medium shadow-lg transition-all duration-200 hover:bg-ink-800 active:scale-[0.98]"
+        aria-label="Åpne chat"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+        Spør om eiendommen
+      </button>
+    );
+  }
+
+  return (
+    <aside className="fixed right-0 top-0 z-50 h-full w-full max-w-md border-l border-stone-border/50 bg-stone-warm shadow-lg flex flex-col lg:sticky lg:top-0 lg:h-screen">
+      {/* Header */}
+      <div className="flex items-center justify-between border-b border-stone-border/50 bg-white px-4 py-3">
+        <h2 className="text-body font-semibold text-ink-900">
+          Spør om eiendommen
+        </h2>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="flex items-center justify-center w-8 h-8 rounded-button text-ink-400 hover:text-ink hover:bg-stone-light transition"
+          aria-label="Lukk chat"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Property context */}
+      <div className="px-4 py-2 text-micro text-ink-400 border-b border-stone-border/30 bg-white/50">
+        {kommune} - {gnr}/{bnr}
+      </div>
+
+      {/* Question chips */}
+      {messages.length === 0 && (
+        <div className="px-4 py-4 border-b border-stone-border/30">
+          <p className="text-caption text-ink-400 mb-2">Foreslåtte spørsmål</p>
+          <div className="flex flex-wrap gap-2">
+            {PREDEFINED_QUESTIONS.map((question) => (
+              <button
+                key={question}
+                onClick={() => sendMessage(question)}
+                className="px-3 py-1.5 rounded-button border border-stone-border text-caption text-ink-600 hover:bg-white hover:border-mineral hover:text-mineral transition"
+              >
+                {question}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+        {messages.map((message) => (
+          <MessageBubble key={message.id} message={message} />
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* Input */}
+      <form
+        onSubmit={handleSubmit}
+        className="border-t border-stone-border/50 bg-white px-4 py-3 flex gap-2"
+      >
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Still et spørsmål om eiendommen..."
+          className="input-base flex-1"
+        />
+        <button
+          type="submit"
+          disabled={!input.trim()}
+          className="flex items-center justify-center w-10 h-10 rounded-button bg-mineral text-white transition hover:bg-mineral-dark disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
+          aria-label="Send melding"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </form>
+    </aside>
+  );
+}
+```
+
+### FILE: src/components/document/DocumentUpload.tsx
+```
+"use client";
+
+import { useState, useRef, useCallback, useEffect } from "react";
+import AlertCard from "@/components/ui/AlertCard";
+
+interface DocumentUploadProps {
+  onUpload?: (file: File) => void;
+}
+
+type DocumentType = "salgsoppgave" | "takstrapport" | "annet";
+
+interface UploadedFile {
+  file: File;
+  type: DocumentType;
+  progress: number;
+  done: boolean;
+}
+
+const ACCEPTED_TYPES = [
+  "application/pdf",
+  "image/jpeg",
+  "image/png",
+];
+
+const ACCEPTED_EXTENSIONS = ".pdf,.jpg,.jpeg,.png";
+
+function classifyFile(filename: string): DocumentType {
+  const lower = filename.toLowerCase();
+  if (lower.includes("salgsoppgave") || lower.includes("salg")) {
+    return "salgsoppgave";
+  }
+  if (
+    lower.includes("takst") ||
+    lower.includes("tilstandsrapport") ||
+    lower.includes("verdivurdering")
+  ) {
+    return "takstrapport";
+  }
+  return "annet";
+}
+
+function formatFileSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+const TYPE_LABELS: Record<DocumentType, string> = {
+  salgsoppgave: "Salgsoppgave",
+  takstrapport: "Takstrapport",
+  annet: "Annet",
+};
+
+const TYPE_COLORS: Record<DocumentType, string> = {
+  salgsoppgave: "bg-confidence-dokumentert/12 text-confidence-dokumentert",
+  takstrapport: "bg-confidence-opplyst/12 text-confidence-opplyst",
+  annet: "bg-confidence-uavklart/12 text-confidence-uavklart",
+};
+
+export default function DocumentUpload({ onUpload }: DocumentUploadProps) {
+  const [dragOver, setDragOver] = useState(false);
+  const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFile = useCallback(
+    (file: File) => {
+      if (!ACCEPTED_TYPES.includes(file.type)) {
+        return;
+      }
+
+      const docType = classifyFile(file.name);
+      setUploadedFile({ file, type: docType, progress: 0, done: false });
+      onUpload?.(file);
+    },
+    [onUpload]
+  );
+
+  // Simulate upload progress
+  useEffect(() => {
+    if (!uploadedFile || uploadedFile.done) return;
+
+    const interval = setInterval(() => {
+      setUploadedFile((prev) => {
+        if (!prev || prev.done) return prev;
+        const next = prev.progress + Math.random() * 20 + 10;
+        if (next >= 100) {
+          return { ...prev, progress: 100, done: true };
+        }
+        return { ...prev, progress: Math.min(next, 95) };
+      });
+    }, 300);
+
+    return () => clearInterval(interval);
+  }, [uploadedFile?.done, uploadedFile !== null]);
+
+  const handleDrop = useCallback(
+    (e: React.DragEvent<HTMLDivElement>) => {
+      e.preventDefault();
+      setDragOver(false);
+      const file = e.dataTransfer.files[0];
+      if (file) handleFile(file);
+    },
+    [handleFile]
+  );
+
+  const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(false);
+  }, []);
+
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (file) handleFile(file);
+    },
+    [handleFile]
+  );
+
+  const handleChooseFile = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
+
+  return (
+    <div className="space-y-4">
+      {/* Drop zone */}
+      <div
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        className={`
+          rounded-card border-2 border-dashed transition-colors duration-200
+          flex flex-col items-center justify-center gap-3 p-8 text-center
+          ${
+            dragOver
+              ? "border-mineral bg-mineral/5"
+              : "border-stone-border/60 bg-white hover:border-stone-border"
+          }
+        `}
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-ink-300"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="17 8 12 3 7 8" />
+          <line x1="12" y1="3" x2="12" y2="15" />
+        </svg>
+        <p className="text-body-sm text-ink-500">
+          Dra og slipp salgsoppgave eller takstrapport
+        </p>
+        <button
+          type="button"
+          onClick={handleChooseFile}
+          className="px-4 py-2 rounded-button border border-stone-border text-caption text-ink-600 hover:bg-stone-light hover:border-mineral hover:text-mineral transition"
+        >
+          eller velg fil
+        </button>
+        <p className="text-micro text-ink-300">PDF, JPG eller PNG</p>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={ACCEPTED_EXTENSIONS}
+          onChange={handleInputChange}
+          className="hidden"
+        />
+      </div>
+
+      {/* Uploaded file info */}
+      {uploadedFile && (
+        <div className="rounded-card border border-stone-border/50 bg-white p-4 space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <p className="text-body-sm font-medium text-ink truncate">
+                {uploadedFile.file.name}
+              </p>
+              <p className="text-micro text-ink-400">
+                {formatFileSize(uploadedFile.file.size)}
+              </p>
+            </div>
+            <span
+              className={`shrink-0 px-2 py-0.5 rounded-badge text-micro font-medium ${TYPE_COLORS[uploadedFile.type]}`}
+            >
+              {TYPE_LABELS[uploadedFile.type]}
+            </span>
+          </div>
+
+          {/* Progress bar */}
+          {!uploadedFile.done && (
+            <div className="w-full bg-stone-light rounded-full h-1.5 overflow-hidden">
+              <div
+                className="h-full bg-mineral rounded-full transition-all duration-300"
+                style={{ width: `${uploadedFile.progress}%` }}
+              />
+            </div>
+          )}
+
+          {/* Done state */}
+          {uploadedFile.done && (
+            <AlertCard type="info" title="Under utvikling">
+              Dokumentanalyse er under utvikling — fullstendig AI-analyse kommer
+              snart.
+            </AlertCard>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+### FILE: src/components/layout/Footer.tsx
+```
+import Link from "next/link";
+
+interface FooterColumn {
+  heading: string;
+  links: { label: string; href: string }[];
+}
+
+const columns: FooterColumn[] = [
+  {
+    heading: "Produkt",
+    links: [
+      { label: "Søk", href: "/sok" },
+      { label: "Eiendomsrapport", href: "/rapport" },
+      { label: "Priser", href: "/pris" },
+    ],
+  },
+  {
+    heading: "Ressurser",
+    links: [
+      { label: "Om oss", href: "/om" },
+      { label: "Datakilder", href: "/datakilder" },
+      { label: "API-status", href: "/api-status" },
+    ],
+  },
+  {
+    heading: "Juridisk",
+    links: [
+      { label: "Personvern", href: "/personvern" },
+      { label: "Vilkår", href: "/vilkar" },
+      { label: "Ansvarsfraskrivelse", href: "/ansvarsfraskrivelse" },
+    ],
+  },
+  {
+    heading: "Kontakt",
+    links: [
+      { label: "info@eiendomsgrunn.no", href: "mailto:info@eiendomsgrunn.no" },
+    ],
+  },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-ink-900 text-ink-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {columns.map((col) => (
+            <div key={col.heading}>
+              <h3 className="text-caption uppercase tracking-wider text-ink-400 mb-4">
+                {col.heading}
+              </h3>
+              <ul className="space-y-2.5">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-body-sm text-ink-300 hover:text-white transition"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom row */}
+        <div className="mt-12 pt-8 border-t border-ink-800">
+          <p className="text-caption text-ink-500">
+            &copy; 2026 Eiendomsgrunn AS &middot; Alle data fra offentlige
+            registre
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+
+### FILE: src/components/layout/Header.tsx
+```
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { href: "/sok", label: "Søk" },
+  { href: "/om", label: "Om" },
+  { href: "/pris", label: "Pris" },
+] as const;
+
+export default function Header() {
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-stone-border/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="font-display font-semibold text-heading-sm tracking-tight text-ink-900"
+          >
+            Eiendomsgrunn
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative text-body-sm transition ${
+                    isActive
+                      ? "text-ink-900"
+                      : "text-ink-600 hover:text-ink"
+                  }`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute -bottom-[1.19rem] left-0 right-0 h-[2px] bg-mineral rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            className="md:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8"
+            aria-label={mobileOpen ? "Lukk meny" : "Åpne meny"}
+            aria-expanded={mobileOpen}
+          >
+            <span
+              className={`block h-[2px] w-5 bg-ink-700 rounded-full transition-transform origin-center ${
+                mobileOpen ? "translate-y-[7px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 bg-ink-700 rounded-full transition-opacity ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 bg-ink-700 rounded-full transition-transform origin-center ${
+                mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile slide-down nav */}
+      <div
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+          mobileOpen ? "max-h-60" : "max-h-0"
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 flex flex-col gap-1">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`block py-2 px-3 rounded-button text-body-sm transition ${
+                  isActive
+                    ? "text-ink-900 bg-stone-warm border-l-2 border-mineral"
+                    : "text-ink-600 hover:text-ink hover:bg-stone-warm"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </header>
+  );
+}
+```
+
+### FILE: src/components/map/DynamicMap.tsx
+```
+import dynamic from "next/dynamic";
+
+const DynamicMap = dynamic(() => import("./LeafletMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[400px] w-full rounded-card bg-stone-light animate-pulse flex items-center justify-center">
+      <span className="text-body-sm text-ink-400">Laster kart...</span>
+    </div>
+  ),
+});
+
+export default DynamicMap;
+```
+
+### FILE: src/components/map/LeafletMap.tsx
+```
+"use client";
+
+import { useEffect, useRef } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+/* ---------- Fix default marker icons for webpack/Next.js ---------- */
+delete (L.Icon.Default.prototype as unknown as Record<string, unknown>)
+  ._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+});
+
+/* ---------- Props ---------- */
+interface LeafletMapProps {
+  lat: number;
+  lng: number;
+  address: string;
+  grenser?: GeoJSON.FeatureCollection;
+}
+
+export default function LeafletMap({
+  lat,
+  lng,
+  address,
+  grenser,
+}: LeafletMapProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+
+    /* Initialise map */
+    const map = L.map(containerRef.current).setView([lat, lng], 16);
+    mapRef.current = map;
+
+    /* Kartverket topographic tiles */
+    L.tileLayer(
+      "https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/googlemaps/{z}/{y}/{x}.png",
+      {
+        attribution:
+          '&copy; <a href="https://kartverket.no">Kartverket</a>',
+        maxZoom: 18,
+      },
+    ).addTo(map);
+
+    /* Marker */
+    const marker = L.marker([lat, lng]).addTo(map);
+    marker.bindPopup(address);
+
+    /* Property boundary (grenser) */
+    if (grenser && grenser.features && grenser.features.length > 0) {
+      const geoJsonLayer = L.geoJSON(grenser, {
+        style: {
+          color: "#C45D4A",
+          weight: 2,
+          fillColor: "#C45D4A",
+          fillOpacity: 0.1,
+        },
+      }).addTo(map);
+
+      /* Fit bounds to include marker + boundary */
+      const bounds = geoJsonLayer.getBounds().extend([lat, lng]);
+      map.fitBounds(bounds, { padding: [40, 40] });
+    }
+
+    /* Cleanup */
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lat, lng, address, grenser]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="h-[400px] w-full rounded-card overflow-hidden"
+    />
+  );
+}
+```
+
+### FILE: src/components/property/ActionsSection.tsx
+```
+"use client";
+
+import SectionCard from "@/components/ui/SectionCard";
+
+interface ActionsSectionProps {
+  kommune: string;
+  gnr: number;
+  bnr: number;
+}
+
+interface ActionCard {
+  icon: string;
+  title: string;
+  description: string;
+  action: {
+    label: string;
+    href?: string;
+    disabled?: boolean;
+  };
+}
+
+export default function ActionsSection({
+  kommune,
+  gnr,
+  bnr,
+}: ActionsSectionProps) {
+  const actions: ActionCard[] = [
+    {
+      icon: "\u2191",
+      title: "Last opp dokument",
+      description:
+        "Last opp salgsoppgave eller takstrapport for automatisk analyse og kryssvalidering mot offentlige data.",
+      action: {
+        label: "Last opp",
+      },
+    },
+    {
+      icon: "\u2193",
+      title: "Bestill grunnbok",
+      description:
+        "Hent offisielle grunnboksopplysninger med hjemmelsforhold, heftelser og servitutter fra Kartverket.",
+      action: {
+        label: "G\u00E5 til Infoland",
+        href: `https://www.infoland.no/`,
+      },
+    },
+    {
+      icon: "\u2709",
+      title: "Kontakt kommunen",
+      description: `Ta kontakt med ${kommune} kommune for detaljert planinformasjon, byggesaker og reguleringsbestemmelser for ${gnr}/${bnr}.`,
+      action: {
+        label: "Finn kontaktinfo",
+        href: `https://www.${kommune.toLowerCase().replace(/\s+/g, "")}.kommune.no/`,
+      },
+    },
+    {
+      icon: "\u2193",
+      title: "Last ned rapport",
+      description:
+        "Eksporter eiendomsrapporten som PDF med alle datapunkter, kilder og avviksvurdering.",
+      action: {
+        label: "Kommer snart",
+        disabled: true,
+      },
+    },
+  ];
+
+  return (
+    <SectionCard
+      title="Videre handlinger"
+      subtitle="Neste steg for eiendomsunders\u00F8kelsen"
+      id="actions"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {actions.map((card) => (
+          <div
+            key={card.title}
+            className={`
+              group relative flex flex-col rounded-card border border-stone-border/50
+              bg-white p-5 transition-all
+              ${card.action.disabled
+                ? "opacity-60 cursor-not-allowed"
+                : "hover:shadow-card-hover hover:border-mineral-muted cursor-pointer"
+              }
+            `}
+          >
+            {/* Icon */}
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-badge bg-mineral-wash">
+              <span
+                className="text-heading-sm text-mineral"
+                aria-hidden="true"
+              >
+                {card.icon}
+              </span>
+            </div>
+
+            {/* Content */}
+            <h3 className="text-body font-semibold text-ink mb-1">
+              {card.title}
+            </h3>
+            <p className="text-body-sm text-ink-500 mb-4 flex-1">
+              {card.description}
+            </p>
+
+            {/* Action */}
+            {card.action.href && !card.action.disabled ? (
+              <a
+                href={card.action.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex items-center justify-center
+                  rounded-button border border-mineral/30 bg-mineral-wash
+                  px-4 py-2 text-caption font-semibold text-mineral
+                  transition-colors hover:bg-mineral/10
+                "
+              >
+                {card.action.label}
+                <span className="ml-1.5 text-micro" aria-hidden="true">
+                  {"\u2197"}
+                </span>
+              </a>
+            ) : (
+              <button
+                type="button"
+                disabled={card.action.disabled}
+                className={`
+                  inline-flex items-center justify-center
+                  rounded-button px-4 py-2 text-caption font-semibold
+                  transition-colors
+                  ${card.action.disabled
+                    ? "border border-stone-border/50 bg-stone-light text-ink-400 cursor-not-allowed"
+                    : "border border-mineral/30 bg-mineral-wash text-mineral hover:bg-mineral/10"
+                  }
+                `}
+              >
+                {card.action.label}
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/DiscrepancySection.tsx
+```
+"use client";
+
+import type { Discrepancy } from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+import AlertCard from "@/components/ui/AlertCard";
+
+interface DiscrepancySectionProps {
+  discrepancies: Discrepancy[];
+}
+
+const severityConfig: Record<
+  Discrepancy["severity"],
+  { label: string; bg: string; text: string; border: string }
+> = {
+  lav: {
+    label: "Lav",
+    bg: "bg-confidence-utledet/15",
+    text: "text-confidence-utledet",
+    border: "border-l-confidence-utledet",
+  },
+  medium: {
+    label: "Medium",
+    bg: "bg-[#E8760C]/10",
+    text: "text-[#C46A0A]",
+    border: "border-l-[#E8760C]",
+  },
+  hoy: {
+    label: "H\u00F8y",
+    bg: "bg-avvik/10",
+    text: "text-avvik",
+    border: "border-l-avvik",
+  },
+};
+
+export default function DiscrepancySection({
+  discrepancies,
+}: DiscrepancySectionProps) {
+  return (
+    <SectionCard
+      title="Avviksvurdering"
+      subtitle={`${discrepancies.length} avvik identifisert`}
+      id="discrepancies"
+    >
+      {discrepancies.length === 0 ? (
+        <div className="rounded-card border border-confidence-dokumentert/30 bg-confidence-dokumentert/6 p-5">
+          <div className="flex items-center gap-3">
+            <span
+              className="
+                flex h-8 w-8 items-center justify-center rounded-badge
+                bg-confidence-dokumentert/15 text-confidence-dokumentert
+                text-body font-semibold
+              "
+              aria-hidden="true"
+            >
+              {"\u2713"}
+            </span>
+            <div>
+              <p className="text-body-sm font-medium text-confidence-dokumentert">
+                Ingen avvik funnet mellom kilder
+              </p>
+              <p className="text-micro text-ink-500 mt-0.5">
+                Alle datapunkter samsvarer p\u00E5 tvers av tilgjengelige kilder.
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {/* Discrepancy list */}
+          <div className="space-y-3">
+            {discrepancies.map((disc) => {
+              const sev = severityConfig[disc.severity];
+
+              return (
+                <div
+                  key={disc.id}
+                  className={`
+                    rounded-card border border-stone-border/40
+                    border-l-[3px] ${sev.border}
+                    bg-white p-4
+                  `}
+                >
+                  {/* Header row */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span
+                      className={`
+                        inline-flex items-center rounded-badge px-1.5 py-0.5
+                        text-micro font-semibold ${sev.bg} ${sev.text}
+                      `}
+                    >
+                      {sev.label}
+                    </span>
+                    <span className="text-body-sm font-medium text-ink">
+                      {disc.label}
+                    </span>
+                  </div>
+
+                  {/* Conflicting values */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                    <div className="rounded-badge bg-stone-warm p-3">
+                      <span className="block text-micro text-ink-400 mb-0.5">
+                        {disc.sourceA.source.name}
+                      </span>
+                      <span className="text-body-sm font-medium font-mono text-ink-700">
+                        {disc.sourceA.value}
+                      </span>
+                    </div>
+                    <div className="rounded-badge bg-stone-warm p-3">
+                      <span className="block text-micro text-ink-400 mb-0.5">
+                        {disc.sourceB.source.name}
+                      </span>
+                      <span className="text-body-sm font-medium font-mono text-ink-700">
+                        {disc.sourceB.value}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-body-sm text-ink-600">
+                    {disc.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Disclaimer */}
+          <AlertCard type="info" title="Om avvik">
+            Avvik betyr ikke n\u00F8dvendigvis feil &mdash; det betyr at kildene
+            oppgir ulike verdier for samme felt. Kontroller opplysningene med
+            de aktuelle kildene for \u00E5 avklare hvilken verdi som er korrekt.
+          </AlertCard>
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/DocumentAnalysisSection.tsx
+```
+"use client";
+
+import type { DocumentInfo } from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+
+interface DocumentAnalysisSectionProps {
+  documents: DocumentInfo[];
+}
+
+const typeLabels: Record<DocumentInfo["type"], { label: string; bg: string; text: string }> = {
+  salgsoppgave: {
+    label: "Salgsoppgave",
+    bg: "bg-confidence-opplyst/15",
+    text: "text-confidence-opplyst",
+  },
+  takstrapport: {
+    label: "Takstrapport",
+    bg: "bg-confidence-dokumentert/15",
+    text: "text-confidence-dokumentert",
+  },
+  reguleringsplan: {
+    label: "Reguleringsplan",
+    bg: "bg-confidence-utledet/15",
+    text: "text-confidence-utledet",
+  },
+  annet: {
+    label: "Annet",
+    bg: "bg-confidence-uavklart/15",
+    text: "text-confidence-uavklart",
+  },
+};
+
+const statusConfig: Record<
+  DocumentInfo["status"],
+  { label: string; icon: string; color: string }
+> = {
+  laster_opp: {
+    label: "Laster opp",
+    icon: "\u2191",
+    color: "text-confidence-opplyst",
+  },
+  analyserer: {
+    label: "Analyserer",
+    icon: "\u25CB",
+    color: "text-confidence-utledet",
+  },
+  ferdig: {
+    label: "Ferdig",
+    icon: "\u2713",
+    color: "text-confidence-dokumentert",
+  },
+  feil: {
+    label: "Feil",
+    icon: "\u2715",
+    color: "text-avvik",
+  },
+};
+
+function formatDateTime(isoString: string): string {
+  try {
+    const date = new Date(isoString);
+    return date.toLocaleDateString("nb-NO", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch {
+    return isoString;
+  }
+}
+
+export default function DocumentAnalysisSection({
+  documents,
+}: DocumentAnalysisSectionProps) {
+  return (
+    <SectionCard
+      title="Dokumentanalyse"
+      subtitle="Opplastede dokumenter og analysestatus"
+      id="documents"
+    >
+      {documents.length === 0 ? (
+        <div className="rounded-card border border-dashed border-stone-border bg-stone-warm p-6 text-center">
+          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-badge bg-mineral-wash">
+            <span className="text-heading-sm text-mineral" aria-hidden="true">
+              +
+            </span>
+          </div>
+          <p className="text-body-sm font-medium text-ink-700 mb-1">
+            Ingen dokumenter lastet opp
+          </p>
+          <p className="text-body-sm text-ink-500 max-w-sm mx-auto">
+            Last opp en salgsoppgave eller takstrapport for automatisk analyse
+            og kryssvalidering mot offentlige data.
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {documents.map((doc) => {
+            const typeCfg = typeLabels[doc.type];
+            const statusCfg = statusConfig[doc.status];
+
+            return (
+              <div
+                key={doc.id}
+                className="
+                  flex items-center gap-4 rounded-card border border-stone-border/50
+                  bg-white p-4 transition-shadow hover:shadow-card-hover
+                "
+              >
+                {/* Status icon */}
+                <div
+                  className={`
+                    flex h-9 w-9 shrink-0 items-center justify-center
+                    rounded-badge bg-stone-warm
+                    ${statusCfg.color}
+                    ${doc.status === "analyserer" ? "animate-pulse" : ""}
+                  `}
+                >
+                  <span className="text-body font-semibold" aria-hidden="true">
+                    {statusCfg.icon}
+                  </span>
+                </div>
+
+                {/* File info */}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <span className="text-body-sm font-medium text-ink truncate">
+                      {doc.filename}
+                    </span>
+                    <span
+                      className={`
+                        inline-flex shrink-0 items-center rounded-badge px-1.5 py-0.5
+                        text-micro font-medium ${typeCfg.bg} ${typeCfg.text}
+                      `}
+                    >
+                      {typeCfg.label}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 text-micro text-ink-400">
+                    <span>{formatDateTime(doc.uploadedAt)}</span>
+                    <span className={`font-medium ${statusCfg.color}`}>
+                      {statusCfg.label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Extracted data count */}
+                {doc.status === "ferdig" && doc.extractedData && (
+                  <div className="shrink-0 text-right">
+                    <span className="text-caption font-medium text-ink-600">
+                      {Object.keys(doc.extractedData).length}
+                    </span>
+                    <span className="text-micro text-ink-400 ml-1">felt</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/FieldValidationSection.tsx
+```
+"use client";
+
+import type {
+  PropertyReport,
+  TrackedValue,
+  ConfidenceLevel,
+  ValidationStatus,
+} from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+import ConfidenceBadge from "@/components/ui/ConfidenceBadge";
+import ValidationBadge from "@/components/ui/ValidationBadge";
+
+interface FieldValidationSectionProps {
+  report: PropertyReport;
+}
+
+interface DataPointRow {
+  field: string;
+  value: string;
+  confidence: ConfidenceLevel;
+  source: string;
+  validationStatus?: ValidationStatus;
+}
+
+/** Extract a display-friendly value from any TrackedValue. */
+function formatValue(v: TrackedValue<unknown>): string {
+  const val = v.value;
+  if (val === null || val === undefined) return "—";
+  if (typeof val === "object" && val !== null && "lat" in val && "lng" in val) {
+    const coords = val as { lat: number; lng: number };
+    return `${coords.lat.toFixed(4)}\u00B0 N, ${coords.lng.toFixed(4)}\u00B0 \u00D8`;
+  }
+  return String(val);
+}
+
+/** Collect all tracked data points from the report into a flat list. */
+function collectDataPoints(report: PropertyReport): DataPointRow[] {
+  const rows: DataPointRow[] = [];
+
+  function addField(field: string, tracked: TrackedValue<unknown> | undefined): void {
+    if (!tracked) return;
+    rows.push({
+      field,
+      value: formatValue(tracked),
+      confidence: tracked.confidence,
+      source: tracked.source.name,
+      validationStatus: tracked.validationStatus,
+    });
+  }
+
+  // Identity
+  const id = report.identity;
+  addField("Kommunenummer", id.kommunenummer);
+  addField("Kommunenavn", id.kommunenavn);
+  addField("G\u00E5rdsnummer", id.gardsnummer);
+  addField("Bruksnummer", id.bruksnummer);
+  addField("Festenummer", id.festenummer);
+  addField("Seksjonsnummer", id.seksjonsnummer);
+  addField("Adresse", id.adresse);
+  addField("Postnummer", id.postnummer);
+  addField("Poststed", id.poststed);
+  addField("Koordinater", id.koordinater);
+
+  // Zoning
+  const z = report.zoning;
+  addField("Arealform\u00E5l", z.arealformaal);
+  addField("Plan-ID", z.planId);
+  addField("Plannavn", z.planNavn);
+  addField("Plantype", z.planType);
+  addField("Planstatus", z.planStatus);
+  addField("Utnyttingsgrad", z.utnyttingsgrad);
+  addField("Maks h\u00F8yde", z.maksHoyde);
+  addField("Byggegrense", z.byggegrense);
+
+  // Terrain
+  addField("H\u00F8yde over havet", report.terrain.hoyde);
+
+  // Building
+  if (report.building) {
+    const b = report.building;
+    addField("Bygningstype", b.bygningstype);
+    addField("Bygge\u00E5r", b.byggeaar);
+    addField("Bruksareal", b.bruksareal);
+    addField("Antall etasjer", b.antallEtasjer);
+    addField("Bygningsstatus", b.bygningsstatus);
+  }
+
+  return rows;
+}
+
+export default function FieldValidationSection({
+  report,
+}: FieldValidationSectionProps) {
+  const dataPoints = collectDataPoints(report);
+
+  return (
+    <SectionCard
+      title="Feltvalidering"
+      subtitle={`${dataPoints.length} datapunkter fra alle kilder`}
+      id="field-validation"
+    >
+      {dataPoints.length === 0 ? (
+        <p className="text-body-sm text-ink-500">
+          Ingen datapunkter tilgjengelig.
+        </p>
+      ) : (
+        <div className="overflow-x-auto -mx-5">
+          <table className="w-full min-w-[600px] text-left">
+            <thead>
+              <tr className="border-b border-stone-border/60">
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Felt
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Verdi
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Konfidens
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Kilde
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Validering
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataPoints.map((dp, idx) => (
+                <tr
+                  key={dp.field}
+                  className={`
+                    border-b border-stone-border/30 last:border-b-0
+                    ${idx % 2 === 0 ? "bg-white" : "bg-stone-warm"}
+                  `}
+                >
+                  <td className="px-5 py-2.5 text-body-sm font-medium text-ink">
+                    {dp.field}
+                  </td>
+                  <td className="px-5 py-2.5 text-body-sm text-ink-700 font-mono">
+                    {dp.value}
+                  </td>
+                  <td className="px-5 py-2.5">
+                    <ConfidenceBadge level={dp.confidence} size="sm" />
+                  </td>
+                  <td className="px-5 py-2.5 text-micro text-ink-500">
+                    {dp.source}
+                  </td>
+                  <td className="px-5 py-2.5">
+                    {dp.validationStatus ? (
+                      <ValidationBadge status={dp.validationStatus} />
+                    ) : (
+                      <span className="text-micro text-ink-400">&mdash;</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/IdentitySection.tsx
+```
+"use client";
+
+import type { PropertyIdentity } from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+import DataRow from "@/components/ui/DataRow";
+
+interface IdentitySectionProps {
+  identity: PropertyIdentity;
+}
+
+export default function IdentitySection({ identity }: IdentitySectionProps) {
+  const coords = identity.koordinater.value;
+  const formattedCoords = `${coords.lat.toFixed(4)}\u00B0 N, ${coords.lng.toFixed(4)}\u00B0 \u00D8`;
+
+  return (
+    <SectionCard
+      title="Eiendomsidentitet"
+      subtitle="Matrikkeldata og adresseinformasjon"
+      id="identity"
+    >
+      <div className="divide-y divide-stone-border/40">
+        <DataRow
+          label="Kommunenummer"
+          value={identity.kommunenummer.value}
+          confidence={identity.kommunenummer.confidence}
+          source={identity.kommunenummer.source.name}
+          mono
+        />
+        <DataRow
+          label="Kommunenavn"
+          value={identity.kommunenavn.value}
+          confidence={identity.kommunenavn.confidence}
+          source={identity.kommunenavn.source.name}
+        />
+        <DataRow
+          label="G\u00E5rdsnummer"
+          value={identity.gardsnummer.value}
+          confidence={identity.gardsnummer.confidence}
+          source={identity.gardsnummer.source.name}
+          mono
+        />
+        <DataRow
+          label="Bruksnummer"
+          value={identity.bruksnummer.value}
+          confidence={identity.bruksnummer.confidence}
+          source={identity.bruksnummer.source.name}
+          mono
+        />
+        <DataRow
+          label="Adresse"
+          value={identity.adresse.value}
+          confidence={identity.adresse.confidence}
+          source={identity.adresse.source.name}
+        />
+        {identity.postnummer && identity.poststed && (
+          <DataRow
+            label="Postnummer / Poststed"
+            value={`${identity.postnummer.value} ${identity.poststed.value}`}
+            confidence={identity.postnummer.confidence}
+            source={identity.postnummer.source.name}
+          />
+        )}
+        {identity.postnummer && !identity.poststed && (
+          <DataRow
+            label="Postnummer"
+            value={identity.postnummer.value}
+            confidence={identity.postnummer.confidence}
+            source={identity.postnummer.source.name}
+            mono
+          />
+        )}
+        <DataRow
+          label="Koordinater"
+          value={formattedCoords}
+          confidence={identity.koordinater.confidence}
+          source={identity.koordinater.source.name}
+          mono
+        />
+      </div>
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/MapSection.tsx
+```
+"use client";
+
+import { useEffect, useState } from "react";
+import SectionCard from "@/components/ui/SectionCard";
+import DynamicMap from "@/components/map/DynamicMap";
+
+interface MapSectionProps {
+  coordinates: { lat: number; lng: number };
+  address: string;
+  kommune: string;
+  gnr: number;
+  bnr: number;
+}
+
+export default function MapSection({
+  coordinates,
+  address,
+  kommune,
+  gnr,
+  bnr,
+}: MapSectionProps) {
+  const [grenser, setGrenser] = useState<GeoJSON.FeatureCollection | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function fetchGrenser() {
+      try {
+        const res = await fetch(
+          `/api/eiendom/grenser?kommune=${encodeURIComponent(kommune)}&gnr=${gnr}&bnr=${bnr}`,
+          { signal: controller.signal },
+        );
+        if (res.ok) {
+          const data = (await res.json()) as GeoJSON.FeatureCollection;
+          setGrenser(data);
+        }
+      } catch {
+        // Silently handle abort / fetch errors
+      }
+    }
+
+    void fetchGrenser();
+    return () => controller.abort();
+  }, [kommune, gnr, bnr]);
+
+  return (
+    <SectionCard title="Kart" id="map">
+      <div className="rounded-card overflow-hidden border border-stone-border/40">
+        <DynamicMap
+          lat={coordinates.lat}
+          lng={coordinates.lng}
+          address={address}
+          grenser={grenser}
+        />
+      </div>
+      <p className="text-micro text-ink-400 mt-2">
+        Kartdata: &copy; Kartverket
+      </p>
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/PropertySummary.tsx
+```
+"use client";
+
+import type {
+  PropertyReport,
+  ConfidenceLevel,
+  TrackedValue,
+} from "@/types";
+
+interface PropertySummaryProps {
+  report: PropertyReport;
+}
+
+/** Extract all TrackedValues from the report for counting. */
+function collectTrackedValues(report: PropertyReport): TrackedValue<unknown>[] {
+  const values: TrackedValue<unknown>[] = [];
+
+  // Identity fields
+  const identity = report.identity;
+  values.push(
+    identity.kommunenummer,
+    identity.kommunenavn,
+    identity.gardsnummer,
+    identity.bruksnummer,
+    identity.adresse,
+    identity.koordinater,
+  );
+  if (identity.festenummer) values.push(identity.festenummer);
+  if (identity.seksjonsnummer) values.push(identity.seksjonsnummer);
+  if (identity.postnummer) values.push(identity.postnummer);
+  if (identity.poststed) values.push(identity.poststed);
+
+  // Zoning fields
+  const zoning = report.zoning;
+  if (zoning.arealformaal) values.push(zoning.arealformaal);
+  if (zoning.planId) values.push(zoning.planId);
+  if (zoning.planNavn) values.push(zoning.planNavn);
+  if (zoning.planType) values.push(zoning.planType);
+  if (zoning.planStatus) values.push(zoning.planStatus);
+  if (zoning.utnyttingsgrad) values.push(zoning.utnyttingsgrad);
+  if (zoning.maksHoyde) values.push(zoning.maksHoyde);
+  if (zoning.byggegrense) values.push(zoning.byggegrense);
+
+  // Terrain fields
+  if (report.terrain.hoyde) values.push(report.terrain.hoyde);
+
+  // Building fields
+  if (report.building) {
+    const b = report.building;
+    if (b.bygningstype) values.push(b.bygningstype);
+    if (b.byggeaar) values.push(b.byggeaar);
+    if (b.bruksareal) values.push(b.bruksareal);
+    if (b.antallEtasjer) values.push(b.antallEtasjer);
+    if (b.bygningsstatus) values.push(b.bygningsstatus);
+  }
+
+  return values;
+}
+
+const confidenceColors: Record<ConfidenceLevel, string> = {
+  dokumentert: "bg-confidence-dokumentert",
+  opplyst: "bg-confidence-opplyst",
+  utledet: "bg-confidence-utledet",
+  uavklart: "bg-confidence-uavklart",
+};
+
+const confidenceLabels: Record<ConfidenceLevel, string> = {
+  dokumentert: "Dokumentert",
+  opplyst: "Opplyst",
+  utledet: "Utledet",
+  uavklart: "Uavklart",
+};
+
+export default function PropertySummary({ report }: PropertySummaryProps) {
+  const { identity } = report;
+  const address = identity.adresse.value;
+  const kommune = identity.kommunenavn.value;
+  const kommunenr = identity.kommunenummer.value;
+  const gnr = identity.gardsnummer.value;
+  const bnr = identity.bruksnummer.value;
+  const matrikkel = `${kommunenr}-${gnr}/${bnr}`;
+
+  // Collect all tracked values and count by confidence
+  const allValues = collectTrackedValues(report);
+  const totalDataPoints = allValues.length;
+
+  const counts: Record<ConfidenceLevel, number> = {
+    dokumentert: 0,
+    opplyst: 0,
+    utledet: 0,
+    uavklart: 0,
+  };
+  for (const v of allValues) {
+    counts[v.confidence]++;
+  }
+
+  // Unique sources
+  const sourceNames = new Set<string>();
+  for (const v of allValues) {
+    sourceNames.add(v.source.name);
+  }
+  const totalSources = sourceNames.size;
+
+  const totalDiscrepancies = report.discrepancies.length;
+
+  // Compute percentages for the validation bar
+  const levels: ConfidenceLevel[] = ["dokumentert", "opplyst", "utledet", "uavklart"];
+
+  return (
+    <section
+      className="
+        bg-white rounded-card shadow-card
+        border border-stone-border/50
+        border-t-[3px] border-t-mineral
+        overflow-hidden
+        p-6 sm:p-8
+      "
+    >
+      {/* Address & matrikkel */}
+      <div className="mb-6">
+        <h1 className="text-display-sm text-ink mb-1">{address}</h1>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-body text-ink-500">
+          <span className="font-mono text-caption">{matrikkel}</span>
+          <span className="hidden sm:inline text-stone-border">|</span>
+          <span>{kommune}</span>
+        </div>
+      </div>
+
+      {/* Validation bar */}
+      <div className="mb-5">
+        <div className="flex items-center gap-1.5 mb-2">
+          <span className="text-caption text-ink-500">Datakvalitet</span>
+        </div>
+        <div className="flex h-2 w-full rounded-full overflow-hidden bg-stone-light">
+          {levels.map((level) => {
+            const pct = totalDataPoints > 0 ? (counts[level] / totalDataPoints) * 100 : 0;
+            if (pct === 0) return null;
+            return (
+              <div
+                key={level}
+                className={`${confidenceColors[level]} transition-all duration-500`}
+                style={{ width: `${pct}%` }}
+                title={`${confidenceLabels[level]}: ${counts[level]}`}
+              />
+            );
+          })}
+        </div>
+        {/* Legend */}
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
+          {levels.map((level) =>
+            counts[level] > 0 ? (
+              <div key={level} className="flex items-center gap-1.5">
+                <span
+                  className={`inline-block w-2.5 h-2.5 rounded-sm ${confidenceColors[level]}`}
+                />
+                <span className="text-micro text-ink-500">
+                  {confidenceLabels[level]} ({counts[level]})
+                </span>
+              </div>
+            ) : null,
+          )}
+        </div>
+      </div>
+
+      {/* Stats row */}
+      <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 border-t border-stone-border/50">
+        <div className="flex items-baseline gap-1.5">
+          <span className="text-heading text-ink">{totalDataPoints}</span>
+          <span className="text-caption text-ink-500">datapunkter</span>
+        </div>
+        <div className="flex items-baseline gap-1.5">
+          <span className="text-heading text-ink">{totalSources}</span>
+          <span className="text-caption text-ink-500">kilder</span>
+        </div>
+        <div className="flex items-baseline gap-1.5">
+          <span
+            className={`text-heading ${totalDiscrepancies > 0 ? "text-avvik" : "text-confidence-dokumentert"}`}
+          >
+            {totalDiscrepancies}
+          </span>
+          <span className="text-caption text-ink-500">avvik</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+### FILE: src/components/property/SourceRegistrySection.tsx
+```
+"use client";
+
+import type { SourceEntry } from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+
+interface SourceRegistrySectionProps {
+  sources: SourceEntry[];
+}
+
+const statusConfig: Record<
+  SourceEntry["status"],
+  { label: string; bg: string; text: string }
+> = {
+  ok: {
+    label: "OK",
+    bg: "bg-confidence-dokumentert/15",
+    text: "text-confidence-dokumentert",
+  },
+  feil: {
+    label: "Feil",
+    bg: "bg-avvik/15",
+    text: "text-avvik",
+  },
+  timeout: {
+    label: "Timeout",
+    bg: "bg-confidence-utledet/15",
+    text: "text-confidence-utledet",
+  },
+};
+
+const sourceTypeLabels: Record<string, string> = {
+  offentlig_register: "Offentlig register",
+  opplastet_dokument: "Opplastet dokument",
+  beregnet: "Beregnet",
+};
+
+function formatDateTime(isoString: string): string {
+  try {
+    const date = new Date(isoString);
+    return date.toLocaleDateString("nb-NO", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch {
+    return isoString;
+  }
+}
+
+function formatResponseTime(ms: number): string {
+  if (ms < 1000) return `${ms} ms`;
+  return `${(ms / 1000).toFixed(1)} s`;
+}
+
+export default function SourceRegistrySection({
+  sources,
+}: SourceRegistrySectionProps) {
+  return (
+    <SectionCard
+      title="Kilderegister"
+      subtitle={`${sources.length} kilder benyttet`}
+      id="sources"
+    >
+      {sources.length === 0 ? (
+        <p className="text-body-sm text-ink-500">
+          Ingen kilder registrert.
+        </p>
+      ) : (
+        <div className="overflow-x-auto -mx-5">
+          <table className="w-full min-w-[700px] text-left">
+            <thead>
+              <tr className="border-b border-stone-border/60">
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Kilde
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Type
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Felt
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Hentet
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold">
+                  Status
+                </th>
+                <th className="px-5 py-2.5 text-caption text-ink-500 font-semibold text-right">
+                  Responstid
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sources.map((entry, idx) => {
+                const st = statusConfig[entry.status];
+
+                return (
+                  <tr
+                    key={`${entry.source.name}-${idx}`}
+                    className={`
+                      border-b border-stone-border/30 last:border-b-0
+                      ${idx % 2 === 0 ? "bg-white" : "bg-stone-warm"}
+                    `}
+                  >
+                    {/* Source name */}
+                    <td className="px-5 py-2.5 text-body-sm font-medium text-ink">
+                      {entry.source.url ? (
+                        <a
+                          href={entry.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-stone-border hover:decoration-mineral transition-colors"
+                        >
+                          {entry.source.name}
+                        </a>
+                      ) : (
+                        entry.source.name
+                      )}
+                    </td>
+
+                    {/* Type */}
+                    <td className="px-5 py-2.5 text-micro text-ink-500">
+                      {sourceTypeLabels[entry.source.type] ?? entry.source.type}
+                    </td>
+
+                    {/* Fields provided */}
+                    <td className="px-5 py-2.5">
+                      <div className="flex flex-wrap gap-1">
+                        {entry.fieldsProvided.map((field) => (
+                          <span
+                            key={field}
+                            className="
+                              inline-block rounded-badge bg-stone-light px-1.5 py-0.5
+                              text-micro text-ink-600
+                            "
+                          >
+                            {field}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+
+                    {/* Retrieved at */}
+                    <td className="px-5 py-2.5 text-micro text-ink-500 whitespace-nowrap">
+                      {formatDateTime(entry.retrievedAt)}
+                    </td>
+
+                    {/* Status */}
+                    <td className="px-5 py-2.5">
+                      <span
+                        className={`
+                          inline-flex items-center rounded-badge px-1.5 py-0.5
+                          text-micro font-semibold ${st.bg} ${st.text}
+                        `}
+                      >
+                        {st.label}
+                      </span>
+                    </td>
+
+                    {/* Response time */}
+                    <td className="px-5 py-2.5 text-micro text-ink-500 text-right font-mono">
+                      {entry.responseTimeMs !== undefined
+                        ? formatResponseTime(entry.responseTimeMs)
+                        : "\u2014"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/property/ZoningSection.tsx
+```
+"use client";
+
+import type { ZoningInfo, TrackedValue } from "@/types";
+import SectionCard from "@/components/ui/SectionCard";
+import DataRow from "@/components/ui/DataRow";
+import AlertCard from "@/components/ui/AlertCard";
+
+interface ZoningSectionProps {
+  zoning: ZoningInfo;
+}
+
+interface ZoningField {
+  label: string;
+  tracked: TrackedValue<string> | undefined;
+}
+
+export default function ZoningSection({ zoning }: ZoningSectionProps) {
+  const fields: ZoningField[] = [
+    { label: "Arealform\u00E5l", tracked: zoning.arealformaal },
+    { label: "Plan-ID", tracked: zoning.planId },
+    { label: "Plannavn", tracked: zoning.planNavn },
+    { label: "Plantype", tracked: zoning.planType },
+    { label: "Planstatus", tracked: zoning.planStatus },
+    { label: "Utnyttingsgrad", tracked: zoning.utnyttingsgrad },
+    { label: "Maks h\u00F8yde", tracked: zoning.maksHoyde },
+    { label: "Byggegrense", tracked: zoning.byggegrense },
+  ];
+
+  const availableFields = fields.filter((f) => f.tracked !== undefined);
+  const uavklartFields = availableFields.filter(
+    (f) => f.tracked!.confidence === "uavklart",
+  );
+  const hasUavklart = uavklartFields.length > 0;
+
+  return (
+    <SectionCard
+      title="Plandata og regulering"
+      subtitle="Reguleringsplan og arealform\u00E5l"
+      id="zoning"
+    >
+      {availableFields.length > 0 ? (
+        <div className="divide-y divide-stone-border/40">
+          {availableFields.map((field) => (
+            <DataRow
+              key={field.label}
+              label={field.label}
+              value={field.tracked!.value}
+              confidence={field.tracked!.confidence}
+              source={field.tracked!.source.name}
+            />
+          ))}
+        </div>
+      ) : (
+        <AlertCard type="limit" title="Ingen plandata tilgjengelig">
+          Det ble ikke funnet plandata for denne eiendommen i de tilgjengelige
+          kildene. Kontakt kommunen for detaljert planinformasjon.
+        </AlertCard>
+      )}
+
+      {hasUavklart && (
+        <div className="mt-4">
+          <AlertCard type="warning" title="Uavklarte felt krever manuell sjekk">
+            F\u00F8lgende felt er markert som uavklart og b\u00F8r kontrolleres
+            direkte med kommunen:{" "}
+            <strong>{uavklartFields.map((f) => f.label).join(", ")}</strong>.
+            Kommunens planavdeling kan gi n\u00F8yaktig informasjon om gjeldende
+            regulering.
+          </AlertCard>
+        </div>
+      )}
+    </SectionCard>
+  );
+}
+```
+
+### FILE: src/components/ui/AlertCard.tsx
+```
+"use client";
+
+interface AlertCardProps {
+  type: "info" | "warning" | "error" | "limit";
+  title: string;
+  children: React.ReactNode;
+}
+
+const config: Record<
+  AlertCardProps["type"],
+  { border: string; bg: string; text: string; iconBg: string; icon: string }
+> = {
+  info: {
+    border: "border-l-confidence-opplyst",
+    bg: "bg-confidence-opplyst/6",
+    text: "text-confidence-opplyst",
+    iconBg: "bg-confidence-opplyst/12",
+    icon: "ℹ",
+  },
+  warning: {
+    border: "border-l-confidence-utledet",
+    bg: "bg-confidence-utledet/6",
+    text: "text-confidence-utledet",
+    iconBg: "bg-confidence-utledet/12",
+    icon: "⚠",
+  },
+  error: {
+    border: "border-l-avvik",
+    bg: "bg-avvik/6",
+    text: "text-avvik",
+    iconBg: "bg-avvik/12",
+    icon: "✕",
+  },
+  limit: {
+    border: "border-l-confidence-uavklart",
+    bg: "bg-confidence-uavklart/6",
+    text: "text-confidence-uavklart",
+    iconBg: "bg-confidence-uavklart/12",
+    icon: "◻",
+  },
+};
+
+export default function AlertCard({ type, title, children }: AlertCardProps) {
+  const { border, bg, text, iconBg, icon } = config[type];
+
+  return (
+    <div
+      className={`
+        rounded-card border border-stone-border/40
+        border-l-[3px] ${border} ${bg}
+        p-4
+      `}
+      role="alert"
+    >
+      <div className="flex gap-3">
+        <span
+          className={`
+            flex items-center justify-center shrink-0
+            w-6 h-6 rounded-badge text-micro
+            ${iconBg} ${text}
+          `}
+          aria-hidden="true"
+        >
+          {icon}
+        </span>
+        <div className="min-w-0">
+          <p className={`text-caption font-semibold ${text}`}>{title}</p>
+          <div className="mt-1 text-body-sm text-ink-600">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### FILE: src/components/ui/ConfidenceBadge.tsx
+```
+"use client";
+
+import type { ConfidenceLevel } from "@/types";
+
+interface ConfidenceBadgeProps {
+  level: ConfidenceLevel;
+  size?: "sm" | "md";
+}
+
+const config: Record<
+  ConfidenceLevel,
+  { label: string; bg: string; text: string }
+> = {
+  dokumentert: {
+    label: "Dokumentert",
+    bg: "bg-confidence-dokumentert/15",
+    text: "text-confidence-dokumentert",
+  },
+  opplyst: {
+    label: "Opplyst",
+    bg: "bg-confidence-opplyst/15",
+    text: "text-confidence-opplyst",
+  },
+  utledet: {
+    label: "Utledet",
+    bg: "bg-confidence-utledet/15",
+    text: "text-confidence-utledet",
+  },
+  uavklart: {
+    label: "Uavklart",
+    bg: "bg-confidence-uavklart/15",
+    text: "text-confidence-uavklart",
+  },
+};
+
+export default function ConfidenceBadge({
+  level,
+  size = "sm",
+}: ConfidenceBadgeProps) {
+  const { label, bg, text } = config[level];
+
+  return (
+    <span
+      className={`
+        inline-flex items-center rounded-badge font-medium select-none
+        ${bg} ${text}
+        ${size === "sm" ? "px-1.5 py-0.5 text-micro" : "px-2 py-0.5 text-caption"}
+      `}
+    >
+      {label}
+    </span>
+  );
+}
+```
+
+### FILE: src/components/ui/DataRow.tsx
+```
+"use client";
+
+import type { ConfidenceLevel } from "@/types";
+import ConfidenceBadge from "./ConfidenceBadge";
+
+interface DataRowProps {
+  label: string;
+  value: string | number;
+  confidence?: ConfidenceLevel;
+  source?: string;
+  mono?: boolean;
+}
+
+export default function DataRow({
+  label,
+  value,
+  confidence,
+  source,
+  mono = false,
+}: DataRowProps) {
+  return (
+    <div className="flex flex-col gap-0.5 py-2.5 border-b border-stone-border/60 last:border-b-0">
+      <div className="flex items-center justify-between gap-4">
+        <span className="text-caption text-ink-500 shrink-0">{label}</span>
+        <div className="flex items-center gap-2 text-right">
+          <span
+            className={`text-body font-medium text-ink ${mono ? "font-mono" : ""}`}
+          >
+            {value}
+          </span>
+          {confidence && <ConfidenceBadge level={confidence} size="sm" />}
+        </div>
+      </div>
+      {source && (
+        <span className="text-micro text-ink-400 text-right">{source}</span>
+      )}
+    </div>
+  );
+}
+```
+
+### FILE: src/components/ui/SearchInput.tsx
+```
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+import type { SearchResult } from "@/types";
+
+interface SearchInputProps {
+  value: string;
+  onChange: (value: string) => void;
+  results: SearchResult[];
+  loading: boolean;
+  onSelect: (result: SearchResult) => void;
+  placeholder?: string;
+  size?: "default" | "large";
+}
+
+export default function SearchInput({
+  value,
+  onChange,
+  results,
+  loading,
+  onSelect,
+  placeholder = "Søk etter adresse eller matrikkel...",
+  size = "default",
+}: SearchInputProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const showDropdown = isFocused && (results.length > 0 || loading);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
+        setIsFocused(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isLarge = size === "large";
+
+  return (
+    <div ref={containerRef} className="relative w-full">
+      {/* Input wrapper */}
+      <div
+        className={`
+          relative flex items-center bg-white
+          border border-stone-border rounded-input
+          transition-shadow duration-200
+          ${isFocused ? "shadow-input-focus border-mineral-muted" : "shadow-card hover:shadow-card-hover"}
+          ${isLarge ? "h-14" : "h-10"}
+        `}
+      >
+        {/* Magnifying glass icon */}
+        <div
+          className={`
+            flex items-center justify-center shrink-0 text-ink-400
+            ${isLarge ? "pl-4 pr-2" : "pl-3 pr-2"}
+          `}
+        >
+          <svg
+            width={isLarge ? 22 : 18}
+            height={isLarge ? 22 : 18}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
+
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onFocus={() => setIsFocused(true)}
+          placeholder={placeholder}
+          className={`
+            flex-1 bg-transparent outline-none text-ink placeholder:text-ink-400
+            ${isLarge ? "text-body-lg pr-4" : "text-body pr-3"}
+          `}
+          role="combobox"
+          aria-expanded={showDropdown}
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+        />
+
+        {/* Loading spinner */}
+        {loading && (
+          <div
+            className={`
+              shrink-0 animate-spin rounded-full
+              border-2 border-stone-mid border-t-mineral
+              ${isLarge ? "w-5 h-5 mr-4" : "w-4 h-4 mr-3"}
+            `}
+            aria-label="Søker..."
+          />
+        )}
+      </div>
+
+      {/* Dropdown */}
+      {showDropdown && (
+        <div
+          className="
+            absolute z-50 top-full left-0 right-0 mt-1.5
+            bg-white border border-stone-border rounded-card
+            shadow-elevated overflow-hidden
+            max-h-72 overflow-y-auto
+          "
+          role="listbox"
+        >
+          {loading && results.length === 0 ? (
+            <div className="px-4 py-5 text-center text-body-sm text-ink-400">
+              Søker...
+            </div>
+          ) : (
+            results.map((result) => (
+              <button
+                key={result.slug}
+                type="button"
+                role="option"
+                aria-selected={false}
+                className="
+                  w-full text-left px-4 py-3
+                  hover:bg-stone-warm transition-colors duration-100
+                  border-b border-stone-border/40 last:border-b-0
+                  focus:outline-none focus:bg-stone-warm
+                "
+                onClick={() => {
+                  onSelect(result);
+                  setIsFocused(false);
+                }}
+              >
+                <div className="text-body font-medium text-ink">
+                  {result.address}
+                </div>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-caption text-ink-500">
+                    {result.municipality}
+                  </span>
+                  <span className="text-micro text-ink-400" aria-hidden="true">
+                    ·
+                  </span>
+                  <span className="text-caption text-ink-400 font-mono">
+                    {result.gnr}/{result.bnr}
+                  </span>
+                </div>
+              </button>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+### FILE: src/components/ui/SectionCard.tsx
+```
+"use client";
+
+interface SectionCardProps {
+  title: string;
+  subtitle?: string;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+  id?: string;
+}
+
+export default function SectionCard({
+  title,
+  subtitle,
+  icon,
+  children,
+  id,
+}: SectionCardProps) {
+  return (
+    <section
+      id={id}
+      className="
+        bg-white rounded-card shadow-card
+        border border-stone-border/50
+        border-t-2 border-t-mineral-muted
+        overflow-hidden
+      "
+    >
+      <div className="px-5 pt-5 pb-4">
+        <div className="flex items-center gap-2.5">
+          {icon && (
+            <span className="flex items-center justify-center w-8 h-8 rounded-badge bg-mineral-wash text-mineral">
+              {icon}
+            </span>
+          )}
+          <div>
+            <h2 className="text-heading-sm text-ink">{title}</h2>
+            {subtitle && (
+              <p className="text-body-sm text-ink-500 mt-0.5">{subtitle}</p>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="px-5 pb-5">{children}</div>
+    </section>
+  );
+}
+```
+
+### FILE: src/components/ui/Skeleton.tsx
+```
+"use client";
+
+interface SkeletonProps {
+  className?: string;
+  lines?: number;
+}
+
+const lineWidths = ["w-full", "w-3/4", "w-5/6", "w-2/3", "w-4/5"];
+
+export default function Skeleton({ className, lines }: SkeletonProps) {
+  if (lines) {
+    return (
+      <div className="flex flex-col gap-2.5" role="status" aria-label="Laster...">
+        {Array.from({ length: lines }, (_, i) => (
+          <div
+            key={i}
+            className={`
+              h-3.5 rounded-badge animate-pulse bg-stone-mid/50
+              ${lineWidths[i % lineWidths.length]}
+            `}
+          />
+        ))}
+        <span className="sr-only">Laster...</span>
+      </div>
+    );
+  }
+
+  return (
+    <div role="status" aria-label="Laster...">
+      <div
+        className={`rounded-badge animate-pulse bg-stone-mid/50 ${className ?? "h-10 w-full"}`}
+      />
+      <span className="sr-only">Laster...</span>
+    </div>
+  );
+}
+```
+
+### FILE: src/components/ui/ValidationBadge.tsx
+```
+"use client";
+
+import type { ValidationStatus } from "@/types";
+
+interface ValidationBadgeProps {
+  status: ValidationStatus;
+}
+
+const config: Record<
+  ValidationStatus,
+  { label: string; bg: string; text: string; icon: string }
+> = {
+  bekreftet_flere: {
+    label: "Bekreftet av flere kilder",
+    bg: "bg-confidence-dokumentert/12",
+    text: "text-confidence-dokumentert",
+    icon: "✓✓",
+  },
+  bekreftet_en: {
+    label: "Bekreftet av én kilde",
+    bg: "bg-confidence-dokumentert/8",
+    text: "text-confidence-dokumentert",
+    icon: "✓",
+  },
+  avvik: {
+    label: "Avvik funnet",
+    bg: "bg-avvik/12",
+    text: "text-avvik",
+    icon: "!",
+  },
+  ikke_funnet: {
+    label: "Ikke funnet",
+    bg: "bg-confidence-uavklart/12",
+    text: "text-confidence-uavklart",
+    icon: "—",
+  },
+  kun_dokument: {
+    label: "Kun i dokument",
+    bg: "bg-confidence-utledet/12",
+    text: "text-confidence-utledet",
+    icon: "◇",
+  },
+  ai_utledet: {
+    label: "AI-utledet",
+    bg: "bg-confidence-opplyst/12",
+    text: "text-confidence-opplyst",
+    icon: "◈",
+  },
+};
+
+export default function ValidationBadge({ status }: ValidationBadgeProps) {
+  const { label, bg, text, icon } = config[status];
+
+  return (
+    <span
+      className={`
+        inline-flex items-center gap-1 rounded-badge px-2 py-0.5
+        text-micro font-medium select-none
+        ${bg} ${text}
+      `}
+    >
+      <span className="text-[0.6rem] leading-none" aria-hidden="true">
+        {icon}
+      </span>
+      {label}
+    </span>
+  );
+}
+```
+
+### FILE: src/hooks/usePropertyData.ts
+```
+"use client";
+import { useState, useEffect } from "react";
+import type { PropertyReport } from "@/types";
+
+export function usePropertyData(kommune: string, gnr: number, bnr: number) {
+  const [report, setReport] = useState<PropertyReport | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(
+          `/api/eiendom?kommune=${encodeURIComponent(kommune)}&gnr=${gnr}&bnr=${bnr}`
+        );
+        if (!res.ok) throw new Error(`Feil ved henting av eiendomsdata (${res.status})`);
+        const data: PropertyReport = await res.json();
+        if (!cancelled) setReport(data);
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : "Ukjent feil");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    fetchData();
+    return () => {
+      cancelled = true;
+    };
+  }, [kommune, gnr, bnr]);
+
+  return { report, loading, error };
+}
+```
+
+### FILE: src/hooks/useSearch.ts
+```
+"use client";
+import { useState, useEffect, useCallback } from "react";
+import type { SearchResult } from "@/types";
+
+export function useSearch() {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (query.length < 2) {
+      setResults([]);
+      setError(null);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
+          signal: controller.signal,
+        });
+        if (!res.ok) throw new Error("Søk feilet");
+        const data = await res.json();
+        setResults(data.results || []);
+      } catch (err) {
+        if (err instanceof Error && err.name !== "AbortError") {
+          setError("Kunne ikke søke. Prøv igjen.");
+          setResults([]);
+        }
+      } finally {
+        setLoading(false);
+      }
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [query]);
+
+  const clear = useCallback(() => {
+    setQuery("");
+    setResults([]);
+    setError(null);
+  }, []);
+
+  return { query, setQuery, results, loading, error, clear };
+}
+```
+
+### FILE: src/lib/api/einnsyn.ts
+```
+// ─── eInnsyn API ────────────────────────────────────────────
+
+const EINNSYN_API = "https://api.einnsyn.no";
+
+// ─── Types ──────────────────────────────────────────────────
+
+export interface EinnsynResult {
+  title: string;
+  description?: string;
+  publisher?: string;
+  date?: string;
+  url?: string;
+}
+
+interface EinnsynApiHit {
+  _source?: {
+    tittel?: string;
+    beskrivelse?: string;
+    publisertAv_navn?: string;
+    publisertDato?: string;
+    journaldato?: string;
+    saksdato?: string;
+    dokumentUrl?: string;
+    arkivskaperNavn?: string;
+  };
+  tittel?: string;
+  beskrivelse?: string;
+}
+
+interface EinnsynApiResponse {
+  hits?: {
+    hits?: EinnsynApiHit[];
+    total?: number | { value: number };
+  };
+  _embedded?: {
+    searchResults?: Array<{
+      tittel?: string;
+      beskrivelse?: string;
+      publisertAv?: string;
+      dato?: string;
+      url?: string;
+    }>;
+  };
+}
+
+// ─── Public functions ───────────────────────────────────────
+
+/**
+ * Search public building case documents on eInnsyn.
+ * @param query - Search query string
+ * @param limit - Maximum number of results (default 10)
+ * @returns Array of results, or null on error
+ */
+export async function searchEinnsyn(
+  query: string,
+  limit: number = 10
+): Promise<EinnsynResult[] | null> {
+  try {
+    const params = new URLSearchParams({
+      q: query,
+      limit: String(limit),
+    });
+
+    const response = await fetch(`${EINNSYN_API}/api/search?${params.toString()}`, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      console.error(`eInnsyn API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: EinnsynApiResponse = await response.json();
+
+    // Handle Elasticsearch-style response
+    if (data.hits?.hits) {
+      return data.hits.hits.map((hit) => {
+        const source = hit._source;
+        if (source) {
+          return {
+            title: source.tittel ?? "Uten tittel",
+            description: source.beskrivelse ?? undefined,
+            publisher: source.publisertAv_navn ?? source.arkivskaperNavn ?? undefined,
+            date: source.journaldato ?? source.publisertDato ?? source.saksdato ?? undefined,
+            url: source.dokumentUrl ?? undefined,
+          };
+        }
+        return {
+          title: hit.tittel ?? "Uten tittel",
+          description: hit.beskrivelse ?? undefined,
+        };
+      });
+    }
+
+    // Handle embedded response format
+    if (data._embedded?.searchResults) {
+      return data._embedded.searchResults.map((result) => ({
+        title: result.tittel ?? "Uten tittel",
+        description: result.beskrivelse ?? undefined,
+        publisher: result.publisertAv ?? undefined,
+        date: result.dato ?? undefined,
+        url: result.url ?? undefined,
+      }));
+    }
+
+    return [];
+  } catch (error) {
+    console.error(
+      "Error searching eInnsyn:",
+      error instanceof Error ? error.message : error
+    );
+    return null;
+  }
+}
+```
+
+### FILE: src/lib/api/geonorge.ts
+```
+// ─── Geonorge WFS services ──────────────────────────────────
+
+const EIENDOMSKART_WFS = "https://wfs.geonorge.no/skwms1/wfs.matrikkelen-eiendomskart-teig";
+const AREALPLAN_WFS = "https://wfs.geonorge.no/skwms1/wfs.reguleringsplanforslag";
+
+// ─── GeoJSON types ──────────────────────────────────────────
+
+interface GeoJSONGeometry {
+  type: string;
+  coordinates: number[] | number[][] | number[][][] | number[][][][];
+}
+
+interface GeoJSONProperties {
+  [key: string]: string | number | boolean | null | undefined;
+}
+
+interface GeoJSONFeature {
+  type: "Feature";
+  geometry: GeoJSONGeometry;
+  properties: GeoJSONProperties;
+  id?: string;
+}
+
+export interface GeoJSONFeatureCollection {
+  type: "FeatureCollection";
+  features: GeoJSONFeature[];
+  totalFeatures?: number;
+  numberMatched?: number;
+  numberReturned?: number;
+}
+
+// ─── Arealplan result ───────────────────────────────────────
+
+export interface ArealplanInfo {
+  planId: string;
+  planNavn: string;
+  arealformaal: string;
+  planType?: string;
+  planStatus?: string;
+}
+
+// ─── Helper ─────────────────────────────────────────────────
+
+function buildWfsUrl(
+  baseUrl: string,
+  typeNames: string,
+  cqlFilter: string,
+  maxFeatures: number = 10
+): string {
+  const params = new URLSearchParams({
+    service: "WFS",
+    version: "2.0.0",
+    request: "GetFeature",
+    typeNames,
+    outputFormat: "application/json",
+    CQL_FILTER: cqlFilter,
+    count: String(maxFeatures),
+  });
+  return `${baseUrl}?${params.toString()}`;
+}
+
+// ─── Public functions ───────────────────────────────────────
+
+/**
+ * Fetch property boundary polygons from Geonorge WFS.
+ * Returns a GeoJSON FeatureCollection with teig (parcel) boundaries.
+ */
+export async function getEiendomsgrenser(
+  kommunenr: string,
+  gnr: number,
+  bnr: number
+): Promise<GeoJSONFeatureCollection | null> {
+  try {
+    const cqlFilter = `kommunenummer='${kommunenr}' AND gaardsnummer=${gnr} AND bruksnummer=${bnr}`;
+    const url = buildWfsUrl(
+      EIENDOMSKART_WFS,
+      "matrikkelen_teig:Teig",
+      cqlFilter,
+      50
+    );
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      console.error(`Geonorge Eiendomskart WFS returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: GeoJSONFeatureCollection = await response.json();
+
+    if (!data.features || data.features.length === 0) {
+      console.warn(`No eiendomsgrenser found for ${kommunenr}-${gnr}/${bnr}`);
+      return { type: "FeatureCollection", features: [] };
+    }
+
+    return data;
+  } catch (error) {
+    console.error(
+      "Error fetching eiendomsgrenser:",
+      error instanceof Error ? error.message : error
+    );
+    return null;
+  }
+}
+
+/**
+ * Attempt to fetch zoning/plan data from Geonorge arealplan WFS.
+ * Returns plan info if found, or null on error or no data.
+ */
+export async function getArealplan(
+  kommunenr: string,
+  gnr: number,
+  bnr: number
+): Promise<ArealplanInfo | null> {
+  try {
+    const cqlFilter = `kommunenummer='${kommunenr}' AND gaardsnummer=${gnr} AND bruksnummer=${bnr}`;
+    const url = buildWfsUrl(
+      AREALPLAN_WFS,
+      "Reguleringsplanforslag",
+      cqlFilter,
+      5
+    );
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      // Arealplan WFS may not be available for all municipalities
+      console.warn(`Geonorge Arealplan WFS returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: GeoJSONFeatureCollection = await response.json();
+
+    if (!data.features || data.features.length === 0) {
+      return null;
+    }
+
+    const feature = data.features[0];
+    const props = feature.properties;
+
+    return {
+      planId: String(props["planidentifikasjon"] ?? props["planId"] ?? ""),
+      planNavn: String(props["plannavn"] ?? props["planNavn"] ?? ""),
+      arealformaal: String(props["arealformaal"] ?? props["arealformål"] ?? ""),
+      planType: props["plantype"] ? String(props["plantype"]) : undefined,
+      planStatus: props["planstatus"] ? String(props["planstatus"]) : undefined,
+    };
+  } catch (error) {
+    console.error(
+      "Error fetching arealplan:",
+      error instanceof Error ? error.message : error
+    );
+    return null;
+  }
+}
+```
+
+### FILE: src/lib/api/kartverket.ts
+```
+import type { SearchResult, KartverketAdresseResponse } from "@/types";
+
+const ADRESSE_API = "https://ws.geonorge.no/adresser/v1";
+const EIENDOM_API = "https://ws.geonorge.no/eiendom/v1";
+const KOMMUNEINFO_API = "https://ws.geonorge.no/kommuneinfo/v1";
+const HOYDEDATA_API = "https://ws.geonorge.no/hoydedata/v1";
+
+// ─── Response types for Kartverket APIs ─────────────────────
+
+interface KommuneInfoResponse {
+  kommunenavn: string;
+  kommunenavnNorsk: string;
+  kommunenummer: string;
+  fylkesnavn: string;
+  fylkesnummer: string;
+}
+
+interface HoydedataResponse {
+  koordsys: number;
+  punkter: Array<{
+    nord: number;
+    ost: number;
+    z: number;
+    datakilde: string;
+  }>;
+}
+
+interface EiendomByPointResponse {
+  teiger?: Array<{
+    kommunenummer: string;
+    gaardsnummer: number;
+    bruksnummer: number;
+    festenummer?: number;
+    seksjonsnummer?: number;
+    matrikkelnummertekst: string;
+  }>;
+}
+
+// ─── Helper ────────────────────────────────────────────────
+
+function slugify(address: string, kommunenr: string, gnr: number, bnr: number): string {
+  const addressSlug = address
+    .toLowerCase()
+    .replace(/[æ]/g, "ae")
+    .replace(/[ø]/g, "o")
+    .replace(/[å]/g, "a")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return `${kommunenr}-${gnr}-${bnr}-${addressSlug}`;
+}
+
+// ─── Public functions ──────────────────────────────────────
+
+/**
+ * Search addresses via Kartverket Adresse-API.
+ * Returns formatted results with address, kommune, gnr, bnr, coordinates, and slug.
+ */
+export async function searchAddress(
+  query: string,
+  limit: number = 10
+): Promise<SearchResult[] | null> {
+  try {
+    const params = new URLSearchParams({
+      sok: query,
+      treffPerSide: String(limit),
+    });
+
+    const response = await fetch(`${ADRESSE_API}/sok?${params.toString()}`);
+
+    if (!response.ok) {
+      console.error(`Kartverket Adresse-API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: KartverketAdresseResponse = await response.json();
+
+    if (!data.adresser || data.adresser.length === 0) {
+      return [];
+    }
+
+    return data.adresser.map((adresse) => ({
+      address: `${adresse.adressetekst}, ${adresse.postnummer} ${adresse.poststed}`,
+      municipality: adresse.kommunenavn,
+      municipalityNumber: adresse.kommunenummer,
+      gnr: adresse.gardsnummer,
+      bnr: adresse.bruksnummer,
+      coordinates: {
+        lat: adresse.representasjonspunkt.lat,
+        lng: adresse.representasjonspunkt.lon,
+      },
+      slug: slugify(
+        adresse.adressetekst,
+        adresse.kommunenummer,
+        adresse.gardsnummer,
+        adresse.bruksnummer
+      ),
+    }));
+  } catch (error) {
+    console.error("Error searching addresses:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+
+/**
+ * Get property information by geographic coordinates.
+ */
+export async function getEiendomByPoint(
+  lat: number,
+  lon: number
+): Promise<EiendomByPointResponse | null> {
+  try {
+    const params = new URLSearchParams({
+      lat: String(lat),
+      lon: String(lon),
+    });
+
+    const response = await fetch(`${EIENDOM_API}/punkt?${params.toString()}`);
+
+    if (!response.ok) {
+      console.error(`Kartverket Eiendom-API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: EiendomByPointResponse = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching eiendom by point:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+
+/**
+ * Get property by matrikkel number using the address API.
+ * Searches for the pattern "kommunenr-gnr/bnr".
+ */
+export async function getEiendomByMatrikkel(
+  kommunenr: string,
+  gnr: number,
+  bnr: number
+): Promise<SearchResult[] | null> {
+  try {
+    const query = `${kommunenr}-${gnr}/${bnr}`;
+    return await searchAddress(query, 5);
+  } catch (error) {
+    console.error("Error fetching eiendom by matrikkel:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+
+/**
+ * Get municipality information (name, fylke).
+ */
+export async function getKommuneInfo(
+  kommunenr: string
+): Promise<KommuneInfoResponse | null> {
+  try {
+    const response = await fetch(`${KOMMUNEINFO_API}/kommuner/${kommunenr}`);
+
+    if (!response.ok) {
+      console.error(`Kartverket Kommuneinfo-API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: KommuneInfoResponse = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching kommune info:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+
+/**
+ * Get terrain height at a geographic point.
+ */
+export async function getHoyde(
+  lat: number,
+  lon: number
+): Promise<number | null> {
+  try {
+    const params = new URLSearchParams({
+      koordsys: "4258",
+      nord: String(lat),
+      ost: String(lon),
+    });
+
+    const response = await fetch(`${HOYDEDATA_API}/punkt?${params.toString()}`);
+
+    if (!response.ok) {
+      console.error(`Kartverket Hoydedata-API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: HoydedataResponse = await response.json();
+
+    if (data.punkter && data.punkter.length > 0) {
+      return data.punkter[0].z;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Error fetching hoyde:", error instanceof Error ? error.message : error);
+    return null;
+  }
+}
+```
+
+### FILE: src/lib/api/ssb.ts
+```
+// ─── SSB Statistikkbanken API ───────────────────────────────
+
+const SSB_API = "https://data.ssb.no/api/v0/no/table";
+
+// ─── Types ──────────────────────────────────────────────────
+
+interface SSBQueryPayload {
+  query: Array<{
+    code: string;
+    selection: {
+      filter: string;
+      values: string[];
+    };
+  }>;
+  response: {
+    format: string;
+  };
+}
+
+interface SSBJsonStatResponse {
+  dataset: {
+    dimension: {
+      [key: string]: {
+        category: {
+          index: Record<string, number>;
+          label: Record<string, string>;
+        };
+      };
+    };
+    value: number[];
+  };
+}
+
+export interface BoligprisIndeksEntry {
+  year: string;
+  index: number;
+}
+
+// ─── Public functions ───────────────────────────────────────
+
+/**
+ * Fetch boligprisindeks (housing price index) from SSB table 07241.
+ * @param region - SSB region code (e.g., "0301" for Oslo)
+ * @returns Array of year/index pairs, or null on error
+ */
+export async function getBoligprisIndeks(
+  region: string
+): Promise<BoligprisIndeksEntry[] | null> {
+  try {
+    const payload: SSBQueryPayload = {
+      query: [
+        {
+          code: "Boligtype",
+          selection: {
+            filter: "item",
+            values: ["00"], // All dwelling types
+          },
+        },
+        {
+          code: "Region",
+          selection: {
+            filter: "item",
+            values: [region],
+          },
+        },
+        {
+          code: "ContentsCode",
+          selection: {
+            filter: "item",
+            values: ["Boligpris"], // Boligprisindeks
+          },
+        },
+        {
+          code: "Tid",
+          selection: {
+            filter: "top",
+            values: ["10"], // Last 10 periods
+          },
+        },
+      ],
+      response: {
+        format: "json-stat2",
+      },
+    };
+
+    const response = await fetch(`${SSB_API}/07241`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      console.error(`SSB API returned ${response.status}: ${response.statusText}`);
+      return null;
+    }
+
+    const data: SSBJsonStatResponse = await response.json();
+
+    if (!data.dataset || !data.dataset.value) {
+      return null;
+    }
+
+    const tidDimension = data.dataset.dimension["Tid"];
+    if (!tidDimension) {
+      return null;
+    }
+
+    const yearLabels = tidDimension.category.label;
+    const yearIndex = tidDimension.category.index;
+    const values = data.dataset.value;
+
+    const results: BoligprisIndeksEntry[] = [];
+
+    for (const [code, label] of Object.entries(yearLabels)) {
+      const idx = yearIndex[code];
+      if (idx !== undefined && idx < values.length) {
+        results.push({
+          year: label,
+          index: values[idx],
+        });
+      }
+    }
+
+    // Sort chronologically
+    results.sort((a, b) => a.year.localeCompare(b.year));
+
+    return results;
+  } catch (error) {
+    console.error(
+      "Error fetching boligprisindeks from SSB:",
+      error instanceof Error ? error.message : error
+    );
+    return null;
+  }
+}
+```
+
+### FILE: src/lib/buildPropertyReport.ts
+```
+import { searchAddress, getKommuneInfo, getHoyde } from "./api/kartverket";
+import { getArealplan } from "./api/geonorge";
+import type {
+  PropertyReport,
+  TrackedValue,
+  DataSource,
+  ConfidenceLevel,
+  PropertyIdentity,
+  ZoningInfo,
+  TerrainInfo,
+  SourceEntry,
+} from "@/types";
+
+// ─── Helper ─────────────────────────────────────────────────
+
+function tracked<T>(
+  value: T,
+  sourceName: string,
+  sourceUrl?: string,
+  confidence: ConfidenceLevel = "dokumentert"
+): TrackedValue<T> {
+  return {
+    value,
+    confidence,
+    source: { type: "offentlig_register", name: sourceName, url: sourceUrl } satisfies DataSource,
+    retrievedAt: new Date().toISOString(),
+  };
+}
+
+// ─── Main report builder ────────────────────────────────────
+
+/**
+ * Assemble a PropertyReport from multiple public API calls.
+ * Uses Promise.allSettled to fetch data in parallel where possible,
+ * and gracefully handles individual API failures.
+ */
+export async function buildPropertyReport(
+  kommune: string,
+  gnr: number,
+  bnr: number
+): Promise<PropertyReport> {
+  const now = new Date().toISOString();
+
+  // Do parallel API calls using Promise.allSettled
+  const [adresseResult, kommuneResult, arealplanResult] = await Promise.allSettled([
+    searchAddress(`${kommune}-${gnr}/${bnr}`, 1),
+    getKommuneInfo(kommune),
+    getArealplan(kommune, gnr, bnr),
+  ]);
+
+  // Extract address data
+  let adresseData: {
+    address: string;
+    coordinates: { lat: number; lng: number };
+  } | null = null;
+
+  if (
+    adresseResult.status === "fulfilled" &&
+    adresseResult.value &&
+    adresseResult.value.length > 0
+  ) {
+    adresseData = adresseResult.value[0];
+  }
+
+  // If we got coordinates from address, fetch height
+  let hoydeData: number | null = null;
+  if (adresseData?.coordinates) {
+    hoydeData = await getHoyde(adresseData.coordinates.lat, adresseData.coordinates.lng);
+  }
+
+  // Extract kommune data
+  const kommuneData =
+    kommuneResult.status === "fulfilled" ? kommuneResult.value : null;
+
+  // Extract arealplan data
+  const arealplanData =
+    arealplanResult.status === "fulfilled" ? arealplanResult.value : null;
+
+  // Build identity
+  const identity: PropertyIdentity = {
+    kommunenummer: tracked(
+      kommune,
+      "Kartverket Matrikkel",
+      "https://ws.geonorge.no/eiendom/v1/"
+    ),
+    kommunenavn: kommuneData
+      ? tracked(
+          kommuneData.kommunenavnNorsk || kommuneData.kommunenavn,
+          "Kartverket Kommuneinfo",
+          "https://ws.geonorge.no/kommuneinfo/v1/"
+        )
+      : tracked("Ukjent kommune", "Manuelt", undefined, "uavklart"),
+    gardsnummer: tracked(
+      gnr,
+      "Kartverket Matrikkel",
+      "https://ws.geonorge.no/eiendom/v1/"
+    ),
+    bruksnummer: tracked(
+      bnr,
+      "Kartverket Matrikkel",
+      "https://ws.geonorge.no/eiendom/v1/"
+    ),
+    adresse: adresseData
+      ? tracked(
+          adresseData.address,
+          "Kartverket Adresse-API",
+          "https://ws.geonorge.no/adresser/v1/"
+        )
+      : tracked(`${kommune}-${gnr}/${bnr}`, "Manuelt", undefined, "uavklart"),
+    postnummer: adresseData
+      ? tracked(
+          adresseData.address.match(/(\d{4})/)?.[1] || "",
+          "Kartverket Adresse-API"
+        )
+      : undefined,
+    koordinater: adresseData?.coordinates
+      ? tracked(
+          adresseData.coordinates,
+          "Kartverket Adresse-API",
+          "https://ws.geonorge.no/adresser/v1/"
+        )
+      : tracked(
+          { lat: 59.911, lng: 10.733 },
+          "Standardkoordinater",
+          undefined,
+          "uavklart"
+        ),
+  };
+
+  // Build zoning
+  const zoning: ZoningInfo = {
+    arealformaal: arealplanData?.arealformaal
+      ? tracked(
+          arealplanData.arealformaal,
+          "Geonorge Arealplan WFS",
+          "https://wfs.geonorge.no/"
+        )
+      : tracked(
+          "Ikke tilgjengelig via API",
+          "Uavklart",
+          undefined,
+          "uavklart"
+        ),
+    planId: arealplanData?.planId
+      ? tracked(arealplanData.planId, "Geonorge Arealplan WFS")
+      : undefined,
+    planNavn: arealplanData?.planNavn
+      ? tracked(arealplanData.planNavn, "Geonorge Arealplan WFS")
+      : undefined,
+  };
+
+  // Build terrain
+  const terrain: TerrainInfo = {
+    hoyde: hoydeData !== null
+      ? tracked(
+          hoydeData,
+          "Kartverket Høydedata",
+          "https://ws.geonorge.no/hoydedata/v1/"
+        )
+      : undefined,
+  };
+
+  // Build sources registry
+  const sources: SourceEntry[] = [
+    {
+      source: {
+        type: "offentlig_register",
+        name: "Kartverket Adresse-API",
+        url: "https://ws.geonorge.no/adresser/v1/",
+      },
+      fieldsProvided: ["adresse", "postnummer", "poststed", "koordinater"],
+      retrievedAt: now,
+      status: adresseData ? "ok" : "feil",
+    },
+    {
+      source: {
+        type: "offentlig_register",
+        name: "Kartverket Kommuneinfo",
+        url: "https://ws.geonorge.no/kommuneinfo/v1/",
+      },
+      fieldsProvided: ["kommunenavn", "fylke"],
+      retrievedAt: now,
+      status: kommuneData ? "ok" : "feil",
+    },
+    {
+      source: {
+        type: "offentlig_register",
+        name: "Kartverket Høydedata",
+        url: "https://ws.geonorge.no/hoydedata/v1/",
+      },
+      fieldsProvided: ["terrenghøyde"],
+      retrievedAt: now,
+      status: hoydeData !== null ? "ok" : "feil",
+    },
+  ];
+
+  return {
+    identity,
+    zoning,
+    terrain,
+    documents: [],
+    discrepancies: [],
+    sources,
+    generatedAt: now,
+  };
+}
+```
+
+### FILE: src/lib/utils/coordinates.ts
+```
+// ─── Coordinate utilities ───────────────────────────────────
+
+interface LatLng {
+  lat: number;
+  lng: number;
+}
+
+/**
+ * Convert EPSG:4258 (ETRS89) coordinates to WGS84 lat/lng.
+ * EPSG:4258 and WGS84 are essentially identical for practical purposes
+ * (sub-meter differences), so this is a direct mapping.
+ *
+ * @param nord - Northing / latitude in EPSG:4258
+ * @param ost - Easting / longitude in EPSG:4258
+ */
+export function toLatLng(nord: number, ost: number): LatLng {
+  return {
+    lat: nord,
+    lng: ost,
+  };
+}
+
+/**
+ * Format coordinates as a human-readable string with Norwegian convention.
+ * Uses "N" for north and "\u00D8" (Ø) for east.
+ *
+ * @example formatCoordinates(59.911, 10.733) => "59.9110\u00B0 N, 10.7330\u00B0 \u00D8"
+ */
+export function formatCoordinates(lat: number, lng: number): string {
+  const latDir = lat >= 0 ? "N" : "S";
+  const lngDir = lng >= 0 ? "\u00D8" : "V";
+
+  const latFormatted = Math.abs(lat).toFixed(4);
+  const lngFormatted = Math.abs(lng).toFixed(4);
+
+  return `${latFormatted}\u00B0 ${latDir}, ${lngFormatted}\u00B0 ${lngDir}`;
+}
+```
+
+### FILE: src/lib/utils/formatters.ts
+```
+import type { ConfidenceLevel, ValidationStatus } from "@/types";
+
+// ─── Norwegian month names ──────────────────────────────────
+
+const NORWEGIAN_MONTHS: Record<number, string> = {
+  0: "januar",
+  1: "februar",
+  2: "mars",
+  3: "april",
+  4: "mai",
+  5: "juni",
+  6: "juli",
+  7: "august",
+  8: "september",
+  9: "oktober",
+  10: "november",
+  11: "desember",
+};
+
+// ─── Public functions ───────────────────────────────────────
+
+/**
+ * Format a matrikkel number in the standard Norwegian format.
+ * @example formatMatrikkel("0301", 123, 45) => "0301-123/45"
+ */
+export function formatMatrikkel(kommune: string, gnr: number, bnr: number): string {
+  return `${kommune}-${gnr}/${bnr}`;
+}
+
+/**
+ * Format an ISO date string to Norwegian locale format.
+ * @example formatDate("2026-03-17") => "17. mars 2026"
+ */
+export function formatDate(isoDate: string): string {
+  const date = new Date(isoDate);
+
+  if (isNaN(date.getTime())) {
+    return isoDate; // Return original if unparseable
+  }
+
+  const day = date.getDate();
+  const month = NORWEGIAN_MONTHS[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day}. ${month} ${year}`;
+}
+
+/**
+ * Format a number with Norwegian thousands separator (non-breaking space).
+ * @example formatNumber(1234567) => "1 234 567"
+ */
+export function formatNumber(n: number): string {
+  const parts = Math.abs(n).toFixed(0).split("");
+  const formatted: string[] = [];
+
+  for (let i = parts.length - 1, count = 0; i >= 0; i--, count++) {
+    if (count > 0 && count % 3 === 0) {
+      formatted.unshift("\u00A0"); // Non-breaking space
+    }
+    formatted.unshift(parts[i]);
+  }
+
+  return n < 0 ? `-${formatted.join("")}` : formatted.join("");
+}
+
+/**
+ * Format an area value in square meters with Norwegian formatting.
+ * @example formatArea(1234) => "1 234 m\u00B2"
+ */
+export function formatArea(sqm: number): string {
+  return `${formatNumber(sqm)} m\u00B2`;
+}
+
+/**
+ * Format a currency amount in Norwegian kroner.
+ * @example formatCurrency(1234567) => "1 234 567 kr"
+ */
+export function formatCurrency(amount: number): string {
+  return `${formatNumber(amount)} kr`;
+}
+
+/**
+ * Return a human-readable Norwegian label for a confidence level.
+ */
+export function confidenceLabel(level: ConfidenceLevel): string {
+  const labels: Record<ConfidenceLevel, string> = {
+    dokumentert: "Dokumentert i offentlig register",
+    opplyst: "Opplyst av eier/megler",
+    utledet: "Utledet fra tilgjengelige data",
+    uavklart: "Uavklart - trenger verifisering",
+  };
+  return labels[level];
+}
+
+/**
+ * Return a human-readable Norwegian label for a validation status.
+ */
+export function validationLabel(status: ValidationStatus): string {
+  const labels: Record<ValidationStatus, string> = {
+    bekreftet_flere: "Bekreftet av flere kilder",
+    bekreftet_en: "Bekreftet av \u00E9n kilde",
+    avvik: "Avvik mellom kilder",
+    ikke_funnet: "Ikke funnet i offentlige registre",
+    kun_dokument: "Kun funnet i opplastet dokument",
+    ai_utledet: "Utledet av AI-analyse",
+  };
+  return labels[status];
+}
+```
+
+### FILE: src/types/index.ts
+```
+// ─── Confidence & Validation ─────────────────────────────────
+export type ConfidenceLevel = "dokumentert" | "opplyst" | "utledet" | "uavklart";
+
+export type ValidationStatus =
+  | "bekreftet_flere"
+  | "bekreftet_en"
+  | "avvik"
+  | "ikke_funnet"
+  | "kun_dokument"
+  | "ai_utledet";
+
+export interface DataSource {
+  type: "offentlig_register" | "opplastet_dokument" | "beregnet";
+  name: string;
+  url?: string;
+}
+
+export interface TrackedValue<T> {
+  value: T;
+  confidence: ConfidenceLevel;
+  source: DataSource;
+  retrievedAt: string;
+  notes?: string;
+  validationStatus?: ValidationStatus;
+  validatedAgainst?: { source: DataSource; value: T; matches: boolean }[];
+}
+
+// ─── Search ──────────────────────────────────────────────────
+export interface SearchResult {
+  address: string;
+  municipality: string;
+  municipalityNumber: string;
+  gnr: number;
+  bnr: number;
+  coordinates: { lat: number; lng: number };
+  slug: string;
+}
+
+// ─── Property Identity ──────────────────────────────────────
+export interface PropertyIdentity {
+  kommunenummer: TrackedValue<string>;
+  kommunenavn: TrackedValue<string>;
+  gardsnummer: TrackedValue<number>;
+  bruksnummer: TrackedValue<number>;
+  festenummer?: TrackedValue<number>;
+  seksjonsnummer?: TrackedValue<number>;
+  adresse: TrackedValue<string>;
+  postnummer?: TrackedValue<string>;
+  poststed?: TrackedValue<string>;
+  koordinater: TrackedValue<{ lat: number; lng: number }>;
+}
+
+// ─── Zoning / Plan Data ─────────────────────────────────────
+export interface ZoningInfo {
+  arealformaal?: TrackedValue<string>;
+  planId?: TrackedValue<string>;
+  planNavn?: TrackedValue<string>;
+  planType?: TrackedValue<string>;
+  planStatus?: TrackedValue<string>;
+  utnyttingsgrad?: TrackedValue<string>;
+  maksHoyde?: TrackedValue<string>;
+  byggegrense?: TrackedValue<string>;
+}
+
+// ─── Terrain ─────────────────────────────────────────────────
+export interface TerrainInfo {
+  hoyde?: TrackedValue<number>;
+}
+
+// ─── Building Info ───────────────────────────────────────────
+export interface BuildingInfo {
+  bygningstype?: TrackedValue<string>;
+  byggeaar?: TrackedValue<number>;
+  bruksareal?: TrackedValue<number>;
+  antallEtasjer?: TrackedValue<number>;
+  bygningsstatus?: TrackedValue<string>;
+}
+
+// ─── Document Analysis ──────────────────────────────────────
+export interface DocumentInfo {
+  id: string;
+  filename: string;
+  type: "salgsoppgave" | "takstrapport" | "reguleringsplan" | "annet";
+  uploadedAt: string;
+  status: "laster_opp" | "analyserer" | "ferdig" | "feil";
+  extractedData?: Record<string, TrackedValue<string>>;
+}
+
+// ─── Discrepancy ─────────────────────────────────────────────
+export interface Discrepancy {
+  id: string;
+  field: string;
+  label: string;
+  sourceA: { source: DataSource; value: string };
+  sourceB: { source: DataSource; value: string };
+  severity: "lav" | "medium" | "hoy";
+  description: string;
+}
+
+// ─── Source Registry ─────────────────────────────────────────
+export interface SourceEntry {
+  source: DataSource;
+  fieldsProvided: string[];
+  retrievedAt: string;
+  status: "ok" | "feil" | "timeout";
+  responseTimeMs?: number;
+}
+
+// ─── Full Property Report ───────────────────────────────────
+export interface PropertyReport {
+  identity: PropertyIdentity;
+  zoning: ZoningInfo;
+  terrain: TerrainInfo;
+  building?: BuildingInfo;
+  documents: DocumentInfo[];
+  discrepancies: Discrepancy[];
+  sources: SourceEntry[];
+  generatedAt: string;
+}
+
+// ─── Chat ────────────────────────────────────────────────────
+export interface ChatMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  timestamp: string;
+  sources?: DataSource[];
+  sections?: {
+    fakta?: string;
+    kilde?: string;
+    tolkning?: string;
+    uavklart?: string;
+  };
+}
+
+// ─── API Response Types ─────────────────────────────────────
+export interface KartverketAdresseResponse {
+  adresser: Array<{
+    adressetekst: string;
+    postnummer: string;
+    poststed: string;
+    kommunenavn: string;
+    kommunenummer: string;
+    gardsnummer: number;
+    bruksnummer: number;
+    representasjonspunkt: {
+      lat: number;
+      lon: number;
+    };
+  }>;
+}
+
+export interface GeonorgeEiendomResponse {
+  teiger?: Array<{
+    kommunenummer: string;
+    gaardsnummer: number;
+    bruksnummer: number;
+    festenummer?: number;
+    seksjonsnummer?: number;
+    matrikkelnummertekst: string;
+  }>;
+}
+```
+
+
+---
+
+## Steg 3: Bygg og verifiser
+
+npm run build
+npm run dev
+
+## Steg 4: Deploy til Vercel
+
+npx vercel --prod
+
+Opprett alle filene ovenfor nøyaktig som vist. Ikke hopp over noen filer. Kjør build etterpå for å verifisere at alt kompilerer.
